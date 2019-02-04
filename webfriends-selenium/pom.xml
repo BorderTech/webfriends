@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>webfriends-selenium</name>
+	<artifactId>webfriends-selenium</artifactId>
+	<description>Webfriends Selenium Implementation</description>
+
+	<parent>
+		<groupId>com.github.bordertech.webfriends</groupId>
+		<artifactId>webfriends-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- Webfriends API -->
+		<dependency>
+			<groupId>com.github.bordertech.webfriends</groupId>
+			<artifactId>webfriends-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Selenium lib -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+			<exclusions>
+				<!-- OWASP (Multiple violations for opera driver) -->
+				<exclusion>
+					<groupId>org.seleniumhq.selenium</groupId>
+					<artifactId>selenium-opera-driver</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Didums -->
+		<dependency>
+			<groupId>com.github.bordertech.didums</groupId>
+			<artifactId>didums-core</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+
+		<!-- Commons -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<!-- LDE API -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- Tomcat LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-tomcat</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Junit -->
+		<!--
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+	</dependencies>
+
+</project>

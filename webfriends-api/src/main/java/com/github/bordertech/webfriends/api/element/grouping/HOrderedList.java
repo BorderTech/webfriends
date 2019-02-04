@@ -1,0 +1,91 @@
+package com.github.bordertech.webfriends.api.element.grouping;
+
+import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.element.Element;
+import java.util.Arrays;
+import java.util.List;
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * Ordered list element.
+ *
+ * @param <T> the ordered list item type
+ */
+public interface HOrderedList<T extends HOrderedListItem> extends ListElement<T> {
+
+	@Override
+	public default ElementTag<? extends HOrderedList> getElementTag() {
+		return StandardTags.OL;
+	}
+
+	/**
+	 * List marker type.
+	 */
+	enum MarkerType implements AttributeToken {
+		DECIMAL("1"),
+		UPPER_ALPHA("A"),
+		LOWER_ALPHA("a"),
+		UPPER_ROMAN("I"),
+		LOWER_ROMAN("i");
+
+		/**
+		 * @param token the attribute token
+		 */
+		private MarkerType(final String token) {
+			this.token = token;
+		}
+
+		private final String token;
+
+		@Override
+		public String getToken() {
+			return token;
+		}
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "marker";
+
+		/**
+		 * @param token the token to match
+		 * @return the matching type
+		 */
+		public static MarkerType findType(final String token) {
+			if (token == null) {
+				return null;
+			}
+			for (MarkerType type : MarkerType.values()) {
+				if (StringUtils.equalsIgnoreCase(type.getToken(), token)) {
+					return type;
+				}
+			}
+			return null;
+		}
+
+	}
+
+	/**
+	 * @return true if number list backwards
+	 */
+	boolean isReversed();
+
+	/**
+	 * @return the starting value of the list
+	 */
+	int getStart();
+
+	/**
+	 * @return the kind of list marker or null for default
+	 */
+	MarkerType getMarkerType();
+
+	@Override
+	public default List<Class<? extends Element>> getChildrenAllowed() {
+		return Arrays.asList(ScriptSupporting.class, HOrderedListItem.class);
+	}
+
+}
