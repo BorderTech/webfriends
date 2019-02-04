@@ -2,6 +2,9 @@ cache:
   directories:
   - $HOME/.m2
 
+addons:
+  chrome: stable
+
 before_install:
 - echo "MAVEN_OPTS='-Xmx512m -XX:MaxPermSize=128m'" > ~/.mavenrc
 - mvn clean
