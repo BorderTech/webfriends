@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.bordertech.webfriends</groupId>
+	<name>webfriends-parent</name>
+	<artifactId>webfriends-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.github.bordertech.common</groupId>
+		<artifactId>qa-parent</artifactId>
+		<version>1.0.11</version>
+	</parent>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<bt.qa.skip>false</bt.qa.skip>
+		<checkstyle.skip>true</checkstyle.skip>
+	</properties>
+
+	<description>
+		Utilities for working with HTML and Selenium.
+	</description>
+
+	<url>https://github.com/bordertech/webfriends</url>
+
+	<scm>
+		<url>https://github.com/bordertech/webfriends</url>
+		<connection>scm:git:https://github.com/bordertech/webfriends.git</connection>
+		<developerConnection>scm:git:https://github.com/bordertech/webfriends.git</developerConnection>
+		<tag>java-webfriends-1.0.0</tag>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/bordertech/webfriends/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.com/BorderTech/webfriends</url>
+	</ciManagement>
+
+	<modules>
+		<module>webfriends-api</module>
+		<module>webfriends-selenium</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Didums -->
+			<dependency>
+				<groupId>com.github.bordertech.didums</groupId>
+				<artifactId>didums-core</artifactId>
+				<version>1.0.3</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
