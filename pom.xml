@@ -46,17 +46,7 @@
 	<modules>
 		<module>webfriends-api</module>
 		<module>webfriends-selenium</module>
+		<module>webfriends-selenium-wc</module>
 	</modules>
-
-	<dependencyManagement>
-		<dependencies>
-			<!-- Didums -->
-			<dependency>
-				<groupId>com.github.bordertech.didums</groupId>
-				<artifactId>didums-core</artifactId>
-				<version>1.0.3</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 </project>
