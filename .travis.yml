@@ -6,6 +6,10 @@ cache:
 
 addons:
   chrome: stable
+  sonarcloud:
+    organization: "bordertech-github"
+    token:
+      secure: "qbyHiidk89mJ1w5oEF/ZALP//C/SkSxDVaoD2F6ORrSg9pE/sRVzpTzSEUjhET+cMu6+SrUtdh2d+sKTWKmVJ1SZcs05Ks+AwD5FcC79vt0AibYLZgDitRnTTFBkp518HdZGheYaK1Zrr9NRtjTkOkxtYOIjZ3NQC89mqIIjNRzzVDjhVqzvLIAAlJ1LZnmAZz/xl/3LoTsbtC9fcGaY3gMf7o8HESceewYfNNqJ28lZy7a9RvpgnoyqOaWLc6x+og0Wc/UBlUch0w2NLEt/B3yY/tNqKxNg0qNEZXDHWWr+RAlJmrPt4o5CMgCGfH3GnzhLWTZy3SAFlGK3ktY/3IQn0RkUFeosUTJSMHlyXGAUieGhZa9pO9ik+lvKR2YEtpA20S1tJFGfTONZDssETVTDLCPL6/eD+X/9Do06nIXlcMZ9+FDFffV+Wl1kCPQD262RqUR4EeQ9M7asJNmYJtOuT5kA9TCh6X87FdnM4C5mUQIub0YGFNb6kkrbeVXMqZXsEWckyTibP4w+QRMT6ql1/iusr7nRadxpC2mB/5mxB4imcBJgLaV3eeujpXMLJE18ICdkBEBPKF4ivMc58dhK5JYRYjHKW+2+Ve3coEJmhRu49ZvD9COO1BEtS871kz+sX2XBeEcMLXZtVx+RSZK5OErdobqyt3CBZPlCeU4="
 
 before_install:
 - echo "MAVEN_OPTS='-Xmx512m -XX:MaxPermSize=128m'" > ~/.mavenrc
@@ -24,7 +28,7 @@ jdk:
 
 ## Travis installs the project with the following maven command:- "mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
 script:
- - mvn package
+ - mvn package sonar:sonar -Dsonar.projectKey="bordertech-webfriends"
 
 ## Send Coverage to Codacy
 after_success:
