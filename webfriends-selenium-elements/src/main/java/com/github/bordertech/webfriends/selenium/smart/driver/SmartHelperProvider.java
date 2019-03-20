@@ -954,28 +954,51 @@ public class SmartHelperProvider extends HelperProvider {
 			return "";
 		}
 
-		StringBuilder xpath = new StringBuilder();
-		xpath.append("[");
-		boolean appendOr = false;
+		// Build options
+		StringBuilder xpathOpt = new StringBuilder();
 		// Check node
 		if (options.isCheckNodeText()) {
-			String cmd = options.isPartialMatch() ? XPATH_TEXT_CONTAINS : XPATH_TEXT_EQUALS;
-			xpath.append(String.format(cmd, options.getMatch()));
-			appendOr = true;
+			handleCheckNodeText(xpathOpt, options);
 		}
 		// Check attributes
 		if (options.isCheckAttributes()) {
-			String cmd = options.isPartialMatch() ? XPATH_ATTR_CONTAINS : XPATH_ATTR_EQUALS;
-			for (String attr : options.getAttributes()) {
-				if (appendOr) {
-					xpath.append(" or ");
-				}
-				xpath.append(String.format(cmd, attr, options.getMatch()));
-				appendOr = true;
-			}
+			handleCheckNodeAttributes(xpathOpt, options);
 		}
-		xpath.append("]");
+
+		// Build xpath
+		StringBuilder xpath = new StringBuilder();
+		xpath.append("[").append(xpathOpt).append("]");
 		return xpath.toString();
+	}
+
+	/**
+	 * Handle XPATH for node text.
+	 *
+	 * @param xpath the XPATH being built
+	 * @param options the text search options
+	 */
+	protected void handleCheckNodeText(final StringBuilder xpath, final TextSearchOptions options) {
+		if (xpath.length() > 0) {
+			xpath.append(" or ");
+		}
+		String cmd = options.isPartialMatch() ? XPATH_TEXT_CONTAINS : XPATH_TEXT_EQUALS;
+		xpath.append(String.format(cmd, options.getMatch()));
+	}
+
+	/**
+	 * Handle XPATH for attributes text.
+	 *
+	 * @param xpath the XPATH being built
+	 * @param options the text search options
+	 */
+	protected void handleCheckNodeAttributes(final StringBuilder xpath, final TextSearchOptions options) {
+		String cmd = options.isPartialMatch() ? XPATH_ATTR_CONTAINS : XPATH_ATTR_EQUALS;
+		for (String attr : options.getAttributes()) {
+			if (xpath.length() > 0) {
+				xpath.append(" or ");
+			}
+			xpath.append(String.format(cmd, attr, options.getMatch()));
+		}
 	}
 
 }
