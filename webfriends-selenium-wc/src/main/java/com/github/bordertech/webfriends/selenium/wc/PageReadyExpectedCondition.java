@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.selenium.wc;
 
-import com.github.bordertech.webfriends.selenium.util.condition.PageReadyCondition;
-import com.github.bordertech.webfriends.selenium.util.config.ConfigurationProperties;
+import com.github.bordertech.webfriends.selenium.util.driver.ConfigUtilProperties;
+import com.github.bordertech.webfriends.selenium.util.driver.PageReadyCondition;
 import org.apache.commons.lang3.BooleanUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -16,7 +16,7 @@ public class PageReadyExpectedCondition implements PageReadyCondition {
 	/**
 	 * The body tag indicating the page is ready.
 	 */
-	private static final String DATA_READY_TAG = ConfigurationProperties.getDataReadyTag();
+	private static final String DATA_READY_TAG = ConfigUtilProperties.getDataReadyTag();
 
 	/**
 	 * Wait for the WComponents page to be ready.

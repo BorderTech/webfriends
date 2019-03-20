@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>webfriends-selenium-util</name>
+	<artifactId>webfriends-selenium-util</artifactId>
+	<description>Webfriends Selenium Driver Utilities</description>
+
+	<parent>
+		<groupId>com.github.bordertech.webfriends</groupId>
+		<artifactId>webfriends-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- Selenium lib -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+			<exclusions>
+				<!-- OWASP (Multiple violations for opera driver) -->
+				<exclusion>
+					<groupId>org.seleniumhq.selenium</groupId>
+					<artifactId>selenium-opera-driver</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- LDE API -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- Didums -->
+		<dependency>
+			<groupId>com.github.bordertech.didums</groupId>
+			<artifactId>didums-core</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+
+		<!-- Commons -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>

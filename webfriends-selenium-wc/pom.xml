@@ -20,7 +20,7 @@
 		<!-- Webfriends Selenium -->
 		<dependency>
 			<groupId>com.github.bordertech.webfriends</groupId>
-			<artifactId>webfriends-selenium</artifactId>
+			<artifactId>webfriends-selenium-elements</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
