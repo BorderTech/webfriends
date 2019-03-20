@@ -4,12 +4,12 @@
 
 	<name>webfriends-selenium-elements</name>
 	<artifactId>webfriends-selenium-elements</artifactId>
-	<description>Webfriends Selenium Implementation</description>
+	<description>Webfriends Selenium Smart Elements Implementation</description>
 
 	<parent>
 		<groupId>com.github.bordertech.webfriends</groupId>
 		<artifactId>webfriends-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -24,7 +24,7 @@
 			<version>${project.version}</version>
 		</dependency>
 
-		<!-- Selenium runner -->
+		<!-- Selenium Utils -->
 		<dependency>
 			<groupId>com.github.bordertech.webfriends</groupId>
 			<artifactId>webfriends-selenium-util</artifactId>

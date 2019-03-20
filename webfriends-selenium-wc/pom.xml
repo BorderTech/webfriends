@@ -17,7 +17,7 @@
 
 	<dependencies>
 
-		<!-- Webfriends Selenium -->
+		<!-- Webfriends Selenium Smart Elements -->
 		<dependency>
 			<groupId>com.github.bordertech.webfriends</groupId>
 			<artifactId>webfriends-selenium-elements</artifactId>
