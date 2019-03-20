@@ -10,19 +10,19 @@ import org.apache.commons.configuration.Configuration;
  */
 public final class ConfigSmartProperties {
 
-	/**
-	 * Private constructor for static class.
-	 */
-	private ConfigSmartProperties() {
-		//No-impl
-	}
-
 	private static final List<String> DEFAULT_TEXT_SEARCH_ATTRIBUTES = Arrays.asList("title", "aria-label");
 
 	/**
 	 * The list of attributes to check on an element on text searches.
 	 */
 	private static final String TEXT_SEARCH_ATTRIBUTES = "bordertech.webfriends.selenium.text.search.attributes";
+
+	/**
+	 * Private constructor for static class.
+	 */
+	private ConfigSmartProperties() {
+		//No-impl
+	}
 
 	/**
 	 * Shorthand convenience method to get the Configuration instance.

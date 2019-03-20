@@ -333,6 +333,7 @@ public class SmartHelperProvider extends HelperProvider {
 					default:
 						// Equals value
 						cond = String.format(XPATH_QUAL_EQUALS, qual.getKey(), qual.getValue());
+						break;
 				}
 				select.append(cond);
 			}

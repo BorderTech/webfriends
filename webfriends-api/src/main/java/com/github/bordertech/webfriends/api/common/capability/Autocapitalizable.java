@@ -22,23 +22,23 @@ public interface Autocapitalizable extends Element {
 		CHARACTERS("characters");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "autocapitalize";
+
+		private final String token;
+
+		/**
 		 * @param token the attribute token
 		 */
 		private AutocapitalizeType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "autocapitalize";
 
 		/**
 		 * @param token the token to match

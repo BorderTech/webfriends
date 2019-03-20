@@ -31,6 +31,13 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 		CHAPTERS("chapters"),
 		METADATA("metadata");
 
+		private final String token;
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "kind";
+
 		/**
 		 * @param token the token
 		 */
@@ -38,17 +45,10 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "kind";
 
 		/**
 		 * @param token the token to match
@@ -77,23 +77,23 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 		ERROR(3);
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "readystate";
+
+		private final Integer token;
+
+		/**
 		 * @param token the token
 		 */
 		private ReadyStateType(final Integer token) {
 			this.token = token;
 		}
 
-		private final Integer token;
-
 		@Override
 		public Integer getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "readystate";
 
 		/**
 		 * @param token the token to match

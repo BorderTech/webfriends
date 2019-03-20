@@ -13,8 +13,8 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server
- * for processing.
+ * The form element represents a collection of form-associated elements, some of which can represent editable values
+ * that can be submitted to a server for processing.
  */
 public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomModel {
 
@@ -31,23 +31,23 @@ public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomMod
 		OFF("off");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "autocomplete";
+
+		private final String token;
+
+		/**
 		 * @param token the attribute token
 		 */
 		private AutocompleteType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "autocomplete";
 
 		/**
 		 * @param token the token to match

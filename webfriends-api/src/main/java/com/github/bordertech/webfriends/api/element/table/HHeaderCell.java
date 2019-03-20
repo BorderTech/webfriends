@@ -27,22 +27,23 @@ public interface HHeaderCell extends CellElement, NoCategory {
 		AUTO("auto");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "scope";
+
+		private final String token;
+
+		/**
 		 * @param token the attribute token
 		 */
 		private ScopeType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "scope";
 
 		/**
 		 * @param token the token to match

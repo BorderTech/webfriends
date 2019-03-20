@@ -114,23 +114,23 @@ public interface Autocompleteable extends Element {
 //"photo"
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "autocomplete";
+
+		private final String token;
+
+		/**
 		 * @param token the token
 		 */
 		private AutocompleteFieldType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "autocomplete";
 
 		/**
 		 * @param token the token to match

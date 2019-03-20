@@ -25,23 +25,23 @@ public interface HTextArea extends FormTextControl, TextModel {
 		HARD("hard");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "wrap";
+
+		private final String token;
+
+		/**
 		 * @param token the token
 		 */
 		private WrapType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "wrap";
 
 		/**
 		 * @param token the token to match

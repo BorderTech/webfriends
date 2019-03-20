@@ -38,23 +38,23 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 		BUTTON("button");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "type";
+
+		private final String token;
+
+		/**
 		 * @param token the token
 		 */
 		private ButtonType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "type";
 
 		/**
 		 * @param token the token to match

@@ -32,23 +32,23 @@ public interface HOrderedList<T extends HOrderedListItem> extends ListElement<T>
 		LOWER_ROMAN("i");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "marker";
+
+		private final String token;
+
+		/**
 		 * @param token the attribute token
 		 */
 		private MarkerType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "marker";
 
 		/**
 		 * @param token the token to match

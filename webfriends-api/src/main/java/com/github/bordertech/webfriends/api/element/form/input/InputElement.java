@@ -33,6 +33,13 @@ public interface InputElement extends FormControl, NothingContentModel {
 		RADIO("radio"),
 		FILEUPLOAD("file");
 
+		private final String token;
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "type";
+
 		/**
 		 * @param token the token
 		 */
@@ -40,17 +47,10 @@ public interface InputElement extends FormControl, NothingContentModel {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "type";
 
 		/**
 		 * @param token the token to match
