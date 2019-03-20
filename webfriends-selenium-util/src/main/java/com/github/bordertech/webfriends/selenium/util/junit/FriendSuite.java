@@ -177,9 +177,10 @@ public class FriendSuite extends Suite {
 			executor.shutdown();
 
 			try {
-				executor.awaitTermination(10 * 60, TimeUnit.SECONDS); // 10 mins, overly generous
+				executor.awaitTermination(10, TimeUnit.MINUTES); // 10 mins, overly generous
 			} catch (InterruptedException exc) {
-				throw new IllegalStateException("Test execution timed out", exc);
+				Thread.currentThread().interrupt();
+				throw new IllegalStateException("Test execution was interrupted or timedout.", exc);
 			}
 		}
 
