@@ -9,8 +9,7 @@ import com.github.bordertech.webfriends.api.common.context.PhrasingContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.model.TransparentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagA;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -18,17 +17,15 @@ import java.util.List;
 /**
  * HyperLink element.
  * <p>
- * If the element has a HREF attribute then the content is Interactive. The content model is Transparent, but there must be no interactive content or
- * a element descendants.
+ * If the element has a HREF attribute then the content is Interactive. The content model is Transparent, but there must
+ * be no interactive content or a element descendants.
  * </p>
  */
 public interface HLinkAnchor extends PhrasingContent, InteractiveContent, PalpableContent,
 		PhrasingContext, TransparentModel, FlowModel, CustomModel, Focusable {
 
 	@Override
-	public default ElementTag<? extends HLinkAnchor> getElementTag() {
-		return StandardTags.A;
-	}
+	TagA getTagType();
 
 	/**
 	 * @return the URL

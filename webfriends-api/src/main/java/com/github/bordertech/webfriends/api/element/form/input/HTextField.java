@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.api.element.form.input;
 
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputText;
 
 /**
  * Text input element.
@@ -9,9 +8,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HTextField extends InputTextSuggestionsElement {
 
 	@Override
-	public default ElementTag<? extends HTextField> getElementTag() {
-		return StandardTags.INPUT_TEXT;
-	}
+	TagInputText getTagType();
 
 	@Override
 	public default InputType getInputType() {

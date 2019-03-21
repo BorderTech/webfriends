@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.form.input;
 
 import com.github.bordertech.webfriends.api.common.form.capability.Checkable;
 import com.github.bordertech.webfriends.api.common.form.capability.Requireable;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputRadio;
 import com.github.bordertech.webfriends.api.element.form.other.RadioButtonGroup;
 
 /**
@@ -12,9 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.other.RadioButtonGroup;
 public interface HRadioButton extends InputElement, Checkable, Requireable {
 
 	@Override
-	public default ElementTag<? extends HRadioButton> getElementTag() {
-		return StandardTags.INPUT_RADIO;
-	}
+	TagInputRadio getTagType();
 
 	@Override
 	public default InputType getInputType() {

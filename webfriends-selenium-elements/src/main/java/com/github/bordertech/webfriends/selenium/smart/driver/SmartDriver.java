@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.selenium.smart.driver;
 
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.element.form.SButton;
@@ -11,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Smart Elements Web Driver.
@@ -59,7 +59,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param text the text of the button
 	 * @return the labeled element or null
 	 */
-	public <T extends LabelableSelenium> T findLabeled(final SeleniumTag<T> elementTag, final String text) {
+	public <T extends LabelableSelenium> T findLabeled(final TagTypeSelenium<T> elementTag, final String text) {
 		return findLabeled(elementTag, text, false);
 	}
 
@@ -72,7 +72,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public <T extends LabelableSelenium> T findLabeled(final SeleniumTag<T> elementTag, final String text, final boolean partial) {
+	public <T extends LabelableSelenium> T findLabeled(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		return getHelper().findLabeled(this, getWebDriver(), elementTag, text, partial);
 	}
 
@@ -84,7 +84,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param text the text of the button
 	 * @return the labeled element or null
 	 */
-	public <T extends SElement> T findWithText(final SeleniumTag<T> elementTag, final String text) {
+	public <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text) {
 		return findWithText(elementTag, text, true);
 	}
 
@@ -97,7 +97,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public <T extends SElement> T findWithText(final SeleniumTag<T> elementTag, final String text, final boolean partial) {
+	public <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		return getHelper().findWithText(this, getWebDriver(), elementTag, text, partial);
 	}
 
@@ -108,7 +108,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param elementTag the element tag
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriend(final SeleniumTag<T> elementTag) {
+	public <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag) {
 		return getHelper().findWebFriend(this, getWebDriver(), elementTag);
 	}
 
@@ -120,7 +120,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param by the by condition
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriend(final SeleniumTag<T> elementTag, final By by) {
+	public <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag, final By by) {
 		return getHelper().findWebFriend(this, getWebDriver(), elementTag, by);
 	}
 
@@ -132,7 +132,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriendNth(final SeleniumTag<T> elementTag, final int idx) {
+	public <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final int idx) {
 		return getHelper().findWebFriendNth(this, getWebDriver(), elementTag, idx);
 	}
 
@@ -145,7 +145,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriendNth(final SeleniumTag<T> elementTag, final By by, final int idx) {
+	public <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final By by, final int idx) {
 		return getHelper().findWebFriendNth(this, getWebDriver(), elementTag, by, idx);
 	}
 
@@ -156,7 +156,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param elementTag the element tag
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> List<T> findWebFriends(final SeleniumTag<T> elementTag) {
+	public <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag) {
 		return getHelper().findWebFriends(this, getWebDriver(), elementTag);
 	}
 
@@ -168,7 +168,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param by the BY condition
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> List<T> findWebFriends(final SeleniumTag<T> elementTag, final By by) {
+	public <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final By by) {
 		return getHelper().findWebFriends(this, getWebDriver(), elementTag, by);
 	}
 
@@ -178,7 +178,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param elementTag the element tag
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElement(final SeleniumTag elementTag) {
+	public WebElement findWebElement(final TagTypeSelenium elementTag) {
 		return getHelper().findWebElement(getWebDriver(), elementTag);
 	}
 
@@ -189,7 +189,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param by the by condition
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElement(final SeleniumTag elementTag, final By by) {
+	public WebElement findWebElement(final TagTypeSelenium elementTag, final By by) {
 		return getHelper().findWebElement(getWebDriver(), elementTag, by);
 	}
 
@@ -200,7 +200,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param idx the nth element (starting at 1)
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElementNth(final SeleniumTag elementTag, final int idx) {
+	public WebElement findWebElementNth(final TagTypeSelenium elementTag, final int idx) {
 		return getHelper().findWebElementNth(getWebDriver(), elementTag, idx);
 	}
 
@@ -212,7 +212,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param idx the nth element (starting at 1)
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElementNth(final SeleniumTag elementTag, final By by, final int idx) {
+	public WebElement findWebElementNth(final TagTypeSelenium elementTag, final By by, final int idx) {
 		return getHelper().findWebElementNth(getWebDriver(), elementTag, by, idx);
 	}
 
@@ -222,7 +222,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param elementTag the element tag
 	 * @return the matching elements.
 	 */
-	public List<WebElement> findWebElements(final SeleniumTag elementTag) {
+	public List<WebElement> findWebElements(final TagTypeSelenium elementTag) {
 		return getHelper().findWebElements(getWebDriver(), elementTag);
 	}
 
@@ -233,7 +233,7 @@ public class SmartDriver extends FriendDriver {
 	 * @param by the by condition
 	 * @return the matching elements.
 	 */
-	public List<WebElement> findWebElements(final SeleniumTag elementTag, final By by) {
+	public List<WebElement> findWebElements(final TagTypeSelenium elementTag, final By by) {
 		return getHelper().findWebElements(getWebDriver(), elementTag, by);
 	}
 

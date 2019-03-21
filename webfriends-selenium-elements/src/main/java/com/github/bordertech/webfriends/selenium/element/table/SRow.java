@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.selenium.element.table;
 
 import com.github.bordertech.webfriends.api.element.table.HRow;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagTR;
 
 /**
  * Selenium row of cells in a table.
@@ -12,7 +12,7 @@ import java.util.List;
 public class SRow extends AbstractSElement implements HRow {
 
 	@Override
-	public SeleniumTag<? extends SRow> getElementTag() {
+	public STagTR getTagType() {
 		return SeleniumTags.TR;
 	}
 

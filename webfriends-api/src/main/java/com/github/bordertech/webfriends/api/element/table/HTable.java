@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.table;
 
 import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTable;
 import java.util.List;
 
 /**
@@ -15,9 +14,7 @@ import java.util.List;
 public interface HTable extends FlowPalpableElement, ScriptSupportingModel {
 
 	@Override
-	public default ElementTag<? extends HTable> getElementTag() {
-		return StandardTags.TABLE;
-	}
+	TagTable getTagType();
 
 	/**
 	 * @return the table caption

@@ -4,8 +4,7 @@ import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
 import com.github.bordertech.webfriends.api.common.combo.PhrasingPalpableElement;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagDatalist;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -16,9 +15,7 @@ import java.util.List;
 public interface HDatalist extends PhrasingPalpableElement, ScriptSupportingModel, CustomModel {
 
 	@Override
-	public default ElementTag<? extends HDatalist> getElementTag() {
-		return StandardTags.DATALIST;
-	}
+	TagDatalist getTagType();
 
 	/**
 	 * @return the list of options (ie suggestions)

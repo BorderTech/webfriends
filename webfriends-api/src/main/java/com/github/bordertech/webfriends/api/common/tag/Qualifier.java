@@ -1,9 +1,11 @@
 package com.github.bordertech.webfriends.api.common.tag;
 
+import java.io.Serializable;
+
 /**
  * Element attribute qualifier condition.
  */
-public class Qualifier {
+public class Qualifier implements Serializable {
 
 	private final String key;
 	private final String value;

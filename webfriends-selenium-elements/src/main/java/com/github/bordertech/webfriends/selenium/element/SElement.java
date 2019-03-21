@@ -3,18 +3,21 @@ package com.github.bordertech.webfriends.selenium.element;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericToken;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.element.Element;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
 import java.math.BigDecimal;
 import java.util.List;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Element backed by a selenium web element and web driver.
  */
 public interface SElement extends Element {
+
+	@Override
+	TagTypeSelenium getTagType();
 
 	/**
 	 * @param driver set the backing driver
@@ -31,9 +34,6 @@ public interface SElement extends Element {
 	 * @return the backing web element
 	 */
 	WebElement getWebElement();
-
-	@Override
-	public SeleniumTag<? extends SElement> getElementTag();
 
 	@Override
 	public default String getId() {

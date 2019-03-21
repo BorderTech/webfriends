@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.api.element;
 
 import com.github.bordertech.webfriends.api.common.context.ElementContext;
 import com.github.bordertech.webfriends.api.common.model.ElementModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
 import java.util.List;
+import com.github.bordertech.webfriends.api.common.tag.TagType;
 
 /**
  * Base element (No defined category, No context and No model).
@@ -13,7 +13,7 @@ public interface Element extends ElementContext, ElementModel {
 	/**
 	 * @return the element tag details
 	 */
-	ElementTag<? extends Element> getElementTag();
+	TagType getTagType();
 
 	/**
 	 * @return the unique ID of the element

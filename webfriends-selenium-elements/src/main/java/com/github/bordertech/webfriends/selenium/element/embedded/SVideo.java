@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 
 import com.github.bordertech.webfriends.api.element.embedded.HVideo;
 import com.github.bordertech.webfriends.selenium.common.capability.DimensionableSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
+import com.github.bordertech.webfriends.selenium.common.tags.STagVideo;
 
 /**
  * Selenium video element.
@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 public class SVideo extends MediaElementSelenium implements HVideo, DimensionableSelenium {
 
 	@Override
-	public SeleniumTag<? extends SVideo> getElementTag() {
+	public STagVideo getTagType() {
 		return SeleniumTags.VIDEO;
 	}
 

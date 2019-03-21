@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.selenium.element.form.other;
 
 import com.github.bordertech.webfriends.api.element.form.other.HMeter;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.math.BigDecimal;
+import com.github.bordertech.webfriends.selenium.common.tags.STagMeter;
 
 /**
  * Selenium meter element.
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class SMeter extends AbstractSElement implements HMeter {
 
 	@Override
-	public SeleniumTag<? extends SMeter> getElementTag() {
+	public STagMeter getTagType() {
 		return SeleniumTags.METER;
 	}
 

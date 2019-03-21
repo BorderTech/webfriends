@@ -1,18 +1,18 @@
 package com.github.bordertech.webfriends.selenium.element.sections;
 
 import com.github.bordertech.webfriends.api.element.sections.HNav;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElement;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagNav;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Selenium nav element.
  */
-public class SNav extends AbstractSElement implements HNav, ContainerElement {
+public class SNav extends AbstractSElement implements HNav, ContainerElementSelenium {
 
 	@Override
-	public SeleniumTag<? extends SNav> getElementTag() {
+	public STagNav getTagType() {
 		return SeleniumTags.NAV;
 	}
 

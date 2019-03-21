@@ -1,9 +1,9 @@
 package com.github.bordertech.webfriends.selenium.element.form.control;
 
 import com.github.bordertech.webfriends.selenium.common.form.control.FormControlSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.*;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
  */
 public class FormControlTest2 extends AbstractTestElement<FormControlTest2.MyElement> {
 
-	private static final SeleniumTag<MyElement> MYTAG = new MyTag();
+	private static final TagTypeSelenium<MyElement> MYTAG = new MyTag();
 
 	@Override
 	protected String getElementPath() {
@@ -19,7 +19,7 @@ public class FormControlTest2 extends AbstractTestElement<FormControlTest2.MyEle
 	}
 
 	@Override
-	protected SeleniumTag<MyElement> getTag() {
+	protected TagTypeSelenium<MyElement> getTag() {
 		return MYTAG;
 	}
 
@@ -36,7 +36,7 @@ public class FormControlTest2 extends AbstractTestElement<FormControlTest2.MyEle
 		}
 
 		@Override
-		public SeleniumTag<? extends SElement> getElementTag() {
+		public TagTypeSelenium<? extends SElement> getTagType() {
 			return new MyTag();
 		}
 
@@ -50,10 +50,10 @@ public class FormControlTest2 extends AbstractTestElement<FormControlTest2.MyEle
 	/**
 	 * Test tag.
 	 */
-	public static class MyTag implements SeleniumTag<MyElement> {
+	public static class MyTag implements TagTypeSelenium<MyElement> {
 
 		@Override
-		public Class<MyElement> getTagClass() {
+		public Class<MyElement> getElementClass() {
 			return MyElement.class;
 		}
 

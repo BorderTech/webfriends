@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.api.common.category.PalpableContent;
 import com.github.bordertech.webfriends.api.common.context.EmbeddedContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.TransparentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.TagMediaType;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -31,9 +31,6 @@ import org.apache.commons.lang3.StringUtils;
  */
 public interface MediaElement extends EmbeddedContent, InteractiveContent, PalpableContent,
 		EmbeddedContext, TransparentModel, CustomModel, Focusable {
-
-	@Override
-	public ElementTag<? extends MediaElement> getElementTag();
 
 	/**
 	 * Pre-load media type.
@@ -169,6 +166,9 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 			return null;
 		}
 	}
+
+	@Override
+	TagMediaType getTagType();
 
 	/**
 	 * @return the address of the resource

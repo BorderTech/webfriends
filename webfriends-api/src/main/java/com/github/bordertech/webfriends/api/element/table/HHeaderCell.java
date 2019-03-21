@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.table;
 
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTH;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -12,9 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 public interface HHeaderCell extends CellElement, NoCategory {
 
 	@Override
-	public default ElementTag<? extends HHeaderCell> getElementTag() {
-		return StandardTags.TH;
-	}
+	TagTH getTagType();
 
 	/**
 	 * Scope type.

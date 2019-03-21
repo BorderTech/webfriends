@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 
 import com.github.bordertech.webfriends.api.element.embedded.HImage;
 import com.github.bordertech.webfriends.selenium.common.capability.DimensionableSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagImg;
 
 /**
  * Selenium image element.
@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class SImage extends AbstractSElement implements HImage, DimensionableSelenium {
 
 	@Override
-	public SeleniumTag<? extends SImage> getElementTag() {
+	public STagImg getTagType() {
 		return SeleniumTags.IMG;
 	}
 

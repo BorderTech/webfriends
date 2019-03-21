@@ -2,20 +2,20 @@ package com.github.bordertech.webfriends.selenium.element.form;
 
 import com.github.bordertech.webfriends.api.element.form.HForm;
 import com.github.bordertech.webfriends.selenium.common.capability.AutocapitalizableSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElement;
 import com.github.bordertech.webfriends.selenium.common.form.category.FormAssociatedSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagForm;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Selenium form element.
  */
-public class SForm extends AbstractSElement implements HForm, ContainerElement, AutocapitalizableSelenium {
+public class SForm extends AbstractSElement implements HForm, ContainerElementSelenium, AutocapitalizableSelenium {
 
 	@Override
-	public SeleniumTag<? extends SForm> getElementTag() {
+	public STagForm getTagType() {
 		return SeleniumTags.FORM;
 	}
 

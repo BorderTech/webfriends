@@ -17,7 +17,7 @@ public interface AllowedModel extends ElementModel {
 	/**
 	 * @return the list of direct child elements
 	 */
-	public default List<? extends Element> getChildElements() {
+	public default List<Element> getChildElements() {
 		return Collections.emptyList();
 	}
 

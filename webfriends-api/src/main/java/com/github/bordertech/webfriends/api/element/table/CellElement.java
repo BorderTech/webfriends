@@ -2,7 +2,7 @@ package com.github.bordertech.webfriends.api.element.table;
 
 import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.TagType;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -16,15 +16,12 @@ import java.util.List;
  */
 public interface CellElement extends Element, CustomContext, FlowModel {
 
-	@Override
-	public ElementTag<? extends CellElement> getElementTag();
-
 	/**
 	 * @param <T> the element type
 	 * @param tag the element tag
 	 * @return the content of the cell
 	 */
-	<T extends Element> T getCellContentAs(final ElementTag<T> tag);
+	<T extends Element> T getCellContentAs(final TagType<T> tag);
 
 	/**
 	 * @return the column span which can be null or greater than zero and less than or equal to 1000

@@ -6,10 +6,10 @@ import com.github.bordertech.webfriends.selenium.common.form.capability.Autocomp
 import com.github.bordertech.webfriends.selenium.common.form.capability.SizeableSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.capability.ValueMultiSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.control.FormControlSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
 
 /**
  * Selenium select element.
@@ -18,7 +18,7 @@ public class SSelect extends AbstractSElement implements HSelect<SOption>, FormC
 		AutocompleteableSelenium, SizeableSelenium, ValueMultiSelenium {
 
 	@Override
-	public SeleniumTag<? extends SSelect> getElementTag() {
+	public STagSelect getTagType() {
 		return SeleniumTags.SELECT;
 	}
 

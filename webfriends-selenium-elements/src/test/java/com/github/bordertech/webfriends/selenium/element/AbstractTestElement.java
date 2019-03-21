@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.element;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.smart.junit.AbstractFriendTestCase;
 import org.junit.Before;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Abstract class for testing a selenium element.
@@ -34,7 +34,7 @@ public abstract class AbstractTestElement<T extends SElement> extends AbstractFr
 	/**
 	 * @return the tag of the element being tested
 	 */
-	protected abstract SeleniumTag<T> getTag();
+	protected abstract TagTypeSelenium<T> getTag();
 
 	/**
 	 * @return the path of the test HTML for the element

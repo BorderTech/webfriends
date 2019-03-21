@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.selenium.element.table;
 
 import com.github.bordertech.webfriends.api.element.table.HTable;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagTable;
 
 /**
  * Selenium table element.
@@ -12,7 +12,7 @@ import java.util.List;
 public class STable extends AbstractSElement implements HTable {
 
 	@Override
-	public SeleniumTag<? extends STable> getElementTag() {
+	public STagTable getTagType() {
 		return SeleniumTags.TABLE;
 	}
 

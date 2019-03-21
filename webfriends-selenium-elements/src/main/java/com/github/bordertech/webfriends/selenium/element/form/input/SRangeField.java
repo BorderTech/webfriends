@@ -6,9 +6,9 @@ import com.github.bordertech.webfriends.selenium.common.form.capability.MinMaxCo
 import com.github.bordertech.webfriends.selenium.common.form.capability.StepableSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.capability.SuggestableSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.capability.ValueNumberSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagInputRange;
 
 /**
  * Selenium range element.
@@ -18,7 +18,7 @@ public class SRangeField extends AbstractSElement implements HRangeField, InputE
 		StepableSelenium, ValueNumberSelenium {
 
 	@Override
-	public SeleniumTag<? extends SRangeField> getElementTag() {
+	public STagInputRange getTagType() {
 		return SeleniumTags.INPUT_RANGE;
 	}
 

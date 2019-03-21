@@ -12,8 +12,7 @@ import com.github.bordertech.webfriends.api.common.form.category.AutocapitalizeI
 import com.github.bordertech.webfriends.api.common.form.category.Listed;
 import com.github.bordertech.webfriends.api.common.form.category.Submittable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagButton;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -26,11 +25,6 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 		CustomModel,
 		Listed, Labelable, Submittable, AutocapitalizeInheriting,
 		Autofocusable, Disableable, Focusable {
-
-	@Override
-	public default ElementTag<? extends HButton> getElementTag() {
-		return StandardTags.BUTTON;
-	}
 
 	enum ButtonType implements AttributeToken {
 		SUBMIT("submit"),
@@ -72,6 +66,9 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 			return null;
 		}
 	}
+
+	@Override
+	TagButton getTagType();
 
 	/**
 	 * @return the button text

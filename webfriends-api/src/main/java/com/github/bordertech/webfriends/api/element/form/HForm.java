@@ -5,8 +5,7 @@ import com.github.bordertech.webfriends.api.common.capability.Autocapitalizable;
 import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
 import com.github.bordertech.webfriends.api.common.form.category.FormAssociated;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagForm;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -17,11 +16,6 @@ import org.apache.commons.lang3.StringUtils;
  * that can be submitted to a server for processing.
  */
 public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomModel {
-
-	@Override
-	public default ElementTag<? extends HForm> getElementTag() {
-		return StandardTags.FORM;
-	}
 
 	/**
 	 * Autocomplete type.
@@ -66,6 +60,9 @@ public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomMod
 		}
 
 	}
+
+	@Override
+	TagForm getTagType();
 
 	/**
 	 * @return the name of the form

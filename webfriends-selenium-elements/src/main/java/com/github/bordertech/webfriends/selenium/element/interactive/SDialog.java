@@ -1,18 +1,18 @@
 package com.github.bordertech.webfriends.selenium.element.interactive;
 
 import com.github.bordertech.webfriends.api.element.interactive.HDialog;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElement;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagDialog;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Selenium dialog element.
  */
-public class SDialog extends AbstractSElement implements HDialog, ContainerElement {
+public class SDialog extends AbstractSElement implements HDialog, ContainerElementSelenium {
 
 	@Override
-	public SeleniumTag<? extends SDialog> getElementTag() {
+	public STagDialog getTagType() {
 		return SeleniumTags.DIALOG;
 	}
 

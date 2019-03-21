@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.form.select;
 
 import com.github.bordertech.webfriends.api.element.form.select.HOption;
 import com.github.bordertech.webfriends.selenium.common.form.capability.DisableableSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagOption;
 
 /**
  * Selenium option element.
@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class SOption extends AbstractSElement implements HOption, DisableableSelenium {
 
 	@Override
-	public SeleniumTag<? extends SOption> getElementTag() {
+	public STagOption getTagType() {
 		return SeleniumTags.OPTION;
 	}
 

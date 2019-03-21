@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.form.input;
 
 import com.github.bordertech.webfriends.api.common.form.capability.Checkable;
 import com.github.bordertech.webfriends.api.common.form.capability.Requireable;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputCheckbox;
 
 /**
  * CheckBox input element.
@@ -11,9 +10,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HCheckBox extends InputElement, Checkable, Requireable {
 
 	@Override
-	public default ElementTag<? extends HCheckBox> getElementTag() {
-		return StandardTags.INPUT_CHECKBOX;
-	}
+	TagInputCheckbox getTagType();
 
 	@Override
 	public default InputType getInputType() {

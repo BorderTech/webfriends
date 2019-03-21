@@ -1,13 +1,11 @@
 package com.github.bordertech.webfriends.selenium.smart.driver;
 
-import com.github.bordertech.didums.Factory;
+import com.github.bordertech.didums.Didums;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericToken;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.tag.Qualifier;
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElement;
 import com.github.bordertech.webfriends.selenium.common.form.category.FormAssociatedSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.element.form.SButton;
@@ -30,6 +28,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
+import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Smart elements helper provider.
@@ -65,7 +66,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param tagName the tag name
 	 * @return the tag types that match the tag name
 	 */
-	public List<SeleniumTag> getElementTags(final String tagName) {
+	public List<TagTypeSelenium> getElementTags(final String tagName) {
 		return SeleniumTags.HTML_TAG_MAP.get(tagName);
 	}
 
@@ -76,12 +77,12 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @return true if is a container element
 	 */
 	public boolean isElementContainer(final WebElement webElement) {
-		SeleniumTag tag = getElementTag(webElement);
+		TagTypeSelenium tag = getElementTag(webElement);
 		if (tag == null) {
 			return false;
 		}
 		// TODO Check this works
-		return isInterface(tag.getTagClass(), ContainerElement.class);
+		return isInterface(tag.getElementClass(), ContainerElementSelenium.class);
 	}
 
 	/**
@@ -92,7 +93,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 */
 	public boolean isElementContainer(final SElement element) {
 		// TODO More efficent way of doing this. Maybe put a boolean flag on the element tag interface
-		return element instanceof ContainerElement;
+		return element instanceof ContainerElementSelenium;
 	}
 
 	/**
@@ -111,13 +112,13 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param webElement the web element
 	 * @return the element tag for this web element, or null if no match
 	 */
-	public SeleniumTag getElementTag(final WebElement webElement) {
+	public TagTypeSelenium getElementTag(final WebElement webElement) {
 		// Get element tags that match tag name
-		List<SeleniumTag> tags = getElementTags(webElement.getTagName());
+		List<TagTypeSelenium> tags = getElementTags(webElement.getTagName());
 		// Check Qualifiers
-		SeleniumTag matchElement = null;
+		TagTypeSelenium matchElement = null;
 		int matchQualifiers = -1;
-		for (SeleniumTag tag : tags) {
+		for (TagTypeSelenium tag : tags) {
 			if (tag.getQualifiers().size() > matchQualifiers && isElementMatch(webElement, tag)) {
 				matchElement = tag;
 				matchQualifiers = tag.getQualifiers().size();
@@ -133,7 +134,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param tag the element tag to check
 	 * @return true if we element and element tag match
 	 */
-	public boolean isElementMatch(final WebElement webElement, final SeleniumTag<?> tag) {
+	public boolean isElementMatch(final WebElement webElement, final TagTypeSelenium<?> tag) {
 		// Check tag name
 		if (!tag.getTagName().equalsIgnoreCase(webElement.getTagName())) {
 			return false;
@@ -175,7 +176,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 */
 	public SElement wrapWebElement(final SmartDriver driver, final WebElement webElement) {
 		// Get element tag type
-		SeleniumTag tag = getElementTag(webElement);
+		TagTypeSelenium tag = getElementTag(webElement);
 		if (tag == null) {
 			return null;
 		}
@@ -191,7 +192,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag to wrap element with
 	 * @return the list of web friend elements
 	 */
-	public <T extends SElement> List<T> wrapWebElements(final SmartDriver driver, final List<WebElement> webElements, final SeleniumTag<T> elementTag) {
+	public <T extends SElement> List<T> wrapWebElements(final SmartDriver driver, final List<WebElement> webElements, final TagTypeSelenium<T> elementTag) {
 		if (webElements == null || webElements.isEmpty()) {
 			return Collections.emptyList();
 		}
@@ -215,7 +216,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend element or null if no match
 	 */
-	public <T extends SElement> T wrapWebElementNth(final SmartDriver driver, final List<WebElement> webElements, final SeleniumTag<T> elementTag, final int idx) {
+	public <T extends SElement> T wrapWebElementNth(final SmartDriver driver, final List<WebElement> webElements, final TagTypeSelenium<T> elementTag, final int idx) {
 		if (webElements == null || webElements.isEmpty()) {
 			return null;
 		}
@@ -232,7 +233,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag to match elements
 	 * @return the list of elements for this tag type
 	 */
-	public List<WebElement> filterWebElements(final List<WebElement> webElements, final SeleniumTag elementTag) {
+	public List<WebElement> filterWebElements(final List<WebElement> webElements, final TagTypeSelenium elementTag) {
 		if (webElements == null || webElements.isEmpty()) {
 			return Collections.emptyList();
 		}
@@ -254,7 +255,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth element (starting at 1)
 	 * @return the nth element of this tag type
 	 */
-	public WebElement filterWebElementsNth(final List<WebElement> webElements, final SeleniumTag elementTag, final int idx) {
+	public WebElement filterWebElementsNth(final List<WebElement> webElements, final TagTypeSelenium elementTag, final int idx) {
 		if (webElements == null || webElements.isEmpty()) {
 			return null;
 		}
@@ -274,14 +275,14 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag to wrap element with
 	 * @return the web friend element for this web element
 	 */
-	public <T extends SElement> T wrapWebElement(final SmartDriver driver, final WebElement webElement, final SeleniumTag<T> elementTag) {
+	public <T extends SElement> T wrapWebElement(final SmartDriver driver, final WebElement webElement, final TagTypeSelenium<T> elementTag) {
 		if (driver == null) {
 			throw new IllegalArgumentException("Driver must be provided.");
 		}
 		if (webElement == null) {
 			throw new IllegalArgumentException("Web element must be provided.");
 		}
-		T element = Factory.newInstance(elementTag.getTagClass(), elementTag.getTagClass());
+		T element = Didums.getService(elementTag.getElementClass(), elementTag.getElementClass());
 		element.initElement(driver, webElement);
 		return element;
 	}
@@ -492,7 +493,7 @@ public class SmartHelperProvider extends HelperProvider {
 	public HeadingElementSelenium findHeading(final SmartDriver driver, final SearchContext context) {
 		// TODO Maybe switch this to a xpath
 		// Check for H1 to H6
-		for (SeleniumTag tag : SeleniumTags.HEADING_TAGS) {
+		for (TagHeadingTypeSelenium tag : SeleniumTags.HEADING_TAGS) {
 			HeadingElementSelenium heading = (HeadingElementSelenium) SmartHelperProvider.this.findWebFriend(driver, context, tag);
 			if (heading != null) {
 				return heading;
@@ -526,7 +527,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public <T extends LabelableSelenium> T findLabeled(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final String text, final boolean partial) {
+	public <T extends LabelableSelenium> T findLabeled(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		By by = ByLabel.text(text, partial);
 		return findWebFriend(driver, context, elementTag, by);
 	}
@@ -541,7 +542,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param text the text of the button
 	 * @return the labeled element or null
 	 */
-	public <T extends SElement> T findWithText(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final String text) {
+	public <T extends SElement> T findWithText(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final String text) {
 		return findWithText(driver, context, elementTag, text, true);
 	}
 
@@ -556,7 +557,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public <T extends SElement> T findWithText(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final String text, final boolean partial) {
+	public <T extends SElement> T findWithText(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		By by = ByDesc.text(elementTag, text, partial, true);
 		return findWebFriend(driver, context, elementTag, by);
 	}
@@ -570,7 +571,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag) {
+	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag) {
 		return findWebFriend(driver, context, elementTag, true);
 	}
 
@@ -584,7 +585,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final boolean relative) {
+	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final boolean relative) {
 		return findWebFriendNth(driver, context, elementTag, 1, relative);
 	}
 
@@ -598,7 +599,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param by the by condition which determines relative or root
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final By by) {
+	public <T extends SElement> T findWebFriend(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final By by) {
 		return findWebFriendNth(driver, context, elementTag, by, 1);
 	}
 
@@ -612,7 +613,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final int idx) {
+	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final int idx) {
 		return findWebFriendNth(driver, context, elementTag, idx, true);
 	}
 
@@ -627,7 +628,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final int idx, final boolean relative) {
+	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final int idx, final boolean relative) {
 		WebElement element = findWebElementNth(context, elementTag, idx, relative);
 		return element == null ? null : wrapWebElement(driver, element, elementTag);
 	}
@@ -643,7 +644,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final By by, final int idx) {
+	public <T extends SElement> T findWebFriendNth(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final By by, final int idx) {
 		WebElement element = findWebElementNth(context, elementTag, by, idx);
 		return element == null ? null : wrapWebElement(driver, element, elementTag);
 	}
@@ -657,7 +658,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag
 	 * @return the web friend wrappers for the matching element
 	 */
-	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag) {
+	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag) {
 		return findWebFriends(driver, context, elementTag, true);
 	}
 
@@ -671,7 +672,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative
 	 * @return the web friend wrappers for the matching elements
 	 */
-	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final boolean relative) {
+	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final boolean relative) {
 		List<WebElement> elements = findWebElements(context, elementTag, relative);
 		return wrapWebElements(driver, elements, elementTag);
 	}
@@ -686,7 +687,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param by the BY condition which determines relative or root
 	 * @return the web friend wrappers for the matching element
 	 */
-	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final SeleniumTag<T> elementTag, final By by) {
+	public <T extends SElement> List<T> findWebFriends(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final By by) {
 		List<WebElement> elements = findWebElements(context, elementTag, by);
 		return wrapWebElements(driver, elements, elementTag);
 	}
@@ -708,7 +709,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElement(final SearchContext context, final SeleniumTag elementTag) {
+	public WebElement findWebElement(final SearchContext context, final TagTypeSelenium elementTag) {
 		return findWebElement(context, elementTag, true);
 	}
 
@@ -720,7 +721,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative search
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElement(final SearchContext context, final SeleniumTag elementTag, final boolean relative) {
+	public WebElement findWebElement(final SearchContext context, final TagTypeSelenium elementTag, final boolean relative) {
 		return findWebElementNth(context, elementTag, 1, relative);
 	}
 
@@ -732,7 +733,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param by the by condition which determines relative or root
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElement(final SearchContext context, final SeleniumTag elementTag, final By by) {
+	public WebElement findWebElement(final SearchContext context, final TagTypeSelenium elementTag, final By by) {
 		return findWebElementNth(context, elementTag, by, 1);
 	}
 
@@ -744,7 +745,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth (starting from 1) child element
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElementNth(final SearchContext context, final SeleniumTag elementTag, final int idx) {
+	public WebElement findWebElementNth(final SearchContext context, final TagTypeSelenium elementTag, final int idx) {
 		return findWebElementNth(context, elementTag, idx, true);
 	}
 
@@ -757,7 +758,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative search
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElementNth(final SearchContext context, final SeleniumTag elementTag, final int idx, final boolean relative) {
+	public WebElement findWebElementNth(final SearchContext context, final TagTypeSelenium elementTag, final int idx, final boolean relative) {
 		List<WebElement> elements = findWebElements(context, elementTag, relative);
 		return filterWebElementsNth(elements, elementTag, idx);
 	}
@@ -771,7 +772,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param idx the nth (starting from 1) child element
 	 * @return the matching element or null
 	 */
-	public WebElement findWebElementNth(final SearchContext context, final SeleniumTag elementTag, final By by, final int idx) {
+	public WebElement findWebElementNth(final SearchContext context, final TagTypeSelenium elementTag, final By by, final int idx) {
 		List<WebElement> elements = findWebElements(context, elementTag, by);
 		return filterWebElementsNth(elements, elementTag, idx);
 	}
@@ -783,7 +784,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param elementTag the element tag
 	 * @return the matching elements
 	 */
-	public List<WebElement> findWebElements(final SearchContext context, final SeleniumTag elementTag) {
+	public List<WebElement> findWebElements(final SearchContext context, final TagTypeSelenium elementTag) {
 		return findWebElements(context, elementTag, true);
 	}
 
@@ -795,7 +796,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative search
 	 * @return the matching elements
 	 */
-	public List<WebElement> findWebElements(final SearchContext context, final SeleniumTag elementTag, final boolean relative) {
+	public List<WebElement> findWebElements(final SearchContext context, final TagTypeSelenium elementTag, final boolean relative) {
 		By by = buildSeleniumTabBy(elementTag, relative);
 		return context.findElements(by);
 	}
@@ -808,7 +809,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param by the by condition which determines relative or root
 	 * @return the matching elements
 	 */
-	public List<WebElement> findWebElements(final SearchContext context, final SeleniumTag elementTag, final By by) {
+	public List<WebElement> findWebElements(final SearchContext context, final TagTypeSelenium elementTag, final By by) {
 		List<WebElement> elements = context.findElements(by);
 		return filterWebElements(elements, elementTag);
 	}
@@ -820,7 +821,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative search
 	 * @return the BY for the element
 	 */
-	public By buildSeleniumTabBy(final SeleniumTag<?> tag, final boolean relative) {
+	public By buildSeleniumTabBy(final TagTypeSelenium<?> tag, final boolean relative) {
 		return By.xpath(tag.getXPath(relative));
 	}
 
@@ -936,7 +937,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param relative true if relative search
 	 * @return the list of matching elements
 	 */
-	public List<WebElement> findElementsWithTextOptions(final SearchContext context, final SeleniumTag elementTag, final TextSearchOptions options, final boolean relative) {
+	public List<WebElement> findElementsWithTextOptions(final SearchContext context, final TagTypeSelenium elementTag, final TextSearchOptions options, final boolean relative) {
 		String prefix = elementTag.getXPath(relative);
 		String textX = buildTextOptionsXPathFilter(options);
 		return context.findElements(By.xpath(prefix + textX));

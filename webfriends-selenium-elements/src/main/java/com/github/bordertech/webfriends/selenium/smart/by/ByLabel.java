@@ -13,6 +13,10 @@ import org.openqa.selenium.WebElement;
  */
 public class ByLabel extends By {
 
+	private final String labelText;
+	private final boolean partialMatch;
+	private final boolean relative;
+
 	/**
 	 * ByLabel using the label's text and exact match.
 	 *
@@ -46,12 +50,9 @@ public class ByLabel extends By {
 		return new ByLabel(labelText, partialMatch, relative);
 	}
 
-	private final String labelText;
-	private final boolean partialMatch;
-	private final boolean relative;
-
 	/**
-	 * ByLabel using the label's text, either as an exact or partial match and using a relative XPATh to explicitly look 'inside' the current element.
+	 * ByLabel using the label's text, either as an exact or partial match and using a relative XPATh to explicitly look
+	 * 'inside' the current element.
 	 *
 	 * @param labelText the text used to find the label
 	 * @param partialMatch whether it can be a partial text match

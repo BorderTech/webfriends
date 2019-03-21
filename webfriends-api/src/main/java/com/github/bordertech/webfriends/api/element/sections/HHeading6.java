@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.api.element.sections;
 
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagH6;
 
 /**
  * H6 element.
@@ -9,9 +8,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HHeading6 extends HeadingElement {
 
 	@Override
-	public default ElementTag<? extends HHeading6> getElementTag() {
-		return StandardTags.H6;
-	}
+	TagH6 getTagType();
 
 	@Override
 	public default int getHeadingLevel() {

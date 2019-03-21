@@ -1,18 +1,18 @@
 package com.github.bordertech.webfriends.selenium.element.grouping;
 
 import com.github.bordertech.webfriends.api.element.grouping.HMenu;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagMenu;
 
 /**
  * Menu element.
  */
-public class SMenu extends AbstractSElement implements HMenu<SMenuItem>, ListElementSelenium<SMenuItem> {
+public class SMenu extends AbstractSElement implements HMenu<SMenuItem>, ListContainerElementSelenium<SMenuItem> {
 
 	@Override
-	public SeleniumTag<? extends SMenu> getElementTag() {
+	public STagMenu getTagType() {
 		return SeleniumTags.MENU;
 	}
 

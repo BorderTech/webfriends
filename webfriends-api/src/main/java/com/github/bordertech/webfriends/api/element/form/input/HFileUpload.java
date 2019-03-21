@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.form.input;
 
 import com.github.bordertech.webfriends.api.common.form.capability.ValueMulti;
 import com.github.bordertech.webfriends.api.common.form.file.FileItem;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputFileUpload;
 import java.util.List;
 
 /**
@@ -12,9 +11,7 @@ import java.util.List;
 public interface HFileUpload extends InputElement, ValueMulti {
 
 	@Override
-	public default ElementTag<? extends HFileUpload> getElementTag() {
-		return StandardTags.INPUT_FILEUPLOAD;
-	}
+	TagInputFileUpload getTagType();
 
 	@Override
 	public default InputType getInputType() {

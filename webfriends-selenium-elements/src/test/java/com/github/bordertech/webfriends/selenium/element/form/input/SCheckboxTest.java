@@ -1,11 +1,11 @@
 package com.github.bordertech.webfriends.selenium.element.form.input;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractTestElement;
 import com.github.bordertech.webfriends.selenium.element.form.SLabel;
 import org.junit.Assert;
 import org.junit.Test;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Test {@link SCheckBox}.
@@ -65,7 +65,7 @@ public class SCheckboxTest extends AbstractTestElement<SCheckBox> {
 	}
 
 	@Override
-	protected SeleniumTag<SCheckBox> getTag() {
+	protected TagTypeSelenium<SCheckBox> getTag() {
 		return SeleniumTags.INPUT_CHECKBOX;
 	}
 

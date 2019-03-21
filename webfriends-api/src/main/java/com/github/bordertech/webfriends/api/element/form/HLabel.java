@@ -5,11 +5,10 @@ import com.github.bordertech.webfriends.api.common.category.InteractiveContent;
 import com.github.bordertech.webfriends.api.common.category.Labelable;
 import com.github.bordertech.webfriends.api.common.combo.PhrasingPalpableElement;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
+import com.github.bordertech.webfriends.api.common.tags.TagLabel;
 
 /**
  * Label element.
@@ -17,9 +16,7 @@ import java.util.List;
 public interface HLabel extends PhrasingPalpableElement, InteractiveContent, CustomModel, Focusable {
 
 	@Override
-	public default ElementTag<? extends HLabel> getElementTag() {
-		return StandardTags.LABEL;
-	}
+	TagLabel getTagType();
 
 	/**
 	 * @return the label text for a form control

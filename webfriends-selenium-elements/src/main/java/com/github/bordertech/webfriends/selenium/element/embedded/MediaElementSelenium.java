@@ -3,25 +3,25 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 import com.github.bordertech.webfriends.api.element.embedded.HTrack;
 import com.github.bordertech.webfriends.api.element.embedded.MediaElement;
 import com.github.bordertech.webfriends.selenium.common.capability.FocusableSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElement;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
+import com.github.bordertech.webfriends.selenium.common.tag.TagMediaTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
 import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Selenium media element.
  */
-public abstract class MediaElementSelenium extends AbstractSElement implements MediaElement, ContainerElement,
+public abstract class MediaElementSelenium extends AbstractSElement implements MediaElement, ContainerElementSelenium,
 		FocusableSelenium {
 
 	private List<? extends STrack> tracks = null;
 	private List<? extends SSource> sources = null;
 
 	@Override
-	public abstract SeleniumTag<? extends MediaElementSelenium> getElementTag();
+	public abstract TagMediaTypeSelenium getTagType();
 
 	@Override
 	public List<? extends STrack> getTracks() {

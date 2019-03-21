@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.selenium.element.form.other;
 
 import com.github.bordertech.webfriends.api.element.form.other.HProgress;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.math.BigDecimal;
+import com.github.bordertech.webfriends.selenium.common.tags.STagProgress;
 
 /**
  * Selenium progress element.
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class SProgress extends AbstractSElement implements HProgress {
 
 	@Override
-	public SeleniumTag<? extends SProgress> getElementTag() {
+	public STagProgress getTagType() {
 		return SeleniumTags.PROGRESS;
 	}
 

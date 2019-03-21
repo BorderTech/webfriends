@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.selenium.element.embedded;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractTestElement;
 import org.junit.Assert;
 import org.junit.Test;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Test {@link SImage}.
@@ -32,7 +32,7 @@ public class SImageTest extends AbstractTestElement<SImage> {
 	}
 
 	@Override
-	protected SeleniumTag<SImage> getTag() {
+	protected TagTypeSelenium<SImage> getTag() {
 		return SeleniumTags.IMG;
 	}
 

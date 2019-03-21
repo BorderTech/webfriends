@@ -4,8 +4,7 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericTok
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.model.NothingContentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTrack;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -17,9 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 public interface HTrack extends NoCategory, MediaElementContext, NothingContentModel {
 
 	@Override
-	public default ElementTag<? extends HTrack> getElementTag() {
-		return StandardTags.TRACK;
-	}
+	TagTrack getTagType();
 
 	/**
 	 * Track kind type.

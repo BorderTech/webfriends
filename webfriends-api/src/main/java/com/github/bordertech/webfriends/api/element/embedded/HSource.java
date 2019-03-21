@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.embedded;
 
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.model.NothingContentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagSource;
 
 /**
  * Source element.
@@ -11,9 +10,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HSource extends NoCategory, MediaElementContext, NothingContentModel {
 
 	@Override
-	public default ElementTag<? extends HSource> getElementTag() {
-		return StandardTags.SOURCE;
-	}
+	TagSource getTagType();
 
 	/**
 	 * @return the address of the resource

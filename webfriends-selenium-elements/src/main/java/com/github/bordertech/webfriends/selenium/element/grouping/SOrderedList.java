@@ -1,18 +1,18 @@
 package com.github.bordertech.webfriends.selenium.element.grouping;
 
 import com.github.bordertech.webfriends.api.element.grouping.HOrderedList;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
+import com.github.bordertech.webfriends.selenium.common.tags.STagOrderedList;
 
 /**
  * Selenium ordered list element.
  */
-public class SOrderedList extends AbstractSElement implements HOrderedList<SOrderedListItem>, ListElementSelenium<SOrderedListItem> {
+public class SOrderedList extends AbstractSElement implements HOrderedList<SOrderedListItem>, ListContainerElementSelenium<SOrderedListItem> {
 
 	@Override
-	public SeleniumTag<? extends SOrderedList> getElementTag() {
+	public STagOrderedList getTagType() {
 		return SeleniumTags.OL;
 	}
 

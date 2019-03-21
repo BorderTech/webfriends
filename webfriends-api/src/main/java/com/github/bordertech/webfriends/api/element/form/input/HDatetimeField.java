@@ -1,8 +1,7 @@
 package com.github.bordertech.webfriends.api.element.form.input;
 
 import com.github.bordertech.webfriends.api.common.form.control.FormDateControl;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputDateTime;
 
 /**
  * Date and time input element.
@@ -10,9 +9,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HDatetimeField extends InputElement, FormDateControl {
 
 	@Override
-	public default ElementTag<? extends HDatetimeField> getElementTag() {
-		return StandardTags.INPUT_DATETIME;
-	}
+	TagInputDateTime getTagType();
 
 	@Override
 	public default InputType getInputType() {

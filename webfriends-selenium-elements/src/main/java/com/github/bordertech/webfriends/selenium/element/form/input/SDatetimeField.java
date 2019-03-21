@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.form.input;
 
 import com.github.bordertech.webfriends.api.element.form.input.HDatetimeField;
 import com.github.bordertech.webfriends.selenium.common.form.control.FormDateControlSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagInputDateTime;
 
 /**
  * Selenium date time element.
@@ -13,7 +13,7 @@ public class SDatetimeField extends AbstractSElement implements HDatetimeField, 
 		FormDateControlSelenium {
 
 	@Override
-	public SeleniumTag<? extends SDatetimeField> getElementTag() {
+	public STagInputDateTime getTagType() {
 		return SeleniumTags.INPUT_DATETIME;
 	}
 

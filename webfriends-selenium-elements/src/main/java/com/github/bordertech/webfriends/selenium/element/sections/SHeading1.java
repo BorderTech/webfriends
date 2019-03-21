@@ -1,9 +1,9 @@
 package com.github.bordertech.webfriends.selenium.element.sections;
 
 import com.github.bordertech.webfriends.api.element.sections.HHeading1;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagH1;
 
 /**
  * Selenium H1 element.
@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class SHeading1 extends AbstractSElement implements HeadingElementSelenium, HHeading1 {
 
 	@Override
-	public SeleniumTag<? extends SHeading1> getElementTag() {
+	public STagH1 getTagType() {
 		return SeleniumTags.H1;
 	}
 

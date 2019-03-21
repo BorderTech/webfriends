@@ -1,9 +1,9 @@
 package com.github.bordertech.webfriends.selenium.element.embedded;
 
 import com.github.bordertech.webfriends.api.element.embedded.HTrack;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagTrack;
 
 /**
  * Selenium track element.
@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class STrack extends AbstractSElement implements HTrack {
 
 	@Override
-	public SeleniumTag<? extends STrack> getElementTag() {
+	public STagTrack getTagType() {
 		return SeleniumTags.TRACK;
 	}
 

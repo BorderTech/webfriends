@@ -1,12 +1,12 @@
 package com.github.bordertech.webfriends.selenium.element.form;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.smart.by.ByLabel;
 import com.github.bordertech.webfriends.selenium.element.AbstractTestElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Test {@link SLabel} with nested element.
@@ -52,7 +52,7 @@ public class SLabelNestedTest extends AbstractTestElement<SLabel> {
 	}
 
 	@Override
-	protected SeleniumTag<SLabel> getTag() {
+	protected TagTypeSelenium<SLabel> getTag() {
 		return SeleniumTags.LABEL;
 	}
 

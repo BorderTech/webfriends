@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.selenium.element;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
  */
 public class SElementTest extends AbstractTestElement<SElementTest.MyElement> {
 
-	private static final SeleniumTag<MyElement> MYTAG = new MyTag();
+	private static final TagTypeSelenium<MyElement> MYTAG = new MyTag();
 
 	@Test
 	public void testConstructor1() {
@@ -110,7 +110,7 @@ public class SElementTest extends AbstractTestElement<SElementTest.MyElement> {
 	}
 
 	@Override
-	protected SeleniumTag<MyElement> getTag() {
+	protected TagTypeSelenium<MyElement> getTag() {
 		return MYTAG;
 	}
 
@@ -135,7 +135,7 @@ public class SElementTest extends AbstractTestElement<SElementTest.MyElement> {
 		}
 
 		@Override
-		public SeleniumTag<? extends SElement> getElementTag() {
+		public TagTypeSelenium<? extends SElement> getTagType() {
 			return new MyTag();
 		}
 
@@ -144,10 +144,10 @@ public class SElementTest extends AbstractTestElement<SElementTest.MyElement> {
 	/**
 	 * Test tag.
 	 */
-	public static class MyTag implements SeleniumTag<MyElement> {
+	public static class MyTag implements TagTypeSelenium<MyElement> {
 
 		@Override
-		public Class<MyElement> getTagClass() {
+		public Class<MyElement> getElementClass() {
 			return MyElement.class;
 		}
 

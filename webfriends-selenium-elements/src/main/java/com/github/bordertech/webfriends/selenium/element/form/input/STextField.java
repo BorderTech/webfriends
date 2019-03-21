@@ -1,9 +1,9 @@
 package com.github.bordertech.webfriends.selenium.element.form.input;
 
 import com.github.bordertech.webfriends.api.element.form.input.HTextField;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagInputText;
 
 /**
  * Selenium text input element.
@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class STextField extends AbstractSElement implements HTextField, InputTextSuggestionsElementSelenium {
 
 	@Override
-	public SeleniumTag<? extends STextField> getElementTag() {
+	public STagInputText getTagType() {
 		return SeleniumTags.INPUT_TEXT;
 	}
 

@@ -3,8 +3,7 @@ package com.github.bordertech.webfriends.api.element.document;
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.context.NoContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagHtml;
 import com.github.bordertech.webfriends.api.element.Element;
 import com.github.bordertech.webfriends.api.element.metadata.HHead;
 import com.github.bordertech.webfriends.api.element.sections.HBody;
@@ -17,9 +16,7 @@ import java.util.List;
 public interface HHtmlRoot extends NoCategory, NoContext, CustomModel {
 
 	@Override
-	public default ElementTag<? extends HHtmlRoot> getElementTag() {
-		return StandardTags.HTML;
-	}
+	TagHtml getTagType();
 
 	/**
 	 * @return the head element of the document

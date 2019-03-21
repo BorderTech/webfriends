@@ -54,9 +54,9 @@ public abstract class AbstractSElement implements SElement {
 			throw new IllegalArgumentException("Backing web driver must be provided.");
 		}
 		// Check element and TAG are a match
-		if (!getHelper().isElementMatch(getWebElement(), getElementTag())) {
+		if (!getHelper().isElementMatch(getWebElement(), getTagType())) {
 			String name = getWebElement().getTagName();
-			String expected = getElementTag().getKey();
+			String expected = getTagType().getKey();
 			throw new IllegalStateException("Web element is [" + name + "] but expected [" + expected + "].");
 		}
 	}

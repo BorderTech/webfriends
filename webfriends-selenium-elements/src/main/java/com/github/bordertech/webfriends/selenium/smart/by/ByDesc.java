@@ -1,6 +1,5 @@
 package com.github.bordertech.webfriends.selenium.smart.by;
 
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.smart.driver.ConfigSmartProperties;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
@@ -8,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * An implementation of By which can find HTML elements by text node and attributes.
@@ -15,6 +15,10 @@ import org.openqa.selenium.WebElement;
 public class ByDesc extends By {
 
 	private static final List<String> ATTRIBUTES = ConfigSmartProperties.getTextSearchAttributes();
+
+	private final TagTypeSelenium tag;
+	private final TextSearchOptions options;
+	private final boolean relative;
 
 	/**
 	 * Search elements for text and attributes with exact match.
@@ -67,7 +71,7 @@ public class ByDesc extends By {
 	 * @param textMatch the text to match
 	 * @return the By condition
 	 */
-	public static ByDesc text(final SeleniumTag tag, final String textMatch) {
+	public static ByDesc text(final TagTypeSelenium tag, final String textMatch) {
 		return text(tag, textMatch, false);
 	}
 
@@ -79,7 +83,7 @@ public class ByDesc extends By {
 	 * @param partialMatch true if partial match
 	 * @return the By condition
 	 */
-	public static ByDesc text(final SeleniumTag tag, final String textMatch, boolean partialMatch) {
+	public static ByDesc text(final TagTypeSelenium tag, final String textMatch, boolean partialMatch) {
 		return text(tag, textMatch, partialMatch, false);
 	}
 
@@ -92,7 +96,7 @@ public class ByDesc extends By {
 	 * @param relative true if relative search
 	 * @return the By condition
 	 */
-	public static ByDesc text(final SeleniumTag tag, final String textMatch, final boolean partialMatch, boolean relative) {
+	public static ByDesc text(final TagTypeSelenium tag, final String textMatch, final boolean partialMatch, boolean relative) {
 		return new ByDesc(tag, TextSearchOptions.both(textMatch, ATTRIBUTES, partialMatch), relative);
 	}
 
@@ -104,20 +108,16 @@ public class ByDesc extends By {
 	 * @param relative true if relative search
 	 * @return the By condition
 	 */
-	public static ByDesc text(final SeleniumTag tag, final TextSearchOptions options, final boolean relative) {
+	public static ByDesc text(final TagTypeSelenium tag, final TextSearchOptions options, final boolean relative) {
 		return new ByDesc(tag, options, relative);
 	}
-
-	private final SeleniumTag tag;
-	private final TextSearchOptions options;
-	private final boolean relative;
 
 	/**
 	 * @param tag the optional tag type
 	 * @param options the search options
 	 * @param relative true if relative search
 	 */
-	public ByDesc(final SeleniumTag tag, final TextSearchOptions options, final boolean relative) {
+	public ByDesc(final TagTypeSelenium tag, final TextSearchOptions options, final boolean relative) {
 		if (options == null) {
 			throw new IllegalArgumentException("Search options must be provided.");
 		}

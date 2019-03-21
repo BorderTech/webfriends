@@ -1,11 +1,11 @@
 package com.github.bordertech.webfriends.selenium.element.form;
 
 import com.github.bordertech.webfriends.api.common.capability.Autocapitalizable;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractTestElement;
 import org.junit.Assert;
 import org.junit.Test;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Test {@link SForm}.
@@ -44,7 +44,7 @@ public class SFormTest extends AbstractTestElement<SForm> {
 	}
 
 	@Override
-	protected SeleniumTag<SForm> getTag() {
+	protected TagTypeSelenium<SForm> getTag() {
 		return SeleniumTags.FORM;
 	}
 

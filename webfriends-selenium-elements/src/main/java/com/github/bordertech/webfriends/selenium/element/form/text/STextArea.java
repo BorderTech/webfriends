@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.form.text;
 
 import com.github.bordertech.webfriends.api.element.form.text.HTextArea;
 import com.github.bordertech.webfriends.selenium.common.form.control.FormTextControlSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTag;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.common.tags.STagTextArea;
 
 /**
  * Selenium TextArea element.
@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 public class STextArea extends AbstractSElement implements HTextArea, FormTextControlSelenium {
 
 	@Override
-	public SeleniumTag<? extends STextArea> getElementTag() {
+	public STagTextArea getTagType() {
 		return SeleniumTags.TEXTAREA;
 	}
 
