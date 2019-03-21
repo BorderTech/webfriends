@@ -14,4 +14,11 @@ public final class SmartHelper {
 		return (SmartHelperProvider) Helper.getProvider();
 	}
 
+	/**
+	 * Private constructor.
+	 */
+	private SmartHelper() {
+		// No IMPL
+	}
+
 }

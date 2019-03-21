@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.api.common.tag;
 
 import com.github.bordertech.webfriends.api.element.Element;
-import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import java.util.List;
  *
  * @param <T> the element type
  */
-public interface TagType<T extends Element> extends Serializable {
+public interface TagType<T extends Element> {
 
 	/**
 	 * @return the web friends interface class for this tag

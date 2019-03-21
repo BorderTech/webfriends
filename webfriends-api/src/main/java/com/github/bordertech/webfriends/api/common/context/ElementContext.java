@@ -1,11 +1,9 @@
 package com.github.bordertech.webfriends.api.common.context;
 
-import java.io.Serializable;
-
 /**
  * Contexts in which an element can be used (ie parent).
  */
-public interface ElementContext extends Serializable {
+public interface ElementContext {
 
 	/**
 	 * @return true if context allowed

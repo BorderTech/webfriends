@@ -1,11 +1,9 @@
 package com.github.bordertech.webfriends.api.common.form.file;
 
-import java.io.Serializable;
-
 /**
  * File item details.
  */
-public interface FileItem extends Serializable {
+public interface FileItem {
 
 	/**
 	 * @return the file name

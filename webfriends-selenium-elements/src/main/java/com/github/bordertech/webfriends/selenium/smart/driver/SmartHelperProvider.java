@@ -5,8 +5,11 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericTok
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.tag.Qualifier;
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.category.FormAssociatedSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
+import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.element.form.SButton;
 import com.github.bordertech.webfriends.selenium.element.form.SForm;
@@ -28,9 +31,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
-import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 
 /**
  * Smart elements helper provider.
@@ -698,7 +698,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @param form the parent form
 	 * @return the form associated elements
 	 */
-	public List<? extends FormAssociatedSelenium> getFormAssociated(final SForm form) {
+	public List<FormAssociatedSelenium> getFormAssociated(final SForm form) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

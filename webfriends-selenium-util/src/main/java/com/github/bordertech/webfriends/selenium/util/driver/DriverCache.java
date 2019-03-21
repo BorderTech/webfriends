@@ -10,7 +10,7 @@ import java.util.Map;
  * Tests run in parallel use a unique driver.
  * </p>
  */
-public class DriverCache {
+public final class DriverCache {
 
 	private static final Map<String, FriendDriver> POOL = new HashMap<>();
 
@@ -47,6 +47,13 @@ public class DriverCache {
 			poolDriver.quit();
 		});
 		POOL.clear();
+	}
+
+	/**
+	 * Private constructor.
+	 */
+	private DriverCache() {
+		// No impl
 	}
 
 }

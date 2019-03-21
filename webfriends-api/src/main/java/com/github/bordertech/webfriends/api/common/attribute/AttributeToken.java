@@ -1,11 +1,9 @@
 package com.github.bordertech.webfriends.api.common.attribute;
 
-import java.io.Serializable;
-
 /**
  * Attribute with the token value.
  */
-public interface AttributeToken extends Serializable {
+public interface AttributeToken {
 
 	/**
 	 * @return the HTML attribute value

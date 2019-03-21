@@ -36,7 +36,6 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagInputTelephone;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputText;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputUrl;
 import com.github.bordertech.webfriends.selenium.common.tags.STagLabel;
-import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedListItem;
 import com.github.bordertech.webfriends.selenium.common.tags.STagMenu;
 import com.github.bordertech.webfriends.selenium.common.tags.STagMenuItem;
 import com.github.bordertech.webfriends.selenium.common.tags.STagMeter;
@@ -58,6 +57,7 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagTextArea;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTitle;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTrack;
 import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedList;
+import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedListItem;
 import com.github.bordertech.webfriends.selenium.common.tags.STagVideo;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +68,7 @@ import java.util.Map;
 /**
  * Standard HTML tag types.
  */
-public class SeleniumTags {
+public final class SeleniumTags {
 
 	/**
 	 * Map HTML tag name to selenium tag types.
@@ -156,4 +156,12 @@ public class SeleniumTags {
 			tags.add(tag);
 		}
 	}
+
+	/**
+	 * Private constructor.
+	 */
+	private SeleniumTags() {
+		// No impl
+	}
+
 }
