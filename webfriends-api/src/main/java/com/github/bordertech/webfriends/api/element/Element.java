@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.api.element;
 
 import com.github.bordertech.webfriends.api.common.context.ElementContext;
 import com.github.bordertech.webfriends.api.common.model.ElementModel;
-import java.util.List;
 import com.github.bordertech.webfriends.api.common.tag.TagType;
+import java.util.List;
 
 /**
  * Base element (No defined category, No context and No model).

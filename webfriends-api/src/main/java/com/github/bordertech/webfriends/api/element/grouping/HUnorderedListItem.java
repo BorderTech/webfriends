@@ -1,9 +1,9 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
+import com.github.bordertech.webfriends.api.common.tags.TagUnorderedListItem;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
-import com.github.bordertech.webfriends.api.common.tags.TagUnorderedListItem;
 
 /**
  * List item element.

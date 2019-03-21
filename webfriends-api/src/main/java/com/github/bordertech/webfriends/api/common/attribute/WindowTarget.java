@@ -21,4 +21,12 @@ public final class WindowTarget {
 	 * Top window.
 	 */
 	public static final String TOP = "_top";
+
+	/**
+	 * Private constructor.
+	 */
+	private WindowTarget() {
+		// Do nothing
+	}
+
 }

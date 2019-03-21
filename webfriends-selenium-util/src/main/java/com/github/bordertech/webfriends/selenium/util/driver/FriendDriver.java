@@ -140,7 +140,7 @@ public class FriendDriver implements TakesScreenshot {
 		if (getWebDriver() instanceof TakesScreenshot) {
 			return ((TakesScreenshot) getWebDriver()).getScreenshotAs(target);
 		}
-		throw new UnsupportedOperationException("Driver does not support task sreen shot.");
+		throw new WebDriverException("Driver does not support task sreen shot.");
 	}
 
 	/**

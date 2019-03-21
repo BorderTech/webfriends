@@ -1,10 +1,10 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
 import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.tags.TagUnorderedList;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
-import com.github.bordertech.webfriends.api.common.tags.TagUnorderedList;
 
 /**
  * List (unordered) element.

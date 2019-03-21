@@ -5,10 +5,10 @@ import com.github.bordertech.webfriends.api.common.category.InteractiveContent;
 import com.github.bordertech.webfriends.api.common.category.Labelable;
 import com.github.bordertech.webfriends.api.common.combo.PhrasingPalpableElement;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
+import com.github.bordertech.webfriends.api.common.tags.TagLabel;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
-import com.github.bordertech.webfriends.api.common.tags.TagLabel;
 
 /**
  * Label element.
