@@ -12,8 +12,7 @@ import com.github.bordertech.webfriends.api.common.form.category.AutocapitalizeI
 import com.github.bordertech.webfriends.api.common.form.category.Listed;
 import com.github.bordertech.webfriends.api.common.form.category.Submittable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagButton;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -27,15 +26,17 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 		Listed, Labelable, Submittable, AutocapitalizeInheriting,
 		Autofocusable, Disableable, Focusable {
 
-	@Override
-	public default ElementTag<? extends HButton> getElementTag() {
-		return StandardTags.BUTTON;
-	}
-
 	enum ButtonType implements AttributeToken {
 		SUBMIT("submit"),
 		RESET("reset"),
 		BUTTON("button");
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "type";
+
+		private final String token;
 
 		/**
 		 * @param token the token
@@ -44,17 +45,10 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "type";
 
 		/**
 		 * @param token the token to match
@@ -73,6 +67,9 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 		}
 	}
 
+	@Override
+	TagButton getTagType();
+
 	/**
 	 * @return the button text
 	 */
@@ -84,7 +81,7 @@ public interface HButton extends FlowPalpableElement, PhrasingContent, Interacti
 	ButtonType getButtonType();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(InteractiveContent.class);
 	}
 

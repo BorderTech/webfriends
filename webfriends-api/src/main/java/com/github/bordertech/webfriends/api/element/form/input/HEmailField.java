@@ -1,8 +1,7 @@
 package com.github.bordertech.webfriends.api.element.form.input;
 
 import com.github.bordertech.webfriends.api.common.form.capability.ValueMulti;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputEmail;
 
 /**
  * Email input element.
@@ -10,12 +9,10 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HEmailField extends InputTextSuggestionsElement, ValueMulti {
 
 	@Override
-	public default ElementTag<? extends HEmailField> getElementTag() {
-		return StandardTags.INPUT_EMAIL;
-	}
+	TagInputEmail getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.EMAIL;
 	}
 

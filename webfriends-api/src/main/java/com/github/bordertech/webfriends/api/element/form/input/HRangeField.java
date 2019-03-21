@@ -5,8 +5,7 @@ import com.github.bordertech.webfriends.api.common.form.capability.MinMaxConstra
 import com.github.bordertech.webfriends.api.common.form.capability.Stepable;
 import com.github.bordertech.webfriends.api.common.form.capability.Suggestable;
 import com.github.bordertech.webfriends.api.common.form.capability.ValueNumber;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputRange;
 
 /**
  * Input range element.
@@ -15,12 +14,10 @@ public interface HRangeField extends InputElement,
 		Autocompleteable, Suggestable, MinMaxConstrainableNumber, Stepable, ValueNumber {
 
 	@Override
-	public default ElementTag<? extends HRangeField> getElementTag() {
-		return StandardTags.INPUT_RANGE;
-	}
+	TagInputRange getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.RANGE;
 	}
 }

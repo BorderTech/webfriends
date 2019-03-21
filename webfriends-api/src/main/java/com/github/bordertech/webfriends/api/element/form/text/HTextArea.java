@@ -3,8 +3,7 @@ package com.github.bordertech.webfriends.api.element.form.text;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.form.control.FormTextControl;
 import com.github.bordertech.webfriends.api.common.model.TextModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTextArea;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -13,9 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 public interface HTextArea extends FormTextControl, TextModel {
 
 	@Override
-	public default ElementTag<? extends HTextArea> getElementTag() {
-		return StandardTags.TEXTAREA;
-	}
+	TagTextArea getTagType();
 
 	/**
 	 * Wrap types.
@@ -25,23 +22,23 @@ public interface HTextArea extends FormTextControl, TextModel {
 		HARD("hard");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "wrap";
+
+		private final String token;
+
+		/**
 		 * @param token the token
 		 */
 		private WrapType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "wrap";
 
 		/**
 		 * @param token the token to match

@@ -4,8 +4,7 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericTok
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.model.NothingContentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTrack;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -17,9 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 public interface HTrack extends NoCategory, MediaElementContext, NothingContentModel {
 
 	@Override
-	public default ElementTag<? extends HTrack> getElementTag() {
-		return StandardTags.TRACK;
-	}
+	TagTrack getTagType();
 
 	/**
 	 * Track kind type.
@@ -31,6 +28,13 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 		CHAPTERS("chapters"),
 		METADATA("metadata");
 
+		private final String token;
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "kind";
+
 		/**
 		 * @param token the token
 		 */
@@ -38,17 +42,10 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "kind";
 
 		/**
 		 * @param token the token to match
@@ -77,23 +74,23 @@ public interface HTrack extends NoCategory, MediaElementContext, NothingContentM
 		ERROR(3);
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "readystate";
+
+		private final Integer token;
+
+		/**
 		 * @param token the token
 		 */
 		private ReadyStateType(final Integer token) {
 			this.token = token;
 		}
 
-		private final Integer token;
-
 		@Override
 		public Integer getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "readystate";
 
 		/**
 		 * @param token the token to match

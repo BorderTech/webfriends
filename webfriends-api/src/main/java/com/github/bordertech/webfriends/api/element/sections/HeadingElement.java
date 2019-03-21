@@ -2,7 +2,7 @@ package com.github.bordertech.webfriends.api.element.sections;
 
 import com.github.bordertech.webfriends.api.common.category.HeadingContent;
 import com.github.bordertech.webfriends.api.common.combo.FlowPalpableWithPhrasingElement;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.TagHeadingType;
 
 /**
  * Heading element.
@@ -10,7 +10,7 @@ import com.github.bordertech.webfriends.api.common.tag.ElementTag;
 public interface HeadingElement extends FlowPalpableWithPhrasingElement, HeadingContent {
 
 	@Override
-	public ElementTag<? extends HeadingElement> getElementTag();
+	TagHeadingType getTagType();
 
 	/**
 	 * @return the heading level

@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.interactive;
 
 import com.github.bordertech.webfriends.api.common.category.SectioningRoot;
 import com.github.bordertech.webfriends.api.common.combo.FlowElement;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagDialog;
 
 /**
  * Dialog element.
@@ -11,9 +10,7 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HDialog extends FlowElement, SectioningRoot {
 
 	@Override
-	public default ElementTag<? extends HDialog> getElementTag() {
-		return StandardTags.DIALOG;
-	}
+	TagDialog getTagType();
 
 	/**
 	 * @return the dialog title

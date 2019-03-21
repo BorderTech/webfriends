@@ -2,8 +2,7 @@ package com.github.bordertech.webfriends.api.element.table;
 
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTH;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -12,9 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 public interface HHeaderCell extends CellElement, NoCategory {
 
 	@Override
-	public default ElementTag<? extends HHeaderCell> getElementTag() {
-		return StandardTags.TH;
-	}
+	TagTH getTagType();
 
 	/**
 	 * Scope type.
@@ -27,22 +24,23 @@ public interface HHeaderCell extends CellElement, NoCategory {
 		AUTO("auto");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "scope";
+
+		private final String token;
+
+		/**
 		 * @param token the attribute token
 		 */
 		private ScopeType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "scope";
 
 		/**
 		 * @param token the token to match

@@ -11,7 +11,7 @@ import java.util.List;
 public interface PhrasingModel extends AllowedModel {
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsAllowed() {
+	default List<Class<? extends Element>> getDescendantsAllowed() {
 		return Arrays.asList(PhrasingContent.class);
 	}
 

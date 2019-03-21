@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.api.element.form.input;
 
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputTelephone;
 
 /**
  * Telephone input element.
@@ -9,12 +8,10 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HTelephoneField extends InputTextSuggestionsElement {
 
 	@Override
-	public default ElementTag<? extends HTelephoneField> getElementTag() {
-		return StandardTags.INPUT_TELEPHONE;
-	}
+	TagInputTelephone getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.TELEPHONE;
 	}
 

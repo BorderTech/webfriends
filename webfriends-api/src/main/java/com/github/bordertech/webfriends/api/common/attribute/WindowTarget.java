@@ -3,7 +3,7 @@ package com.github.bordertech.webfriends.api.common.attribute;
 /**
  * Target window type.
  */
-public class WindowTarget {
+public final class WindowTarget {
 
 	/**
 	 * New window.

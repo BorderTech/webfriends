@@ -10,21 +10,21 @@ import java.util.List;
 public interface AllowedContext extends ElementContext {
 
 	@Override
-	public default boolean isAllowedContext() {
+	default boolean isAllowedContext() {
 		return true;
 	}
 
 	/**
 	 * @return the parent element
 	 */
-	public default Element getParentElement() {
+	default Element getParentElement() {
 		return null;
 	}
 
 	/**
 	 * @return the list of contexts this element can be added to
 	 */
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Collections.emptyList();
 	}
 
@@ -33,7 +33,7 @@ public interface AllowedContext extends ElementContext {
 	 *
 	 * @return the list of contexts this element cant be added to (ie excluded)
 	 */
-	public default List<Class<? extends Element>> getContextsExcluded() {
+	default List<Class<? extends Element>> getContextsExcluded() {
 		return Collections.emptyList();
 	}
 

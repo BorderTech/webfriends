@@ -45,7 +45,8 @@
 
 	<modules>
 		<module>webfriends-api</module>
-		<module>webfriends-selenium</module>
+		<module>webfriends-selenium-util</module>
+		<module>webfriends-selenium-elements</module>
 		<module>webfriends-selenium-wc</module>
 	</modules>
 

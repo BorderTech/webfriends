@@ -5,8 +5,7 @@ import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagTR;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -20,9 +19,7 @@ import java.util.List;
 public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, CustomModel {
 
 	@Override
-	public default ElementTag<? extends HRow> getElementTag() {
-		return StandardTags.TR;
-	}
+	TagTR getTagType();
 
 	/**
 	 * @param colIdx the column index (starting at 1)
@@ -58,7 +55,7 @@ public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, Cust
 	List<? extends CellElement> getRowCells();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class,
 				CellElement.class
 		);

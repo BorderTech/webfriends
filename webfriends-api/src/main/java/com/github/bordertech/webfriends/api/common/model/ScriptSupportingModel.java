@@ -11,7 +11,7 @@ import java.util.List;
 public interface ScriptSupportingModel extends AllowedModel {
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class);
 	}
 

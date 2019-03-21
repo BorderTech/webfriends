@@ -6,8 +6,7 @@ import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagOptGroup;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -19,9 +18,7 @@ public interface HOptGroup extends NoCategory, CustomContext, ScriptSupportingMo
 		Disableable {
 
 	@Override
-	public default ElementTag<? extends HOptGroup> getElementTag() {
-		return StandardTags.OPTGROUP;
-	}
+	TagOptGroup getTagType();
 
 	/**
 	 * @return the group label
@@ -34,12 +31,12 @@ public interface HOptGroup extends NoCategory, CustomContext, ScriptSupportingMo
 	List<? extends HOption> getOptions();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HSelect.class);
 	}
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(HOption.class, ScriptSupporting.class);
 	}
 

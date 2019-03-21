@@ -10,14 +10,14 @@ import java.util.List;
 public interface AllowedModel extends ElementModel {
 
 	@Override
-	public default boolean isAllowedContent() {
+	default boolean isAllowedContent() {
 		return true;
 	}
 
 	/**
 	 * @return the list of direct child elements
 	 */
-	public default List<? extends Element> getChildElements() {
+	default List<Element> getChildElements() {
 		return Collections.emptyList();
 	}
 
@@ -26,7 +26,7 @@ public interface AllowedModel extends ElementModel {
 	 *
 	 * @return the list of child elements allowed in the model
 	 */
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Collections.emptyList();
 	}
 
@@ -35,14 +35,14 @@ public interface AllowedModel extends ElementModel {
 	 *
 	 * @return the list of child elements not allowed (ie excluded)
 	 */
-	public default List<Class<? extends Element>> getChildrenExcluded() {
+	default List<Class<? extends Element>> getChildrenExcluded() {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @return the list of descendant elements allowed in the model
 	 */
-	public default List<Class<? extends Element>> getDescendantsAllowed() {
+	default List<Class<? extends Element>> getDescendantsAllowed() {
 		return Collections.emptyList();
 	}
 
@@ -51,7 +51,7 @@ public interface AllowedModel extends ElementModel {
 	 *
 	 * @return the list of descendant elements not allowed in the model
 	 */
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Collections.emptyList();
 	}
 

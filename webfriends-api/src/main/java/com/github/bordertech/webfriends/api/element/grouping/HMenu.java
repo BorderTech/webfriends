@@ -1,8 +1,7 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
 import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagMenu;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -12,12 +11,10 @@ import java.util.List;
  *
  * @param <T> the menu item type
  */
-public interface HMenu<T extends HMenuItem> extends ListElement<T> {
+public interface HMenu<T extends HMenuItem> extends ListContainerElement<T> {
 
 	@Override
-	public default ElementTag<? extends HMenu> getElementTag() {
-		return StandardTags.MENU;
-	}
+	TagMenu getTagType();
 
 	/**
 	 * @param text the text of the menu item
@@ -26,7 +23,7 @@ public interface HMenu<T extends HMenuItem> extends ListElement<T> {
 	HMenuItem getMenuItemByText(final String text);
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class, HMenuItem.class);
 	}
 }

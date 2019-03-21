@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.api.element.form.input;
 
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagInputUrl;
 
 /**
  * URL input element.
@@ -9,12 +8,10 @@ import com.github.bordertech.webfriends.api.common.tag.StandardTags;
 public interface HUrlField extends InputTextSuggestionsElement {
 
 	@Override
-	public default ElementTag<? extends HUrlField> getElementTag() {
-		return StandardTags.INPUT_URL;
-	}
+	TagInputUrl getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.URL;
 	}
 

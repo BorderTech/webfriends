@@ -5,8 +5,7 @@ import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.form.category.AutocapitalizeInheriting;
 import com.github.bordertech.webfriends.api.common.form.category.Listed;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagFieldSet;
 
 /**
  * Fieldset element.
@@ -15,9 +14,7 @@ public interface HFieldSet extends FlowPalpableElement, SectioningRoot,
 		Listed, AutocapitalizeInheriting, Disableable {
 
 	@Override
-	public default ElementTag<? extends HFieldSet> getElementTag() {
-		return StandardTags.FIELDSET;
-	}
+	TagFieldSet getTagType();
 
 	/**
 	 * Legend text is either phrasing or a Heading Element.

@@ -3,16 +3,13 @@ package com.github.bordertech.webfriends.api.element.form.input;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.form.control.FormControl;
 import com.github.bordertech.webfriends.api.common.model.NothingContentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.TagInputType;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Input element.
  */
 public interface InputElement extends FormControl, NothingContentModel {
-
-	@Override
-	public ElementTag<? extends InputElement> getElementTag();
 
 	/**
 	 * Input types.
@@ -33,6 +30,13 @@ public interface InputElement extends FormControl, NothingContentModel {
 		RADIO("radio"),
 		FILEUPLOAD("file");
 
+		private final String token;
+
+		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "type";
+
 		/**
 		 * @param token the token
 		 */
@@ -40,17 +44,10 @@ public interface InputElement extends FormControl, NothingContentModel {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "type";
 
 		/**
 		 * @param token the token to match
@@ -68,6 +65,9 @@ public interface InputElement extends FormControl, NothingContentModel {
 			return null;
 		}
 	}
+
+	@Override
+	TagInputType getTagType();
 
 	/**
 	 * @return the input type

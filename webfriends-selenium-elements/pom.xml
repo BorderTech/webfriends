@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>webfriends-selenium-elements</name>
+	<artifactId>webfriends-selenium-elements</artifactId>
+	<description>Webfriends Selenium Smart Elements Implementation</description>
+
+	<parent>
+		<groupId>com.github.bordertech.webfriends</groupId>
+		<artifactId>webfriends-parent</artifactId>
+		<version>0.0.2-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- Webfriends API -->
+		<dependency>
+			<groupId>com.github.bordertech.webfriends</groupId>
+			<artifactId>webfriends-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Selenium Utils -->
+		<dependency>
+			<groupId>com.github.bordertech.webfriends</groupId>
+			<artifactId>webfriends-selenium-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Commons -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<!-- Tomcat LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-tomcat</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>

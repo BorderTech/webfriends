@@ -5,6 +5,16 @@ package com.github.bordertech.webfriends.api.common.tag;
  */
 public class Qualifier {
 
+	private final String key;
+	private final String value;
+	private final Predicate predicate;
+
+	public enum Predicate {
+		EQUALS,
+		CONTAINS,
+		HAS
+	}
+
 	public static Qualifier create(final String key) {
 		return new Qualifier(key);
 	}
@@ -16,16 +26,6 @@ public class Qualifier {
 	public static Qualifier create(String key, String value, Predicate predicate) {
 		return new Qualifier(key, value, predicate);
 	}
-
-	public enum Predicate {
-		EQUALS,
-		CONTAINS,
-		HAS
-	}
-
-	private final String key;
-	private final String value;
-	private final Predicate predicate;
 
 	public Qualifier(final String key) {
 		this(key, null, Predicate.HAS);

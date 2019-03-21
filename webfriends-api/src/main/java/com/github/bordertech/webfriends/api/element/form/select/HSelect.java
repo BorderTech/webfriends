@@ -7,8 +7,7 @@ import com.github.bordertech.webfriends.api.common.form.capability.ValueMulti;
 import com.github.bordertech.webfriends.api.common.form.control.FormControl;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagSelect;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -22,9 +21,7 @@ public interface HSelect<T extends HOption> extends FormControl, ScriptSupportin
 		Autocompleteable, Sizeable, ValueMulti {
 
 	@Override
-	public default ElementTag<? extends HSelect> getElementTag() {
-		return StandardTags.SELECT;
-	}
+	TagSelect getTagType();
 
 	/**
 	 * @return the list of options (including options in option groups)
@@ -69,7 +66,7 @@ public interface HSelect<T extends HOption> extends FormControl, ScriptSupportin
 	void setSelectedOptions(final T... options);
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(HOption.class, HOptGroup.class, ScriptSupporting.class);
 	}
 }

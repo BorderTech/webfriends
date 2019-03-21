@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.api.common.category.PalpableContent;
 import com.github.bordertech.webfriends.api.common.context.EmbeddedContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.TransparentModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
+import com.github.bordertech.webfriends.api.common.tag.TagMediaType;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -21,18 +21,16 @@ import org.apache.commons.lang3.StringUtils;
  * Interactive and Palpable content if the element has a controls attribute.
  * </p>
  * <p>
- * If the element has a src attribute: zero or more track elements, then transparent model, but with no media element descendants.
+ * If the element has a src attribute: zero or more track elements, then transparent model, but with no media element
+ * descendants.
  * </p>
  * <p>
- * If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then transparent model, but with no
- * media element descendants.
+ * If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then
+ * transparent model, but with no media element descendants.
  * </p>
  */
 public interface MediaElement extends EmbeddedContent, InteractiveContent, PalpableContent,
 		EmbeddedContext, TransparentModel, CustomModel, Focusable {
-
-	@Override
-	public ElementTag<? extends MediaElement> getElementTag();
 
 	/**
 	 * Pre-load media type.
@@ -43,23 +41,23 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 		AUTO("");
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "preload";
+
+		private final String token;
+
+		/**
 		 * @param token the token
 		 */
 		private PreloadType(final String token) {
 			this.token = token;
 		}
 
-		private final String token;
-
 		@Override
 		public String getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "preload";
 
 		/**
 		 * @param token the token to match
@@ -88,23 +86,23 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 		SRC_NOT_SUPPORTED(3);
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "code";
+
+		private final Integer token;
+
+		/**
 		 * @param token the token
 		 */
 		private MediaErrorType(final Integer token) {
 			this.token = token;
 		}
 
-		private final Integer token;
-
 		@Override
 		public Integer getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "code";
 
 		/**
 		 * @param token the token to match
@@ -134,23 +132,23 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 		NO_SOURCE(3);
 
 		/**
+		 * Attribute key.
+		 */
+		public static final String ATTR = "networkstate";
+
+		private final Integer token;
+
+		/**
 		 * @param token the token
 		 */
 		private NetworkStateType(final Integer token) {
 			this.token = token;
 		}
 
-		private final Integer token;
-
 		@Override
 		public Integer getToken() {
 			return token;
 		}
-
-		/**
-		 * Attribute key.
-		 */
-		public static final String ATTR = "networkstate";
 
 		/**
 		 * @param token the token to match
@@ -168,6 +166,9 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 			return null;
 		}
 	}
+
+	@Override
+	TagMediaType getTagType();
 
 	/**
 	 * @return the address of the resource
@@ -297,7 +298,7 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 	void pause();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(MediaElement.class);
 	}
 

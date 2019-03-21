@@ -11,7 +11,7 @@ import java.util.List;
 public interface MetadataContentModel extends AllowedModel {
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(MetadataContent.class);
 	}
 

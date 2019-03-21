@@ -4,8 +4,7 @@ import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.model.TextModel;
-import com.github.bordertech.webfriends.api.common.tag.ElementTag;
-import com.github.bordertech.webfriends.api.common.tag.StandardTags;
+import com.github.bordertech.webfriends.api.common.tags.TagOption;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +16,7 @@ public interface HOption extends NoCategory, CustomContext, TextModel,
 		Disableable {
 
 	@Override
-	public default ElementTag<? extends HOption> getElementTag() {
-		return StandardTags.OPTION;
-	}
+	TagOption getTagType();
 
 	/**
 	 * @return the value for form submission
@@ -47,7 +44,7 @@ public interface HOption extends NoCategory, CustomContext, TextModel,
 	void setSelected(final boolean selected);
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HSelect.class, HDatalist.class, HOptGroup.class);
 	}
 

@@ -11,7 +11,7 @@ import java.util.List;
 public interface FlowContext extends AllowedContext {
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(FlowContent.class);
 	}
 
