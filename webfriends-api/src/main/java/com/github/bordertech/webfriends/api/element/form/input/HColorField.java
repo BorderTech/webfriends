@@ -14,7 +14,7 @@ public interface HColorField extends InputElement, Autocompleteable, Suggestable
 	TagInputColor getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.COLOR;
 	}
 }

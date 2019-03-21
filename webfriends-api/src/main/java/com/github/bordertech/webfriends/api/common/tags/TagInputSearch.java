@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.api.element.form.input.InputElement;
 public interface TagInputSearch<T extends HSearchField> extends TagInputType<T> {
 
 	@Override
-	public default InputElement.InputType getInputType() {
+	default InputElement.InputType getInputType() {
 		return InputElement.InputType.SEARCH;
 	}
 

@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface PatternableSelenium extends Patternable, SElement {
 
 	@Override
-	public default String getPattern() {
+	default String getPattern() {
 		return getAttribute("pattern");
 	}
 

@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HUnorderedListItem;
 public interface TagUnorderedListItem<T extends HUnorderedListItem> extends TagListItemType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		// TODO Need to fix the qualifier for menu item to differentiate from listitem
 		return "li";
 	}

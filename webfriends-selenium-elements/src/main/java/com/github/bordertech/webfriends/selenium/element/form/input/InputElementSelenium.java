@@ -10,6 +10,6 @@ import com.github.bordertech.webfriends.selenium.common.tag.TagInputTypeSelenium
 public interface InputElementSelenium extends InputElement, FormControlSelenium {
 
 	@Override
-	public TagInputTypeSelenium getTagType();
+	TagInputTypeSelenium getTagType();
 
 }

@@ -61,6 +61,7 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedListIt
 import com.github.bordertech.webfriends.selenium.common.tags.STagVideo;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +74,7 @@ public final class SeleniumTags {
 	/**
 	 * Map HTML tag name to selenium tag types.
 	 */
-	public static final Map<String, List<TagTypeSelenium>> HTML_TAG_MAP = new HashMap<>();
+	private static final Map<String, List<TagTypeSelenium>> HTML_TAG_MAP = new HashMap<>();
 
 	public static final STagA A = new STagA();
 	public static final STagAudio AUDIO = new STagAudio();
@@ -135,8 +136,8 @@ public final class SeleniumTags {
 	public static final STagUnorderedList UL = new STagUnorderedList();
 	public static final STagVideo VIDEO = new STagVideo();
 
-	public static final List<TagHeadingTypeSelenium> HEADING_TAGS = Arrays.asList(H1, H2, H3, H4, H5, H6);
-	public static final List<TagTypeSelenium> TAGS = Arrays.asList(
+	private static final List<TagHeadingTypeSelenium> HEADING_TAGS = Arrays.asList(H1, H2, H3, H4, H5, H6);
+	private static final List<TagTypeSelenium> TAGS = Arrays.asList(
 			A, AUDIO, BODY, BUTTON, DATALIST, DIALOG, DIV, FIELDSET, FIGURE, FOOTER, FORM, H1, H2, H3, H4, H5, H6,
 			HEAD, HEADER, HTML, IMG, INPUT_CHECKBOX, INPUT_COLOR, INPUT_COLOR, INPUT_DATE, INPUT_DATETIME,
 			INPUT_EMAIL, INPUT_FILEUPLOAD, INPUT_NUMBER, INPUT_PASSWORD, INPUT_RADIO, INPUT_RADIO,
@@ -155,6 +156,33 @@ public final class SeleniumTags {
 			}
 			tags.add(tag);
 		}
+	}
+
+	/**
+	 * Heading tags.
+	 *
+	 * @return list of heading tags
+	 */
+	public static List<TagHeadingTypeSelenium> getHeadingTags() {
+		return Collections.unmodifiableList(HEADING_TAGS);
+	}
+
+	/**
+	 * All selenium tags.
+	 *
+	 * @return list of selenium tags
+	 */
+	public static List<TagTypeSelenium> getTags() {
+		return Collections.unmodifiableList(TAGS);
+	}
+
+	/**
+	 * Map of tags and possible matching selenium tags.
+	 *
+	 * @return list of selenium tags
+	 */
+	public static Map<String, List<TagTypeSelenium>> getTagsMap() {
+		return Collections.unmodifiableMap(HTML_TAG_MAP);
 	}
 
 	/**

@@ -14,12 +14,12 @@ import java.util.List;
 public interface TagMenuItem<T extends HMenuItem> extends TagListItemType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "label";
 	}
 
 	@Override
-	public default List<Qualifier> getQualifiers() {
+	default List<Qualifier> getQualifiers() {
 		return Arrays.asList(Qualifier.create("ismenu"));
 	}
 }

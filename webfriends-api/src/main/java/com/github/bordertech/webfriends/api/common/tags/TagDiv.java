@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HDiv;
 public interface TagDiv<T extends HDiv> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "div";
 	}
 }

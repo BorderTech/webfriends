@@ -16,7 +16,7 @@ public interface HFooter extends FlowPalpableElement, CustomModel {
 	TagFooter getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(HHeader.class, HFooter.class);
 	}
 

@@ -19,7 +19,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param text the text of the button
 	 * @return the button element or null
 	 */
-	public default SButton findButton(final String text) {
+	default SButton findButton(final String text) {
 		return findButton(text, false);
 	}
 
@@ -30,7 +30,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param partial true if partial match
 	 * @return the button element or null
 	 */
-	public default SButton findButton(final String text, final boolean partial) {
+	default SButton findButton(final String text, final boolean partial) {
 		return getHelper().findButton(getDriver(), getWebElement(), text, partial);
 	}
 
@@ -42,7 +42,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param text the text of the button
 	 * @return the labeled element or null
 	 */
-	public default <T extends LabelableSelenium> T findLabelled(final TagTypeSelenium<T> elementTag, final String text) {
+	default <T extends LabelableSelenium> T findLabelled(final TagTypeSelenium<T> elementTag, final String text) {
 		return findLabelled(elementTag, text, false);
 	}
 
@@ -55,7 +55,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public default <T extends LabelableSelenium> T findLabelled(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
+	default <T extends LabelableSelenium> T findLabelled(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		return getHelper().findLabeled(getDriver(), getWebElement(), elementTag, text, partial);
 	}
 
@@ -67,7 +67,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param text the text of the button
 	 * @return the labeled element or null
 	 */
-	public default <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text) {
+	default <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text) {
 		return findWithText(elementTag, text, true);
 	}
 
@@ -80,7 +80,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param partial true if partial match
 	 * @return the labeled element or null
 	 */
-	public default <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
+	default <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
 		return getHelper().findWithText(getDriver(), getWebElement(), elementTag, text, partial);
 	}
 
@@ -91,7 +91,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param elementTag the element tag
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag) {
+	default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag) {
 		return getHelper().findWebFriend(getDriver(), getWebElement(), elementTag);
 	}
 
@@ -103,7 +103,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param by the by condition
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag, final By by) {
+	default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag, final By by) {
 		return getHelper().findWebFriend(getDriver(), getWebElement(), elementTag, by);
 	}
 
@@ -115,7 +115,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final int idx) {
+	default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final int idx) {
 		return getHelper().findWebFriendNth(getDriver(), getWebElement(), elementTag, idx);
 	}
 
@@ -128,7 +128,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param idx the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final By by, final int idx) {
+	default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final By by, final int idx) {
 		return getHelper().findWebFriendNth(getDriver(), getWebElement(), elementTag, by, idx);
 	}
 
@@ -139,7 +139,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param elementTag the element tag
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag) {
+	default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag) {
 		return getHelper().findWebFriends(getDriver(), getWebElement(), elementTag);
 	}
 
@@ -151,7 +151,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param by the BY condition
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
-	public default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final By by) {
+	default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final By by) {
 		return getHelper().findWebFriends(getDriver(), getWebElement(), elementTag, by);
 	}
 
@@ -161,7 +161,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param elementTag the element tag
 	 * @return the matching element or null
 	 */
-	public default WebElement findWebElement(final TagTypeSelenium elementTag) {
+	default WebElement findWebElement(final TagTypeSelenium elementTag) {
 		return getHelper().findWebElement(getWebElement(), elementTag);
 	}
 
@@ -172,7 +172,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param by the by condition
 	 * @return the matching element or null
 	 */
-	public default WebElement findWebElement(final TagTypeSelenium elementTag, final By by) {
+	default WebElement findWebElement(final TagTypeSelenium elementTag, final By by) {
 		return getHelper().findWebElement(getWebElement(), elementTag, by);
 	}
 
@@ -183,7 +183,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param idx the nth element (starting at 1)
 	 * @return the matching element or null
 	 */
-	public default WebElement findWebElementNth(final TagTypeSelenium elementTag, final int idx) {
+	default WebElement findWebElementNth(final TagTypeSelenium elementTag, final int idx) {
 		return getHelper().findWebElementNth(getWebElement(), elementTag, idx);
 	}
 
@@ -195,7 +195,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param idx the nth element (starting at 1)
 	 * @return the matching element or null
 	 */
-	public default WebElement findWebElementNth(final TagTypeSelenium elementTag, final By by, final int idx) {
+	default WebElement findWebElementNth(final TagTypeSelenium elementTag, final By by, final int idx) {
 		return getHelper().findWebElementNth(getWebElement(), elementTag, by, idx);
 	}
 
@@ -205,7 +205,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param elementTag the element tag
 	 * @return the matching elements.
 	 */
-	public default List<WebElement> findWebElements(final TagTypeSelenium elementTag) {
+	default List<WebElement> findWebElements(final TagTypeSelenium elementTag) {
 		return getHelper().findWebElements(getWebElement(), elementTag);
 	}
 
@@ -216,7 +216,7 @@ public interface ContainerElementSelenium extends SElement {
 	 * @param by the by condition
 	 * @return the matching elements.
 	 */
-	public default List<WebElement> findWebElements(final TagTypeSelenium elementTag, final By by) {
+	default List<WebElement> findWebElements(final TagTypeSelenium elementTag, final By by) {
 		return getHelper().findWebElements(getWebElement(), elementTag, by);
 	}
 }

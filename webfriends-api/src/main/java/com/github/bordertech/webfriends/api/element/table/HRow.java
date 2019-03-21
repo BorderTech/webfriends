@@ -55,7 +55,7 @@ public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, Cust
 	List<? extends CellElement> getRowCells();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class,
 				CellElement.class
 		);

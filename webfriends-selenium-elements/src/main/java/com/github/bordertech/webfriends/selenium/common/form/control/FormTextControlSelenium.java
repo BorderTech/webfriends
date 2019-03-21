@@ -17,7 +17,7 @@ public interface FormTextControlSelenium extends FormTextControl, FormControlSel
 		ReadonlyableSelenium, RequireableSelenium, SizeableSelenium {
 
 	@Override
-	public default void setValue(final String value) {
+	default void setValue(final String value) {
 		if (value == null) {
 			clearValue();
 		} else {

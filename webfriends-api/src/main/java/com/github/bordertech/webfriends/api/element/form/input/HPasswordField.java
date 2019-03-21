@@ -11,7 +11,7 @@ public interface HPasswordField extends InputTextElement {
 	TagInputPassword getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.PASSWORD;
 	}
 

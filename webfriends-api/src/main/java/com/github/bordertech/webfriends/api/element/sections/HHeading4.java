@@ -11,7 +11,7 @@ public interface HHeading4 extends HeadingElement {
 	TagH4 getTagType();
 
 	@Override
-	public default int getHeadingLevel() {
+	default int getHeadingLevel() {
 		return 4;
 	}
 

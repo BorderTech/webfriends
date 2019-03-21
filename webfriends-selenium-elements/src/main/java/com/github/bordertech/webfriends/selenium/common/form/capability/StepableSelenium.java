@@ -11,13 +11,13 @@ import org.apache.commons.lang3.StringUtils;
 public interface StepableSelenium extends Stepable, SElement {
 
 	@Override
-	public default boolean isAnyStep() {
+	default boolean isAnyStep() {
 		String value = getAttribute("step");
 		return StringUtils.equalsIgnoreCase("any", value);
 	}
 
 	@Override
-	public default BigDecimal getStep() {
+	default BigDecimal getStep() {
 		if (isAnyStep()) {
 			return null;
 		}
@@ -26,22 +26,22 @@ public interface StepableSelenium extends Stepable, SElement {
 	}
 
 	@Override
-	public default void stepUp() {
+	default void stepUp() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void stepUp(final int steps) {
+	default void stepUp(final int steps) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void stepDown() {
+	default void stepDown() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void stepDown(final int steps) {
+	default void stepDown(final int steps) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.api.element.form.input.InputElement;
 public interface TagInputPassword<T extends HPasswordField> extends TagInputType<T> {
 
 	@Override
-	public default InputElement.InputType getInputType() {
+	default InputElement.InputType getInputType() {
 		return InputElement.InputType.PASSWORD;
 	}
 

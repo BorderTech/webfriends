@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.select.HDatalist;
 public interface TagDatalist<T extends HDatalist> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "datalist";
 	}
 

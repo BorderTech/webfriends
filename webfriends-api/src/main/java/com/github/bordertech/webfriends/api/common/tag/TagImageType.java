@@ -10,7 +10,7 @@ import com.github.bordertech.webfriends.api.element.embedded.ImageElement;
 public interface TagImageType<T extends ImageElement> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "img";
 	}
 }

@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.common.tag.TagListContainerType;
 public interface TagMenu<T extends HMenu> extends TagListContainerType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "menu";
 	}
 

@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HSection;
 public interface TagSection<T extends HSection> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "section";
 	}
 }

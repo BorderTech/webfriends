@@ -81,7 +81,7 @@ public interface HOrderedList<T extends HOrderedListItem> extends ListContainerE
 	MarkerType getMarkerType();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class, HOrderedListItem.class);
 	}
 

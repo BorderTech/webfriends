@@ -17,7 +17,7 @@ public interface HUnorderedList<T extends HUnorderedListItem> extends ListContai
 	TagUnorderedList getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class, HUnorderedListItem.class);
 	}
 }

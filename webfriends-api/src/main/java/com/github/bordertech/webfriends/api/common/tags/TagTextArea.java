@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.text.HTextArea;
 public interface TagTextArea<T extends HTextArea> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "textarea";
 	}
 

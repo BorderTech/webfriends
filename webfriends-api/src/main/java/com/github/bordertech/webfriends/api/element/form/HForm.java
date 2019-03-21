@@ -102,7 +102,7 @@ public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomMod
 	/**
 	 * @return the number of associated controls
 	 */
-	public default int getAssociatedCount() {
+	default int getAssociatedCount() {
 		return getAssociated().size();
 	}
 
@@ -117,7 +117,7 @@ public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomMod
 	void formReset();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(HForm.class);
 	}
 

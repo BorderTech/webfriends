@@ -34,7 +34,7 @@ public interface CellElement extends Element, CustomContext, FlowModel {
 	Integer getRowSpan();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HRow.class);
 	}
 

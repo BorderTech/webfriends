@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface SpellCheckableSelenium extends SpellCheckable, SElement {
 
 	@Override
-	public default SpellCheckableType getSpellCheckable() {
+	default SpellCheckableType getSpellCheckable() {
 		String value = getAttribute(SpellCheckableType.ATTR);
 		return SpellCheckableType.findType(value);
 	}

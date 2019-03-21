@@ -8,7 +8,7 @@ public interface ElementContext {
 	/**
 	 * @return true if context allowed
 	 */
-	public default boolean isAllowedContext() {
+	default boolean isAllowedContext() {
 		return false;
 	}
 }

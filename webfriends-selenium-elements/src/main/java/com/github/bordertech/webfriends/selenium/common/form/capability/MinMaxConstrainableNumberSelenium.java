@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 public interface MinMaxConstrainableNumberSelenium extends MinMaxConstrainableNumber, MinMaxConstrainableSelenium<BigDecimal> {
 
 	@Override
-	public default BigDecimal getMinValueAsType() {
+	default BigDecimal getMinValueAsType() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default BigDecimal getMaxValueAsType() {
+	default BigDecimal getMaxValueAsType() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

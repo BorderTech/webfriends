@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.other.HProgress;
 public interface TagProgress<T extends HProgress> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "progress";
 	}
 

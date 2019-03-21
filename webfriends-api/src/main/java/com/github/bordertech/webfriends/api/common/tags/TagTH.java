@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.table.HHeaderCell;
 public interface TagTH<T extends HHeaderCell> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "th";
 	}
 

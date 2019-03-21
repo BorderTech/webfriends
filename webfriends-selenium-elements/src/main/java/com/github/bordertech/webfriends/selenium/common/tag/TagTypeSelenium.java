@@ -15,7 +15,7 @@ public interface TagTypeSelenium<T extends SElement> extends TagType<T> {
 	 * @param relative relative XPATH
 	 * @return the XPATH to find selenium tag
 	 */
-	public default String getXPath(final boolean relative) {
+	default String getXPath(final boolean relative) {
 		return SmartHelper.getProvider().buildElementQualifierXpath(getTagName(), getQualifiers(), relative);
 	}
 

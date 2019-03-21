@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.interactive.HDialog;
 public interface TagDialog<T extends HDialog> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "dialog";
 	}
 

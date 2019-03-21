@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HHeader;
 public interface TagHeader<T extends HHeader> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "header";
 	}
 

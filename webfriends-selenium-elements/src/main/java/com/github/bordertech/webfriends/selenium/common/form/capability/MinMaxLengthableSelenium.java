@@ -9,12 +9,12 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface MinMaxLengthableSelenium extends MinMaxLengthable, SElement {
 
 	@Override
-	public default Integer getMinLength() {
+	default Integer getMinLength() {
 		return getAttributeAsInteger("minlength");
 	}
 
 	@Override
-	public default Integer getMaxLength() {
+	default Integer getMaxLength() {
 		return getAttributeAsInteger("maxlength");
 	}
 

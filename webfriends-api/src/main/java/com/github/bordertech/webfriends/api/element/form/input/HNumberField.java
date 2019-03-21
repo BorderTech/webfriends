@@ -12,7 +12,7 @@ public interface HNumberField extends InputElement, FormNumberControl {
 	TagInputNumber getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.NUMBER;
 	}
 }

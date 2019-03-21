@@ -11,7 +11,7 @@ import java.util.List;
 public interface MediaElementContext extends CustomContext {
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(MediaElement.class);
 	}
 

@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface PlaceholderableSelenium extends Placeholderable, SElement {
 
 	@Override
-	public default String getPlaceholder() {
+	default String getPlaceholder() {
 		return getAttribute("placeholder");
 	}
 

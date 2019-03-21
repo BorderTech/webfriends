@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HFooter;
 public interface TagFooter<T extends HFooter> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "footer";
 	}
 

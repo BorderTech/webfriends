@@ -11,21 +11,21 @@ public interface Keyboardable extends SElement {
 	/**
 	 * Send the enter key.
 	 */
-	public default void sendEnter() {
+	default void sendEnter() {
 		sendKey(Keys.ENTER);
 	}
 
 	/**
 	 * Send the space key.
 	 */
-	public default void sendSpace() {
+	default void sendSpace() {
 		sendKey(Keys.SPACE);
 	}
 
 	/**
 	 * Send the escape key.
 	 */
-	public default void sendEscape() {
+	default void sendEscape() {
 		sendKey(Keys.ESCAPE);
 	}
 
@@ -34,7 +34,7 @@ public interface Keyboardable extends SElement {
 	 *
 	 * @param key the key to send
 	 */
-	public default void sendKey(final Keys key) {
+	default void sendKey(final Keys key) {
 		if (key == null) {
 			return;
 		}
@@ -47,7 +47,7 @@ public interface Keyboardable extends SElement {
 	 *
 	 * @param text the text to type
 	 */
-	public default void typeText(final String text) {
+	default void typeText(final String text) {
 		if (text == null) {
 			return;
 		}
@@ -58,7 +58,7 @@ public interface Keyboardable extends SElement {
 	/**
 	 * Set focus to this element
 	 */
-	public default void focus() {
+	default void focus() {
 		getHelper().setFocus(getDriver(), this);
 	}
 }

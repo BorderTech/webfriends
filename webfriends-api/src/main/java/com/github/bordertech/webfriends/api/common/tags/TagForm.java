@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.api.element.form.HForm;
 public interface TagForm<T extends HForm> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "form";
 	}
 

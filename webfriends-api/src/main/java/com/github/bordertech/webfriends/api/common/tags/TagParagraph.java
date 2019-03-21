@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HParagraph;
 public interface TagParagraph<T extends HParagraph> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "p";
 	}
 

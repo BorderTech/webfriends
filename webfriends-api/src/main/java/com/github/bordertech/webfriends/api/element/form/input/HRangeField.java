@@ -17,7 +17,7 @@ public interface HRangeField extends InputElement,
 	TagInputRange getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.RANGE;
 	}
 }

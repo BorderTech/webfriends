@@ -39,7 +39,7 @@ public interface WebDriverType<T extends WebDriver, M extends MutableCapabilitie
 	/**
 	 * @return the DesiredCapabilities configured from parameters.
 	 */
-	public default M getOptions() {
+	default M getOptions() {
 		// Get default options
 		M capabilities = getDefaultOptions();
 		// Merge any ocerride options
@@ -53,7 +53,7 @@ public interface WebDriverType<T extends WebDriver, M extends MutableCapabilitie
 	/**
 	 * @return the default driver properties from properties file
 	 */
-	public default Properties getOverrideOptions() {
+	default Properties getOverrideOptions() {
 		return ConfigUtilProperties.getDriverCapabilities(getDriverTypeName());
 	}
 

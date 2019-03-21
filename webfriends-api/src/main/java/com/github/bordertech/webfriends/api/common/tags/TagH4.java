@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HHeading4;
 public interface TagH4<T extends HHeading4> extends TagHeadingType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "h4";
 	}
 

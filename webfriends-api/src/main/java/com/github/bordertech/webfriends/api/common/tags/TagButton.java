@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.HButton;
 public interface TagButton<T extends HButton> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "button";
 	}
 

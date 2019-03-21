@@ -11,7 +11,7 @@ public interface HUrlField extends InputTextSuggestionsElement {
 	TagInputUrl getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.URL;
 	}
 

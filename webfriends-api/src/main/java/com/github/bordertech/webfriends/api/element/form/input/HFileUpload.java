@@ -14,7 +14,7 @@ public interface HFileUpload extends InputElement, ValueMulti {
 	TagInputFileUpload getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.FILEUPLOAD;
 	}
 

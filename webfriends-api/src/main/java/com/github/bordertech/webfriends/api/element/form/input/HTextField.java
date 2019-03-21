@@ -11,7 +11,7 @@ public interface HTextField extends InputTextSuggestionsElement {
 	TagInputText getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.TEXT;
 	}
 

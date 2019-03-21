@@ -31,12 +31,12 @@ public interface HOptGroup extends NoCategory, CustomContext, ScriptSupportingMo
 	List<? extends HOption> getOptions();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HSelect.class);
 	}
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(HOption.class, ScriptSupporting.class);
 	}
 

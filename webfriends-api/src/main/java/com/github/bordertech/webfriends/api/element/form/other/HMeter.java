@@ -47,7 +47,7 @@ public interface HMeter extends PhrasingPalpableElement, CustomModel {
 	BigDecimal getOptimum();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(HMeter.class);
 	}
 }

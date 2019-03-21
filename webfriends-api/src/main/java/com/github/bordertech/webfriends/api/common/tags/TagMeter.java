@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.other.HMeter;
 public interface TagMeter<T extends HMeter> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "meter";
 	}
 

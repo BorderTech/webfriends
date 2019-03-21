@@ -13,7 +13,7 @@ public interface HCheckBox extends InputElement, Checkable, Requireable {
 	TagInputCheckbox getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.CHECKBOX;
 	}
 

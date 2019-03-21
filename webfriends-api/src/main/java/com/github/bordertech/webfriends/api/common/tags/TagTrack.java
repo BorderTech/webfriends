@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.embedded.HTrack;
 public interface TagTrack<T extends HTrack> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "track";
 	}
 

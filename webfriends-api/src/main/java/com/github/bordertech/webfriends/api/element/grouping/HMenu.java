@@ -23,7 +23,7 @@ public interface HMenu<T extends HMenuItem> extends ListContainerElement<T> {
 	HMenuItem getMenuItemByText(final String text);
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(ScriptSupporting.class, HMenuItem.class);
 	}
 }

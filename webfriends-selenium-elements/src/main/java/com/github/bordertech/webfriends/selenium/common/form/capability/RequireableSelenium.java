@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface RequireableSelenium extends Requireable, SElement {
 
 	@Override
-	public default boolean isRequired() {
+	default boolean isRequired() {
 		return getAttributeAsBoolean("required");
 	}
 

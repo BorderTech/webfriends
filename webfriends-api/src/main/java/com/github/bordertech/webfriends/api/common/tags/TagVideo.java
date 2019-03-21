@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.embedded.HVideo;
 public interface TagVideo<T extends HVideo> extends TagMediaType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "video";
 	}
 }

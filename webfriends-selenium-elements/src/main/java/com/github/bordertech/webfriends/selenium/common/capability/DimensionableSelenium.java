@@ -10,14 +10,14 @@ import org.openqa.selenium.Dimension;
 public interface DimensionableSelenium extends Dimensionable, SElement {
 
 	@Override
-	public default int getWidth() {
+	default int getWidth() {
 		// TODO Is this the right way to get this value? Or get as attribute?
 		Dimension size = getWebElement().getSize();
 		return size == null ? -1 : size.getWidth();
 	}
 
 	@Override
-	public default int getHeight() {
+	default int getHeight() {
 		// TODO Is this the right way to get this value? Or get as attribute?
 		Dimension size = getWebElement().getSize();
 		return size == null ? -1 : size.getHeight();

@@ -39,7 +39,7 @@ public interface HLabel extends PhrasingPalpableElement, InteractiveContent, Cus
 	Labelable getLabeledElement();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		// TODO Needs to handle if it is the element this label is for....
 		return Arrays.asList(Labelable.class, HLabel.class);
 	}

@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface ReadonlyableSelenium extends Readonlyable, SElement {
 
 	@Override
-	public default boolean isReadonly() {
+	default boolean isReadonly() {
 		return getAttributeAsBoolean("readonly");
 	}
 

@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.document.HHtmlRoot;
 public interface TagHtml<T extends HHtmlRoot> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "html";
 	}
 

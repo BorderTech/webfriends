@@ -23,7 +23,7 @@ public interface HDatalist extends PhrasingPalpableElement, ScriptSupportingMode
 	List<? extends HOption> getOptions();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(HOption.class, ScriptSupporting.class);
 	}
 

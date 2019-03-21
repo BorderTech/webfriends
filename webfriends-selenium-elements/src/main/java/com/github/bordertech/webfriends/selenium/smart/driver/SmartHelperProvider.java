@@ -67,7 +67,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @return the tag types that match the tag name
 	 */
 	public List<TagTypeSelenium> getElementTags(final String tagName) {
-		return SeleniumTags.HTML_TAG_MAP.get(tagName);
+		return SeleniumTags.getTagsMap().get(tagName);
 	}
 
 	/**
@@ -493,7 +493,7 @@ public class SmartHelperProvider extends HelperProvider {
 	public HeadingElementSelenium findHeading(final SmartDriver driver, final SearchContext context) {
 		// TODO Maybe switch this to a xpath
 		// Check for H1 to H6
-		for (TagHeadingTypeSelenium tag : SeleniumTags.HEADING_TAGS) {
+		for (TagHeadingTypeSelenium tag : SeleniumTags.getHeadingTags()) {
 			HeadingElementSelenium heading = (HeadingElementSelenium) SmartHelperProvider.this.findWebFriend(driver, context, tag);
 			if (heading != null) {
 				return heading;

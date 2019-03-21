@@ -12,6 +12,6 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface ListContainerElementSelenium<T extends ListItemElementSelenium> extends ListContainerElement<T>, SElement {
 
 	@Override
-	public TagListContainerTypeSelenium getTagType();
+	TagListContainerTypeSelenium getTagType();
 
 }

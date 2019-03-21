@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HNav;
 public interface TagNav<T extends HNav> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "nav";
 	}
 

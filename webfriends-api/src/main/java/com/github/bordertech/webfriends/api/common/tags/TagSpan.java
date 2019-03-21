@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.textlevel.HSpan;
 public interface TagSpan<T extends HSpan> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "span";
 	}
 }

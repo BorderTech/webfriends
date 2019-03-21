@@ -8,7 +8,7 @@ import com.github.bordertech.webfriends.api.common.tag.TagType;
 public interface TagTitle extends TagType {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "title";
 	}
 

@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface DirtyableSelenium extends Dirtyable, SElement {
 
 	@Override
-	public default boolean isDirty() {
+	default boolean isDirty() {
 		return getAttributeAsBoolean("dirty");
 	}
 

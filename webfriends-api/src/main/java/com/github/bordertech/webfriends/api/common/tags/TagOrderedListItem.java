@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HOrderedListItem;
 public interface TagOrderedListItem<T extends HOrderedListItem> extends TagListItemType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		// TODO Need to fix the qualifier for menu item to differentiate from listitem
 		return "li";
 	}

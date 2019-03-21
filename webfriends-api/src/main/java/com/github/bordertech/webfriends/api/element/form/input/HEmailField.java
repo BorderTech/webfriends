@@ -12,7 +12,7 @@ public interface HEmailField extends InputTextSuggestionsElement, ValueMulti {
 	TagInputEmail getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.EMAIL;
 	}
 

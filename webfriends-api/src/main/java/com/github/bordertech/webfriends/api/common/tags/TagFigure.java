@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HFigure;
 public interface TagFigure<T extends HFigure> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "figure";
 	}
 }

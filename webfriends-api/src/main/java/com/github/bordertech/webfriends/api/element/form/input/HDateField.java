@@ -12,7 +12,7 @@ public interface HDateField extends InputElement, FormDateControl {
 	TagInputDate getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.DATE;
 	}
 

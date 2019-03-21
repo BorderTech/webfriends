@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.other.HFieldSet;
 public interface TagFieldSet<T extends HFieldSet> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "fieldset";
 	}
 

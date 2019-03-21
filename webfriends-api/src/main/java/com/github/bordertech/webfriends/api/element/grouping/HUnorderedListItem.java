@@ -14,7 +14,7 @@ public interface HUnorderedListItem extends ListItemElement {
 	TagUnorderedListItem getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HUnorderedList.class);
 	}
 

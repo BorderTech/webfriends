@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.textlevel.HLinkAnchor;
 public interface TagA<T extends HLinkAnchor> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "a";
 	}
 

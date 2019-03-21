@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface DisableableSelenium extends Disableable, SElement {
 
 	@Override
-	public default boolean isDisabled() {
+	default boolean isDisabled() {
 		return !getWebElement().isEnabled();
 	}
 

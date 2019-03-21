@@ -12,7 +12,7 @@ import com.github.bordertech.webfriends.api.element.sections.HHeading2;
 public interface TagH2<T extends HHeading2> extends TagHeadingType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "h2";
 	}
 

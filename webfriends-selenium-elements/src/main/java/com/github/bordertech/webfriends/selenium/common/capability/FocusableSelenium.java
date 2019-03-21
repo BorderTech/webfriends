@@ -10,17 +10,17 @@ import com.github.bordertech.webfriends.selenium.common.feature.Keyboardable;
 public interface FocusableSelenium extends Focusable, Clickable, Keyboardable {
 
 	@Override
-	public default String getAccessKey() {
+	default String getAccessKey() {
 		return getAttribute("accesskey");
 	}
 
 	@Override
-	public default TabIndexType getTabIndex() {
+	default TabIndexType getTabIndex() {
 		return TabIndexType.findType(getTabIndexValue());
 	}
 
 	@Override
-	public default Integer getTabIndexValue() {
+	default Integer getTabIndexValue() {
 		return getAttributeAsInteger(TabIndexType.ATTR);
 	}
 

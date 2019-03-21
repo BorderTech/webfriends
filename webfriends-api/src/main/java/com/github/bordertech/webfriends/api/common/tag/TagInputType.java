@@ -12,7 +12,7 @@ import java.util.List;
 public interface TagInputType<T extends InputElement> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "input";
 	}
 
@@ -22,7 +22,7 @@ public interface TagInputType<T extends InputElement> extends TagType<T> {
 	InputElement.InputType getInputType();
 
 	@Override
-	public default List<Qualifier> getQualifiers() {
+	default List<Qualifier> getQualifiers() {
 		return Arrays.asList(Qualifier.create("type", getInputType().getToken()));
 	}
 }

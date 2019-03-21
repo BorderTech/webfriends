@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.table.HTable;
 public interface TagTable<T extends HTable> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "table";
 	}
 

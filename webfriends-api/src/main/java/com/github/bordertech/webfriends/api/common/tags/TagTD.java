@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.table.HDataCell;
 public interface TagTD<T extends HDataCell> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "td";
 	}
 

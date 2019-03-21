@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.select.HOptGroup;
 public interface TagOptGroup<T extends HOptGroup> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "optgroup";
 	}
 

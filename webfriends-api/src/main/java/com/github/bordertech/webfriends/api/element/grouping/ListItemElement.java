@@ -20,7 +20,7 @@ public interface ListItemElement extends NoCategory, CustomContext, FlowModel {
 	TagListItemType getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(ListContainerElement.class);
 	}
 

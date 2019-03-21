@@ -14,12 +14,12 @@ import org.openqa.selenium.WebElement;
 public interface SuggestableSelenium extends Suggestable, SElement {
 
 	@Override
-	public default boolean hasSuggestions() {
+	default boolean hasSuggestions() {
 		return getDataList() != null;
 	}
 
 	@Override
-	public default SDatalist getDataList() {
+	default SDatalist getDataList() {
 		String id = getAttribute("list");
 		if (id == null) {
 			return null;

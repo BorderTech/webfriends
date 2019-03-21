@@ -9,22 +9,22 @@ import java.util.Date;
 public interface ValueDateSelenium extends ValueDate, ValueSingleSelenium {
 
 	@Override
-	public default Date getValueAsDate() {
+	default Date getValueAsDate() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void setValue(final Date date) {
+	default void setValue(final Date date) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void setValue(int year, int month, int day) {
+	default void setValue(int year, int month, int day) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void setValue(final String value) {
+	default void setValue(final String value) {
 		if (value == null) {
 			clearValue();
 		} else {

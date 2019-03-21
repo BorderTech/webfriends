@@ -298,7 +298,7 @@ public interface MediaElement extends EmbeddedContent, InteractiveContent, Palpa
 	void pause();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(MediaElement.class);
 	}
 

@@ -8,17 +8,17 @@ import com.github.bordertech.webfriends.api.common.form.capability.ValueColor;
 public interface ValueColorSelenium extends ValueColor, ValueSingleSelenium {
 
 	@Override
-	public default String getValueAsColor() {
+	default String getValueAsColor() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void setValueAsColor(final String color) {
+	default void setValueAsColor(final String color) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default void setValue(final String value) {
+	default void setValue(final String value) {
 		if (value == null) {
 			clearValue();
 		} else {

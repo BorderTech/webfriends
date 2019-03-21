@@ -34,7 +34,7 @@ public interface HHtmlRoot extends NoCategory, NoContext, CustomModel {
 	String getManifestUrl();
 
 	@Override
-	public default List<Class<? extends Element>> getChildrenAllowed() {
+	default List<Class<? extends Element>> getChildrenAllowed() {
 		return Arrays.asList(HHead.class, HBody.class);
 	}
 

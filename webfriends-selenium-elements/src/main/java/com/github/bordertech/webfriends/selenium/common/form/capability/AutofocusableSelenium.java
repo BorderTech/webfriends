@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface AutofocusableSelenium extends Autofocusable, SElement {
 
 	@Override
-	public default boolean isAutofocus() {
+	default boolean isAutofocus() {
 		return getAttributeAsBoolean("autofocus");
 	}
 

@@ -14,7 +14,7 @@ import java.util.List;
 public interface TagImgMap<T extends HImageMap> extends TagImageType<T> {
 
 	@Override
-	public default List<Qualifier> getQualifiers() {
+	default List<Qualifier> getQualifiers() {
 		return Arrays.asList(Qualifier.create("usemap", ""));
 	}
 

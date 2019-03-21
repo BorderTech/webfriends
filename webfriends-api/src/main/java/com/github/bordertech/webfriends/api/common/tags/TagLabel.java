@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.HLabel;
 public interface TagLabel<T extends HLabel> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "label";
 	}
 

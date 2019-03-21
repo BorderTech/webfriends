@@ -9,12 +9,12 @@ import java.util.Date;
 public interface MinMaxConstrainableDateSelenium extends MinMaxConstrainableDate, MinMaxConstrainableSelenium<Date> {
 
 	@Override
-	public default Date getMinValueAsType() {
+	default Date getMinValueAsType() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
-	public default Date getMaxValueAsType() {
+	default Date getMaxValueAsType() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

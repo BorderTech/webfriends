@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.sections.HBody;
 public interface TagBody<T extends HBody> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "body";
 	}
 

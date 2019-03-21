@@ -11,7 +11,7 @@ public interface HTelephoneField extends InputTextSuggestionsElement {
 	TagInputTelephone getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.TELEPHONE;
 	}
 

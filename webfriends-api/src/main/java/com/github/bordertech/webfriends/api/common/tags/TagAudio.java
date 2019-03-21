@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.embedded.HAudio;
 public interface TagAudio<T extends HAudio> extends TagMediaType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "audio";
 	}
 

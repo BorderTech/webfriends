@@ -11,7 +11,7 @@ public interface HSearchField extends InputTextSuggestionsElement {
 	TagInputSearch getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.SEARCH;
 	}
 

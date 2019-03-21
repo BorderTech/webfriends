@@ -10,18 +10,18 @@ import org.openqa.selenium.By;
 public interface ValueSingleSelenium extends ValueSingle, FocusableSelenium {
 
 	@Override
-	public default String getValue() {
+	default String getValue() {
 		return getAttribute("value");
 	}
 
 	@Override
-	public default boolean isValidState() {
+	default boolean isValidState() {
 		// TODO Will this work??
 		return getWebElement().findElement(By.cssSelector("input#" + getId() + " input:valid")) == null;
 	}
 
 	@Override
-	public default void clearValue() {
+	default void clearValue() {
 		getWebElement().clear();
 	}
 }

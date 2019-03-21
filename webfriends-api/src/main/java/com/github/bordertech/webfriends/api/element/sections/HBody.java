@@ -19,12 +19,12 @@ public interface HBody extends SectioningRoot, CustomContext, FlowModel, CustomM
 	TagBody getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HHtmlRoot.class);
 	}
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(HBody.class);
 	}
 

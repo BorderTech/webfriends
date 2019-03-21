@@ -36,37 +36,37 @@ public interface SElement extends Element {
 	WebElement getWebElement();
 
 	@Override
-	public default String getId() {
+	default String getId() {
 		return getAttribute("id");
 	}
 
 	@Override
-	public default String getCssClass() {
+	default String getCssClass() {
 		return getAttribute("class");
 	}
 
 	@Override
-	public default List<String> getCssClasses() {
+	default List<String> getCssClasses() {
 		return getAttributeAsList("class");
 	}
 
 	@Override
-	public default boolean hasCssClass(final String cssClass) {
+	default boolean hasCssClass(final String cssClass) {
 		return getCssClasses().contains(cssClass);
 	}
 
 	@Override
-	public default boolean isHidden() {
+	default boolean isHidden() {
 		return getAttributeAsBoolean("hidden");
 	}
 
 	@Override
-	public default String getStyle() {
+	default String getStyle() {
 		return getAttribute("style");
 	}
 
 	@Override
-	public default String getTitle() {
+	default String getTitle() {
 		return getAttribute("title");
 	}
 
@@ -74,7 +74,7 @@ public interface SElement extends Element {
 	 * @param key the attribute key
 	 * @return the value for this attribute
 	 */
-	public default String getAttribute(final String key) {
+	default String getAttribute(final String key) {
 		return getHelper().getAttribute(getWebElement(), key);
 	}
 
@@ -84,7 +84,7 @@ public interface SElement extends Element {
 	 * @param key the attribute name
 	 * @return true if attribute is string "true" otherwise false
 	 */
-	public default boolean getAttributeAsBoolean(final String key) {
+	default boolean getAttributeAsBoolean(final String key) {
 		return getHelper().getAttributeAsBoolean(getWebElement(), key);
 	}
 
@@ -94,7 +94,7 @@ public interface SElement extends Element {
 	 * @param key the attribute name
 	 * @return integer value or null
 	 */
-	public default Integer getAttributeAsInteger(final String key) {
+	default Integer getAttributeAsInteger(final String key) {
 		return getHelper().getAttributeAsInteger(getWebElement(), key);
 	}
 
@@ -104,7 +104,7 @@ public interface SElement extends Element {
 	 * @param key the attribute name
 	 * @return big decimal value or null
 	 */
-	public default BigDecimal getAttributeAsBigDecimal(final String key) {
+	default BigDecimal getAttributeAsBigDecimal(final String key) {
 		return getHelper().getAttributeAsBigDecimal(getWebElement(), key);
 	}
 
@@ -114,7 +114,7 @@ public interface SElement extends Element {
 	 * @param key the attribute name
 	 * @return attribute value as a list
 	 */
-	public default List<String> getAttributeAsList(final String key) {
+	default List<String> getAttributeAsList(final String key) {
 		return getHelper().getAttributeAsList(getWebElement(), key);
 	}
 
@@ -125,7 +125,7 @@ public interface SElement extends Element {
 	 * @param delim the delimiter
 	 * @return attribute value as a list
 	 */
-	public default List<String> getAttributeAsList(final String key, final String delim) {
+	default List<String> getAttributeAsList(final String key, final String delim) {
 		return getHelper().getAttributeAsList(getWebElement(), key);
 	}
 
@@ -137,7 +137,7 @@ public interface SElement extends Element {
 	 * @param tokens the list of token types
 	 * @return the token or null
 	 */
-	public default <T extends AttributeToken> T getAttributeToken(final String key, final T[] tokens) {
+	default <T extends AttributeToken> T getAttributeToken(final String key, final T[] tokens) {
 		return getHelper().getAttributeToken(getWebElement(), key, tokens);
 	}
 
@@ -149,14 +149,14 @@ public interface SElement extends Element {
 	 * @param tokens the list of token types
 	 * @return the token or null
 	 */
-	public default <T extends AttributeNumericToken> T getAttributeNumericToken(final String key, final T[] tokens) {
+	default <T extends AttributeNumericToken> T getAttributeNumericToken(final String key, final T[] tokens) {
 		return getHelper().getAttributeNumericToken(getWebElement(), key, tokens);
 	}
 
 	/**
 	 * @return the web friends helper
 	 */
-	public default SmartHelperProvider getHelper() {
+	default SmartHelperProvider getHelper() {
 		return SmartHelper.getProvider();
 	}
 }

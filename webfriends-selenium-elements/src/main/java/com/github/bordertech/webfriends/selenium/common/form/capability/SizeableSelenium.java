@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface SizeableSelenium extends Sizeable, SElement {
 
 	@Override
-	public default Integer getSize() {
+	default Integer getSize() {
 		return getAttributeAsInteger("size");
 	}
 

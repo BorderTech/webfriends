@@ -9,7 +9,7 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface FormAssociatedSelenium extends FormAssociated, SElement {
 
 	@Override
-	public default String getName() {
+	default String getName() {
 		return getAttribute("name");
 	}
 

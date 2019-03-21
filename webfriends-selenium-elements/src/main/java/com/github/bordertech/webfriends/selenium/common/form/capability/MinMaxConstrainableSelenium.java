@@ -11,12 +11,12 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface MinMaxConstrainableSelenium<T> extends MinMaxConstrainable<T>, SElement {
 
 	@Override
-	public default String getMinValue() {
+	default String getMinValue() {
 		return getAttribute("min");
 	}
 
 	@Override
-	public default String getMaxValue() {
+	default String getMaxValue() {
 		return getAttribute("max");
 	}
 

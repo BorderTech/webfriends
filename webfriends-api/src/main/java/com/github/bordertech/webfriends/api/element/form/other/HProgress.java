@@ -27,7 +27,7 @@ public interface HProgress extends PhrasingPalpableElement, CustomModel {
 	BigDecimal getMax();
 
 	@Override
-	public default List<Class<? extends Element>> getDescendantsExcluded() {
+	default List<Class<? extends Element>> getDescendantsExcluded() {
 		return Arrays.asList(HProgress.class);
 	}
 }

@@ -9,17 +9,17 @@ import java.util.List;
 public interface ValueMultiSelenium extends ValueMulti, ValueSingleSelenium {
 
 	@Override
-	public default boolean isMultiple() {
+	default boolean isMultiple() {
 		return getAttributeAsBoolean("multiple");
 	}
 
 	@Override
-	public default List<String> getValues() {
+	default List<String> getValues() {
 		return getAttributeAsList("value");
 	}
 
 	@Override
-	public default String getValue() {
+	default String getValue() {
 		List<String> values = getValues();
 		return values.isEmpty() ? null : values.get(0);
 	}

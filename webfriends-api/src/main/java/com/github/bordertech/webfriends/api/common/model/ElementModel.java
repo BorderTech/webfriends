@@ -8,7 +8,7 @@ public interface ElementModel {
 	/**
 	 * @return true if allowed content
 	 */
-	public default boolean isAllowedContent() {
+	default boolean isAllowedContent() {
 		return false;
 	}
 

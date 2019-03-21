@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.form.select.HOption;
 public interface TagOption<T extends HOption> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "option";
 	}
 

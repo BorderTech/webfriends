@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.embedded.HSource;
 public interface TagSource<T extends HSource> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "source";
 	}
 

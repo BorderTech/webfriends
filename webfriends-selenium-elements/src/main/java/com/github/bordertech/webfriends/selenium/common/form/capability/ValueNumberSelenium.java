@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 public interface ValueNumberSelenium extends ValueNumber, ValueSingleSelenium {
 
 	@Override
-	public default BigDecimal getValueAsNumber() {
+	default BigDecimal getValueAsNumber() {
 		return getAttributeAsBigDecimal("value");
 	}
 
 	@Override
-	public default void setValue(final BigDecimal value) {
+	default void setValue(final BigDecimal value) {
 		if (value == null) {
 			clearValue();
 		} else {
@@ -23,7 +23,7 @@ public interface ValueNumberSelenium extends ValueNumber, ValueSingleSelenium {
 	}
 
 	@Override
-	public default void setValue(final String value) {
+	default void setValue(final String value) {
 		if (value == null) {
 			clearValue();
 		} else {

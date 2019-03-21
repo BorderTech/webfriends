@@ -24,7 +24,7 @@ public interface TagType<T extends Element> {
 	/**
 	 * @return the unique key for this element tag
 	 */
-	public default String getKey() {
+	default String getKey() {
 		if (getQualifiers().isEmpty()) {
 			return getTagName();
 		}
@@ -44,14 +44,14 @@ public interface TagType<T extends Element> {
 	 *
 	 * @return a list of attribute conditions
 	 */
-	public default List<Qualifier> getQualifiers() {
+	default List<Qualifier> getQualifiers() {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @return true if has qualifiers
 	 */
-	public default boolean hasQualifiers() {
+	default boolean hasQualifiers() {
 		return !getQualifiers().isEmpty();
 	}
 

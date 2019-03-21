@@ -14,7 +14,7 @@ public interface HRadioButton extends InputElement, Checkable, Requireable {
 	TagInputRadio getTagType();
 
 	@Override
-	public default InputType getInputType() {
+	default InputType getInputType() {
 		return InputType.RADIO;
 	}
 

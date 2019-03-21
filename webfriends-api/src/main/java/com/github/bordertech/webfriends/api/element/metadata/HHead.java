@@ -18,7 +18,7 @@ public interface HHead extends NoCategory, CustomContext, MetadataContentModel {
 	TagHead getTagType();
 
 	@Override
-	public default List<Class<? extends Element>> getContextsAllowed() {
+	default List<Class<? extends Element>> getContextsAllowed() {
 		return Arrays.asList(HHtmlRoot.class);
 	}
 

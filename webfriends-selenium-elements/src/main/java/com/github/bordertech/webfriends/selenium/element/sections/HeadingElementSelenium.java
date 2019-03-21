@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.element.sections;
 
 import com.github.bordertech.webfriends.api.element.sections.HeadingElement;
-import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
+import com.github.bordertech.webfriends.selenium.element.SElement;
 
 /**
  * Selenium heading element.
@@ -10,10 +10,10 @@ import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSeleni
 public interface HeadingElementSelenium extends HeadingElement, SElement {
 
 	@Override
-	public TagHeadingTypeSelenium getTagType();
+	TagHeadingTypeSelenium getTagType();
 
 	@Override
-	public default String getHeadingText() {
+	default String getHeadingText() {
 		return getWebElement().getText();
 	}
 

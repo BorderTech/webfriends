@@ -9,12 +9,12 @@ import com.github.bordertech.webfriends.selenium.element.SElement;
 public interface CheckableSelenium extends Checkable, SElement {
 
 	@Override
-	public default boolean isChecked() {
+	default boolean isChecked() {
 		return getAttributeAsBoolean("checked");
 	}
 
 	@Override
-	public default void setChecked(final boolean checked) {
+	default void setChecked(final boolean checked) {
 		if (checked != isChecked()) {
 			getWebElement().click();
 		}

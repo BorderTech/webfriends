@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.api.element.table.HRow;
 public interface TagTR<T extends HRow> extends TagType<T> {
 
 	@Override
-	public default String getTagName() {
+	default String getTagName() {
 		return "tr";
 	}
 }
