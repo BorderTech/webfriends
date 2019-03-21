@@ -16,7 +16,7 @@ public interface RadioButtonGroup {
 	/**
 	 * @return the radio buttons in the group
 	 */
-	List<HRadioButton> getRadioButtons();
+	List<? extends HRadioButton> getRadioButtons();
 
 	/**
 	 * @return the selected value in the radio button group, or null

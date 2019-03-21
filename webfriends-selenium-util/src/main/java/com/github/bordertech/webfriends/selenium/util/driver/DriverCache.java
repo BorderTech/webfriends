@@ -43,7 +43,7 @@ public final class DriverCache {
 	 * Release all drivers from the POOL.
 	 */
 	public static void releaseAll() {
-		POOL.values().forEach((poolDriver) -> {
+		POOL.values().forEach(poolDriver -> {
 			poolDriver.quit();
 		});
 		POOL.clear();

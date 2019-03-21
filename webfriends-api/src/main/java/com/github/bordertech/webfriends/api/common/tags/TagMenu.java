@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.api.common.tags;
 
-import com.github.bordertech.webfriends.api.element.grouping.HMenu;
 import com.github.bordertech.webfriends.api.common.tag.TagListContainerType;
+import com.github.bordertech.webfriends.api.element.grouping.HMenu;
 
 /**
  * HTML <code>menu</code> tag.

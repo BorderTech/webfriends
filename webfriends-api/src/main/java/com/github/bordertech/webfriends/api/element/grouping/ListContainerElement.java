@@ -6,10 +6,10 @@ import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
 import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
+import com.github.bordertech.webfriends.api.common.tag.TagListContainerType;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
-import com.github.bordertech.webfriends.api.common.tag.TagListContainerType;
 
 /**
  * List element.

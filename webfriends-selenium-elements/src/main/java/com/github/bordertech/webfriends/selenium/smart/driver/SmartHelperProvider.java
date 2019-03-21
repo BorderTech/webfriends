@@ -426,7 +426,7 @@ public class SmartHelperProvider extends HelperProvider {
 	public List<String> getAttributeAsList(final WebElement element, final String key, final String delim) {
 		String value = getAttribute(element, key);
 		if (value == null || value.isEmpty()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		String[] values = value.split(delim);
 		return Arrays.asList(values);
@@ -493,8 +493,8 @@ public class SmartHelperProvider extends HelperProvider {
 	public HeadingElementSelenium findHeading(final SmartDriver driver, final SearchContext context) {
 		// TODO Maybe switch this to a xpath
 		// Check for H1 to H6
-		for (TagHeadingTypeSelenium tag : SeleniumTags.getHeadingTags()) {
-			HeadingElementSelenium heading = (HeadingElementSelenium) SmartHelperProvider.this.findWebFriend(driver, context, tag);
+		for (TagHeadingTypeSelenium<? extends HeadingElementSelenium> tag : SeleniumTags.getHeadingTags()) {
+			HeadingElementSelenium heading = findWebFriend(driver, context, tag);
 			if (heading != null) {
 				return heading;
 			}
