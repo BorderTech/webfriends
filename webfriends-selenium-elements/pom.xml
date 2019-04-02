@@ -15,6 +15,11 @@
 
 	<packaging>jar</packaging>
 
+	<properties>
+		<!-- Needed for tomcat jar lookups -->
+		<surefire.useSystemClassLoader>false</surefire.useSystemClassLoader>
+	</properties>
+
 	<dependencies>
 
 		<!-- Webfriends API -->
@@ -42,7 +47,7 @@
 		<dependency>
 			<groupId>com.github.bordertech.lde</groupId>
 			<artifactId>lde-tomcat</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.2</version>
 			<scope>test</scope>
 		</dependency>
 
