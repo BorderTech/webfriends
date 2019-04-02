@@ -45,7 +45,7 @@ public class ServerProviderDefault implements ServerProvider {
 
 	@Override
 	public boolean isRunning() {
-		return LdeLauncher.getProvider().getServer() != null;
+		return LdeLauncher.isRunning();
 	}
 
 	@Override
