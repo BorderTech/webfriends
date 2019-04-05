@@ -5,7 +5,6 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericTok
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.tag.Qualifier;
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.category.FormAssociatedSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
@@ -31,6 +30,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;
 
 /**
  * Smart elements helper provider.
@@ -82,7 +82,7 @@ public class SmartHelperProvider extends HelperProvider {
 			return false;
 		}
 		// TODO Check this works
-		return isInterface(tag.getElementClass(), ContainerElementSelenium.class);
+		return isInterface(tag.getElementClass(), ContainerWithChildren.class);
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 */
 	public boolean isElementContainer(final SElement element) {
 		// TODO More efficent way of doing this. Maybe put a boolean flag on the element tag interface
-		return element instanceof ContainerElementSelenium;
+		return element instanceof ContainerWithChildren;
 	}
 
 	/**

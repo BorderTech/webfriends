@@ -177,12 +177,12 @@ public class FriendDriver implements TakesScreenshot {
 	}
 
 	/**
-	 * Verify the correct page has been loaded.
+	 * Verify the page condition.
 	 *
-	 * @param condition check if correct page loaded condition
+	 * @param condition the page verify condition
 	 */
-	public void verifyPageLoaded(final Function<WebDriver, Boolean> condition) {
-		getHelper().verifyPageLoaded(getWebDriver(), condition);
+	public void verifyPageCondition(final Function<WebDriver, Boolean> condition) {
+		getHelper().verifyPageCondition(getWebDriver(), condition);
 	}
 
 	/**

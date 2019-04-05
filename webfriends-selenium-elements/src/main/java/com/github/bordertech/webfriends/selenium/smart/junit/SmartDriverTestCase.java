@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
  * Test class that uses the {@link FriendSuite}.
  */
 @RunWith(FriendSuite.class)
-public class AbstractFriendTestCase implements FriendTestCase {
+public class SmartDriverTestCase implements FriendTestCase {
 
 	private SmartDriver driver;
 	private String baseUrl;
@@ -26,6 +26,11 @@ public class AbstractFriendTestCase implements FriendTestCase {
 		return driver;
 	}
 
+	@Override
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+
 	protected void navigateToPath(final String path) {
 		String url = buildTestUrl(path);
 		getDriver().navigateToUrl(url);
@@ -37,11 +42,6 @@ public class AbstractFriendTestCase implements FriendTestCase {
 	 */
 	protected String buildTestUrl(final String path) {
 		return getBaseUrl() + path;
-	}
-
-	@Override
-	public String getBaseUrl() {
-		return baseUrl;
 	}
 
 }

@@ -3,7 +3,9 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 import com.github.bordertech.webfriends.api.element.embedded.HTrack;
 import com.github.bordertech.webfriends.api.element.embedded.MediaElement;
 import com.github.bordertech.webfriends.selenium.common.capability.FocusableSelenium;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
+import com.github.bordertech.webfriends.selenium.common.feature.Clickable;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;
+import com.github.bordertech.webfriends.selenium.common.feature.Keyboardable;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tag.TagMediaTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
@@ -14,8 +16,9 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Selenium media element.
  */
-public abstract class MediaElementSelenium extends AbstractSElement implements MediaElement, ContainerElementSelenium,
-		FocusableSelenium {
+public abstract class MediaElementSelenium extends AbstractSElement implements MediaElement,
+		ContainerWithChildren,
+		FocusableSelenium, Clickable, Keyboardable {
 
 	private List<? extends STrack> tracks = null;
 	private List<? extends SSource> sources = null;

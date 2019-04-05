@@ -6,13 +6,14 @@ import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
 import com.github.bordertech.webfriends.selenium.common.tags.STagOptGroup;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;
 
 /**
  * Selenium group options element.
  */
-public class SOptGroup extends AbstractSElement implements HOptGroup, ContainerElementSelenium,
-		DisableableSelenium {
+public class SOptGroup extends AbstractSElement implements HOptGroup,
+		DisableableSelenium,
+		ContainerWithChildren {
 
 	private List<SOption> options = null;
 

@@ -2,7 +2,6 @@ package com.github.bordertech.webfriends.selenium.common.feature;
 
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
 import com.github.bordertech.webfriends.selenium.element.SElement;
-import com.github.bordertech.webfriends.selenium.element.form.SButton;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,28 +10,7 @@ import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 /**
  * Element with child elements.
  */
-public interface ContainerElementSelenium extends SElement {
-
-	/**
-	 * Find a button with the matching text.
-	 *
-	 * @param text the text of the button
-	 * @return the button element or null
-	 */
-	default SButton findButton(final String text) {
-		return findButton(text, false);
-	}
-
-	/**
-	 * Find a button with the matching text.
-	 *
-	 * @param text the text of the button
-	 * @param partial true if partial match
-	 * @return the button element or null
-	 */
-	default SButton findButton(final String text, final boolean partial) {
-		return getHelper().findButton(getDriver(), getWebElement(), text, partial);
-	}
+public interface ContainerWithChildren extends SElement {
 
 	/**
 	 * Find a labeled element with the exact text.

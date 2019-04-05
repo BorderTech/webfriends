@@ -35,6 +35,13 @@
 			<artifactId>webfriends-selenium-util</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		
+		<!-- Page objects API -->
+		<dependency>
+			<groupId>com.github.bordertech.webfriends</groupId>
+			<artifactId>webfriends-pageobject-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<!-- Commons -->
 		<dependency>

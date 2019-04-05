@@ -1,15 +1,15 @@
 package com.github.bordertech.webfriends.selenium.element;
 
-import com.github.bordertech.webfriends.selenium.smart.junit.AbstractFriendTestCase;
 import org.junit.Before;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
+import com.github.bordertech.webfriends.selenium.smart.junit.SmartDriverTestCase;
 
 /**
  * Abstract class for testing a selenium element.
  *
  * @param <T> the element type being tested
  */
-public abstract class AbstractTestElement<T extends SElement> extends AbstractFriendTestCase {
+public abstract class AbstractTestElement<T extends SElement> extends SmartDriverTestCase {
 
 	private T element = null;
 
