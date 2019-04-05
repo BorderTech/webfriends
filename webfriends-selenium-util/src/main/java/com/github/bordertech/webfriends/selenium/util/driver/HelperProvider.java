@@ -127,9 +127,9 @@ public class HelperProvider {
 	 * Verify the correct page has been loaded.
 	 *
 	 * @param driver the web driver
-	 * @param condition check if correct page loaded condition
+	 * @param condition the page verify condition
 	 */
-	public void verifyPageLoaded(final WebDriver driver, final Function<WebDriver, Boolean> condition) {
+	public void verifyPageCondition(final WebDriver driver, final Function<WebDriver, Boolean> condition) {
 		// Check page is ready before verifying page
 		waitForPageReady(driver);
 		if (condition != null) {

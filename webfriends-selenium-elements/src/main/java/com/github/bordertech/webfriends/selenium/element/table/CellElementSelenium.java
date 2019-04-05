@@ -3,14 +3,16 @@ package com.github.bordertech.webfriends.selenium.element.table;
 import com.github.bordertech.webfriends.api.common.tag.TagType;
 import com.github.bordertech.webfriends.api.element.Element;
 import com.github.bordertech.webfriends.api.element.table.CellElement;
-import com.github.bordertech.webfriends.selenium.common.feature.ContainerElementSelenium;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithButtons;
+import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 
 /**
  * Selenium table cell element.
  */
-public interface CellElementSelenium extends CellElement, ContainerElementSelenium {
+public interface CellElementSelenium extends CellElement,
+		ContainerWithChildren, ContainerWithButtons {
 
 	@Override
 	TagTypeSelenium<? extends CellElementSelenium> getTagType();

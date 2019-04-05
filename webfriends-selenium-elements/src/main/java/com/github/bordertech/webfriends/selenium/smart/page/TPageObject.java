@@ -1,5 +1,6 @@
 package com.github.bordertech.webfriends.selenium.smart.page;
 
+import com.github.bordertech.webfriends.pageobject.PageObject;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
@@ -7,33 +8,35 @@ import java.util.function.Function;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Test page used in a {@link TApp}.
+ * Page object backed by the smart selenium drivers.
  *
- * @param <T> the test application type
- * @param <P> the page type
+ * @param <T> the application controller type
+ * @param <P> the page object type
+ *
+ * @see PageObject
+ * @see TApplicationPageController
  */
-public abstract class TPage<T extends TApp, P extends TPage<T, P>> {
+public class TPageObject<T extends TApplicationPageController, P extends PageObject> implements PageObject<P> {
 
 	private final T app;
+	private final String pagePath;
 
 	/**
-	 * @param app the application
+	 * @param app the application controller
+	 * @param pagePath the relative path to this page
 	 */
-	public TPage(final T app) {
+	public TPageObject(final T app, final String pagePath) {
 		this.app = app;
+		this.pagePath = pagePath;
 	}
 
-	/**
-	 * Refresh page.
-	 */
+	@Override
 	public P refreshPage() {
 		getDriver().refreshPage();
 		return verifyPage();
 	}
 
-	/**
-	 * Navigate to this page.
-	 */
+	@Override
 	public P navigateToPage() {
 		// TODO UTIL for concat
 		String url = getApp().getBaseUrl() + getPagePath();
@@ -42,8 +45,23 @@ public abstract class TPage<T extends TApp, P extends TPage<T, P>> {
 	}
 
 	/**
+	 * Verify page loaded correctly.
+	 *
+	 * @return this page for chaining
+	 */
+	@Override
+	public P verifyPage() {
+		// Make sure page is ready before verifying
+		waitForPageReady();
+		// Verify the page
+		getDriver().verifyPageCondition(getVerifyCondition());
+		return (P) this;
+	}
+
+	/**
 	 * @return the page title
 	 */
+	@Override
 	public String getPageTitle() {
 		return getDriver().getPageTitle();
 	}
@@ -63,44 +81,27 @@ public abstract class TPage<T extends TApp, P extends TPage<T, P>> {
 	}
 
 	/**
-	 * Verify page loaded.
+	 * Wait for the page ready.
+	 *
+	 * @return this page for chaining
 	 */
-	public P verifyPage() {
-		getDriver().verifyPageLoaded(getVerifyCondition());
+	protected P waitForPageReady() {
+		getDriver().waitForPageReady();
 		return (P) this;
 	}
 
 	/**
 	 * @return the relative path to this page.
 	 */
-	protected abstract String getPagePath();
+	protected String getPagePath() {
+		return pagePath;
+	}
 
 	/**
 	 * @param key the access key
 	 */
 	protected void sendAccessKey(final String key) {
 		getDriver().sendAccessKey(key);
-	}
-
-	/**
-	 * Wait for the page ready.
-	 */
-	protected void waitForPageReady() {
-		getDriver().waitForPageReady();
-	}
-
-	/**
-	 * @return the backing friend driver
-	 */
-	protected SmartDriver getDriver() {
-		return app.getDriver();
-	}
-
-	/**
-	 * @return the helper provider
-	 */
-	protected SmartHelperProvider getHelper() {
-		return SmartHelper.getProvider();
 	}
 
 	/**
@@ -111,10 +112,24 @@ public abstract class TPage<T extends TApp, P extends TPage<T, P>> {
 	}
 
 	/**
-	 * @return the test application
+	 * @return the application controller
 	 */
 	protected T getApp() {
 		return app;
+	}
+
+	/**
+	 * @return the backing friend driver
+	 */
+	protected SmartDriver getDriver() {
+		return getApp().getDriver();
+	}
+
+	/**
+	 * @return the helper provider
+	 */
+	protected SmartHelperProvider getHelper() {
+		return SmartHelper.getProvider();
 	}
 
 }

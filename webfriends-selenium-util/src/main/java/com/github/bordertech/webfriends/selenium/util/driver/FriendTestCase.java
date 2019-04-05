@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.selenium.util.driver;
 
 /**
- * Friend test case used by the unit tests.
+ * Friend test case used by the unit test runners.
  */
 public interface FriendTestCase {
 

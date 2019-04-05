@@ -1,5 +1,6 @@
 package com.github.bordertech.webfriends.selenium.smart.page;
 
+import com.github.bordertech.webfriends.pageobject.PanelObject;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
@@ -7,27 +8,31 @@ import java.util.function.Function;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Test panel used in a {@link TPage}.
+ * Panel object backed by smart selenium drivers.
  *
- * @param <T> the application type
- * @param <P> the panel type
+ * @param <T> the application controller type
+ * @param <P> the panel object type
+ *
+ * @see PanelObject
+ * @see TPageObject
  */
-public class TPanel<T extends TApp, P extends TPanel<T, P>> {
+public class TPanelObject<T extends TApplicationPageController, P extends TPanelObject> implements PanelObject<P> {
 
 	private final T app;
 
 	/**
-	 * @param app the application
+	 * @param app the application controller
 	 */
-	public TPanel(final T app) {
+	public TPanelObject(final T app) {
 		this.app = app;
 	}
 
 	/**
 	 * Verify panel loaded.
 	 */
+	@Override
 	public P verifyPanel() {
-		getDriver().verifyPageLoaded(getVerifyCondition());
+		getDriver().verifyPageCondition(getVerifyCondition());
 		return (P) this;
 	}
 
@@ -36,13 +41,6 @@ public class TPanel<T extends TApp, P extends TPanel<T, P>> {
 	 */
 	protected T getApp() {
 		return app;
-	}
-
-	/**
-	 * Wait for the page ready.
-	 */
-	protected void waitForPageReady() {
-		getDriver().waitForPageReady();
 	}
 
 	/**
