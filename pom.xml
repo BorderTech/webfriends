@@ -10,13 +10,13 @@
 	<parent>
 		<groupId>com.github.bordertech.common</groupId>
 		<artifactId>qa-parent</artifactId>
-		<version>1.0.11</version>
+		<version>1.0.19</version>
 	</parent>
 
 	<packaging>pom</packaging>
 
 	<properties>
-		<bt.qa.skip>false</bt.qa.skip>
+		<bt.qa.skip>true</bt.qa.skip>
 		<checkstyle.skip>true</checkstyle.skip>
 	</properties>
 
