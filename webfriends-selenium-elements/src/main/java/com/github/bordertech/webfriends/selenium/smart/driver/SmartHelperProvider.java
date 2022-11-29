@@ -19,11 +19,13 @@ import com.github.bordertech.webfriends.selenium.smart.by.TextSearchOptions;
 import com.github.bordertech.webfriends.selenium.util.driver.HelperProvider;
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
 import com.google.common.base.Objects;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
@@ -528,7 +530,7 @@ public class SmartHelperProvider extends HelperProvider {
 	 * @return the labeled element or null
 	 */
 	public <T extends LabelableSelenium> T findLabeled(final SmartDriver driver, final SearchContext context, final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
-		By by = ByLabel.text(text, partial);
+		By by = ByLabel.text(text, partial, true);
 		return findWebFriend(driver, context, elementTag, by);
 	}
 

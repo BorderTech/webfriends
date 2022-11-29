@@ -7,9 +7,11 @@ import com.github.bordertech.webfriends.selenium.common.form.capability.Sizeable
 import com.github.bordertech.webfriends.selenium.common.form.capability.ValueMultiSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.control.FormControlSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
-import java.util.List;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
 
 /**
  * Selenium select element.
@@ -24,7 +26,7 @@ public class SSelect extends AbstractSElement implements HSelect<SOption>, FormC
 
 	@Override
 	public List<SOption> getOptions() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return getHelper().findWebFriends(getDriver(), getWebElement(), SeleniumTags.OPTION);
 	}
 
 	@Override
@@ -39,7 +41,8 @@ public class SSelect extends AbstractSElement implements HSelect<SOption>, FormC
 
 	@Override
 	public HOption getOptionByName(final String name) {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return getOptions().stream().filter(option -> StringUtils.equals(option.getTextValue(), name) || StringUtils.equals(option.getLabel(), name))
+				.findAny().orElse(null);
 	}
 
 	@Override
@@ -64,7 +67,7 @@ public class SSelect extends AbstractSElement implements HSelect<SOption>, FormC
 
 	@Override
 	public void setValue(final String value) {
-		throw new UnsupportedOperationException("Not supported yet.");
+		getOptionByName(value).setSelected(true);
 	}
 
 	@Override
