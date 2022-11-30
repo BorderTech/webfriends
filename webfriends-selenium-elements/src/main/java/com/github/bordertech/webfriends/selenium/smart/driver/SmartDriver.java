@@ -105,37 +105,6 @@ public class SmartDriver extends FriendDriver {
 	}
 
 	/**
-	 * Used to get a SSelect but allows for the ability to wait for the ajax events which load the values.
-	 *
-	 * @param elementTag            the element tag
-	 * @param text                  the text of the SSelect
-	 * @param waitForAjaxOptionLoad whether to wait for options to load
-	 * @return
-	 */
-	public SSelect findLabeledSelect(final STagSelect elementTag, final String text, boolean waitForAjaxOptionLoad) {
-		if (waitForAjaxOptionLoad) {
-			getHelper().waitForPageReady(getWebDriver());
-		}
-		return findLabeled(elementTag, text, false);
-	}
-
-	/**
-	 * Used to get a SSelect but allows for the ability to wait for the ajax events which load the values.
-	 *
-	 * @param elementTag            the element tag
-	 * @param searchContext         the search context to use
-	 * @param text                  the text of the SSelect
-	 * @param waitForAjaxOptionLoad whether to wait for options to load
-	 * @return
-	 */
-	public SSelect findLabeledSelect(final STagSelect elementTag, final SearchContext searchContext, final String text, boolean waitForAjaxOptionLoad) {
-		if (waitForAjaxOptionLoad) {
-			getHelper().waitForPageReady(getWebDriver());
-		}
-		return findLabeled(elementTag, searchContext, text, false);
-	}
-
-	/**
 	 * Find a labeled element with the matching text.
 	 *
 	 * @param <T>           the element tag type
