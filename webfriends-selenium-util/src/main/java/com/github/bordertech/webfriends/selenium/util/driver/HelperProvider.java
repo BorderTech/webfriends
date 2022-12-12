@@ -2,6 +2,7 @@ package com.github.bordertech.webfriends.selenium.util.driver;
 
 import com.github.bordertech.didums.Didums;
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import org.apache.commons.lang.StringUtils;
@@ -154,7 +155,7 @@ public class HelperProvider {
 		if (condition == null) {
 			throw new IllegalArgumentException("A condition must be provided.");
 		}
-		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds, pollingMilliseconds);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds), Duration.ofMillis(pollingMilliseconds));
 		wait.until(condition);
 	}
 

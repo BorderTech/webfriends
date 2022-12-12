@@ -21,33 +21,26 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-api</artifactId>
-			<version>3.141.59</version>
+			<version>4.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
-			<exclusions>
-				<!-- OWASP (Multiple violations for opera driver) -->
-				<exclusion>
-					<groupId>org.seleniumhq.selenium</groupId>
-					<artifactId>selenium-opera-driver</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>4.7.1</version>
 		</dependency>
 
 		<!-- LDE API -->
 		<dependency>
 			<groupId>com.github.bordertech.lde</groupId>
 			<artifactId>lde-api</artifactId>
-			<version>1.0.2</version>
+			<version>1.0.4</version>
 		</dependency>
 
 		<!-- Didums -->
 		<dependency>
 			<groupId>com.github.bordertech.didums</groupId>
 			<artifactId>didums-core</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.5</version>
 		</dependency>
 
 		<!-- Commons -->
@@ -57,11 +50,18 @@
 			<version>3.2.2</version>
 		</dependency>
 
+		<!-- Commons Text -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>4.13.2</version>
 			<scope>provided</scope>
 		</dependency>
 
