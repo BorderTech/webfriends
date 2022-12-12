@@ -40,8 +40,8 @@
 	</issueManagement>
 
 	<ciManagement>
-		<system>Travis CI</system>
-		<url>https://travis-ci.com/BorderTech/webfriends</url>
+		<system>Github Actions</system>
+		<url>https://github.com/BorderTech/webfriends/actions</url>
 	</ciManagement>
 
 	<modules>
