@@ -28,6 +28,12 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.7.1</version>
 		</dependency>
+		<!-- Web Driver Manager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.3.1</version>
+		</dependency>
 
 		<!-- LDE API -->
 		<dependency>

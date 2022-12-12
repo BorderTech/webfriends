@@ -1,6 +1,7 @@
 package com.github.bordertech.webfriends.selenium.util.driver.type.impl;
 
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariDriverService;
 import org.openqa.selenium.safari.SafariOptions;
@@ -20,6 +21,9 @@ public class SafariWebDriverType implements WebDriverType<SafariDriver, SafariOp
 
 	@Override
 	public SafariDriver getDriverInstance() {
+		if (isWebDriverManagerEnabled()) {
+			WebDriverManager.safaridriver().setup();
+		}
 		return new SafariDriver(getDriverService(), getOptions());
 	}
 
