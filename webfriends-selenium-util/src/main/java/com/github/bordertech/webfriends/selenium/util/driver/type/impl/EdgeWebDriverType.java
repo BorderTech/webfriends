@@ -1,6 +1,7 @@
 package com.github.bordertech.webfriends.selenium.util.driver.type.impl;
 
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -20,6 +21,9 @@ public class EdgeWebDriverType implements WebDriverType<EdgeDriver, EdgeOptions,
 
 	@Override
 	public EdgeDriver getDriverInstance() {
+		if (isWebDriverManagerEnabled()) {
+			WebDriverManager.edgedriver().setup();
+		}
 		return new EdgeDriver(getDriverService(), getOptions());
 	}
 
