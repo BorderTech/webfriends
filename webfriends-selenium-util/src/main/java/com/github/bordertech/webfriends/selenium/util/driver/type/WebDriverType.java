@@ -1,6 +1,7 @@
 package com.github.bordertech.webfriends.selenium.util.driver.type;
 
 import com.github.bordertech.webfriends.selenium.util.driver.ConfigUtilProperties;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.Map;
 import java.util.Properties;
 import org.openqa.selenium.MutableCapabilities;
@@ -61,5 +62,12 @@ public interface WebDriverType<T extends WebDriver, M extends MutableCapabilitie
 	 * @return the driver service
 	 */
 	D getDriverService();
+
+	/**
+	 * @return true if {@link WebDriverManager} should be used before creating the driver instance
+	 */
+	default boolean isWebDriverManagerEnabled() {
+		return ConfigUtilProperties.isWebDriverManagerEnabled();
+	}
 
 }

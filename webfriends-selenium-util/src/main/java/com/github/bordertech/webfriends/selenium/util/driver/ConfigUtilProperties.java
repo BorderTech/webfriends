@@ -3,6 +3,7 @@ package com.github.bordertech.webfriends.selenium.util.driver;
 import com.github.bordertech.config.Config;
 import com.github.bordertech.didums.Factory;
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.text.MessageFormat;
 import java.util.Properties;
 import org.apache.commons.configuration.Configuration;
@@ -37,6 +38,7 @@ public final class ConfigUtilProperties {
 	 * The flag indicating whether the selenium tests are running in parallel methods.
 	 */
 	private static final String SELENIUM_PARALLEL_METHODS = "bordertech.webfriends.selenium.parallel.methods";
+
 	/**
 	 * The height in pixels of the Selenium screen.
 	 */
@@ -75,6 +77,7 @@ public final class ConfigUtilProperties {
 	 * The duration in milliseconds between poll attempts for page ready.
 	 */
 	private static final String SELENIUM_PAGE_READY_POLL_INTERVAL = "bordertech.webfriends.selenium.pageReadyPollInterval";
+
 	/**
 	 * The duration in seconds to wait to verify the correct page is loaded.
 	 */
@@ -84,6 +87,11 @@ public final class ConfigUtilProperties {
 	 * The duration in milliseconds between poll attempts to verify correct page is loaded.
 	 */
 	private static final String SELENIUM_VERIFY_PAGE_POLL_INTERVAL = "bordertech.webfriends.selenium.verifyPagePollInterval";
+
+	/**
+	 * The flag indicating whether {@link WebDriverManager} should be used before creating driver instances.
+	 */
+	private static final String WEBDRIVER_MANAGER_ENABLED = "bordertech.webfriends.webdrivermanager.enabled";
 
 	/**
 	 * Private constructor for static class.
@@ -232,6 +240,15 @@ public final class ConfigUtilProperties {
 	 */
 	public static int getVerifyPageTimeout() {
 		return get().getInt(SELENIUM_VERIFY_PAGE_TIMEOUT, 2);
+	}
+
+	/**
+	 * The flag indicating whether {@link WebDriverManager} should be used before creating driver instances.
+	 *
+	 * @return the parameter value, or true if not set.
+	 */
+	public static boolean isWebDriverManagerEnabled() {
+		return get().getBoolean(WEBDRIVER_MANAGER_ENABLED, true);
 	}
 
 	/**
