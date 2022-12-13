@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
 import com.github.bordertech.webfriends.api.common.combo.FlowPalpableWithPhrasingElement;
-import com.github.bordertech.webfriends.api.common.tag.TagType;
+import com.github.bordertech.webfriends.api.common.tags.TagParagraph;
 
 /**
  * Paragraph element.
@@ -9,6 +9,6 @@ import com.github.bordertech.webfriends.api.common.tag.TagType;
 public interface HParagraph extends FlowPalpableWithPhrasingElement {
 
 	@Override
-	TagType getTagType();
+	TagParagraph getTagType();
 
 }
