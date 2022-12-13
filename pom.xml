@@ -5,7 +5,7 @@
 	<groupId>com.github.bordertech.webfriends</groupId>
 	<name>webfriends-parent</name>
 	<artifactId>webfriends-parent</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6-SNAPSHOT</version>
 
 	<parent>
 		<groupId>com.github.bordertech.common</groupId>
@@ -31,7 +31,7 @@
 		<url>https://github.com/bordertech/webfriends</url>
 		<connection>scm:git:https://github.com/bordertech/webfriends.git</connection>
 		<developerConnection>scm:git:https://github.com/bordertech/webfriends.git</developerConnection>
-		<tag>webfriends-parent-0.0.5</tag>
+		<tag>java-webfriends-1.0.0</tag>
 	</scm>
 
 	<issueManagement>
