@@ -3,10 +3,8 @@ package com.github.bordertech.webfriends.selenium.smart.driver;
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
-import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.element.form.SButton;
-import com.github.bordertech.webfriends.selenium.element.form.select.SSelect;
 import com.github.bordertech.webfriends.selenium.util.driver.FriendDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -57,7 +55,7 @@ public class SmartDriver extends FriendDriver {
 	}
 
 	/**
-	 * Find a button with the matching text.
+	 * Find a button with the matching text with search context.
 	 *
 	 * @param text          the text of the button
 	 * @param searchContext the search context to use
@@ -92,7 +90,7 @@ public class SmartDriver extends FriendDriver {
 	}
 
 	/**
-	 * Find a labeled element with the exact text.
+	 * Find a labeled element with the exact text with search context.
 	 *
 	 * @param <T>           the element tag type
 	 * @param elementTag    the element tag
@@ -145,10 +143,11 @@ public class SmartDriver extends FriendDriver {
 
 
 	/**
-	 * Find the first element with the tag type and matching text.
+	 * Find the first element with the tag type and matching text with search context.
 	 *
 	 * @param <T>        the element tag type
 	 * @param elementTag the element tag
+	 * @param searchContext the search context
 	 * @param text       the text of the button
 	 * @return the labeled element or null
 	 */
@@ -220,10 +219,11 @@ public class SmartDriver extends FriendDriver {
 	}
 
 	/**
-	 * Find the nth (starting at 1) child element with this tag type.
+	 * Find the nth (starting at 1) child element with this tag type with search context.
 	 *
 	 * @param <T>        the web friends element type
 	 * @param elementTag the element tag
+	 * @param searchContext the search context to use
 	 * @param idx        the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
@@ -244,10 +244,11 @@ public class SmartDriver extends FriendDriver {
 	}
 
 	/**
-	 * Find the nth (starting at 1) child element with this tag type and By.
+	 * Find the nth (starting at 1) child element with this tag type and By with search context.
 	 *
 	 * @param <T>        the web friends element type
 	 * @param elementTag the element tag
+	 * @param searchContext the search context to use
 	 * @param by         the by condition
 	 * @param idx        the nth element (starting at 1)
 	 * @return the web friend wrapper for the matching element, or null if no match

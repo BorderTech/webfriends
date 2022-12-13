@@ -4,7 +4,7 @@ import com.github.bordertech.webfriends.api.common.combo.FlowPalpableWithPhrasin
 import com.github.bordertech.webfriends.api.common.tag.TagType;
 
 /**
- * Paragraph element.
+ * Strong element.
  */
 public interface HStrong extends FlowPalpableWithPhrasingElement {
 
