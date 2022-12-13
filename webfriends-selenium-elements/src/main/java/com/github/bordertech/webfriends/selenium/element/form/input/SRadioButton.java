@@ -26,7 +26,7 @@ public class SRadioButton extends AbstractSElement implements HRadioButton, Inpu
 
 	@Override
 	public void setValue(final String value) {
-		throw new UnsupportedOperationException("Not supported yet.");
+		getWebElement().click();
 	}
 
 }

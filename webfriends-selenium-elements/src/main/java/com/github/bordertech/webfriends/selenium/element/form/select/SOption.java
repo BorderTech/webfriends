@@ -44,7 +44,8 @@ public class SOption extends AbstractSElement implements HOption, DisableableSel
 
 	@Override
 	public void setSelected(final boolean selected) {
-		throw new UnsupportedOperationException("Not supported yet.");
+		if (selected != isSelected()) {
+			getWebElement().click();
+		}
 	}
-
 }
