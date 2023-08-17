@@ -4,7 +4,9 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagA;
 import com.github.bordertech.webfriends.selenium.common.tags.STagAudio;
 import com.github.bordertech.webfriends.selenium.common.tags.STagBody;
 import com.github.bordertech.webfriends.selenium.common.tags.STagButton;
+import com.github.bordertech.webfriends.selenium.common.tags.STagCaption;
 import com.github.bordertech.webfriends.selenium.common.tags.STagDatalist;
+import com.github.bordertech.webfriends.selenium.common.tags.STagDetails;
 import com.github.bordertech.webfriends.selenium.common.tags.STagDialog;
 import com.github.bordertech.webfriends.selenium.common.tags.STagDiv;
 import com.github.bordertech.webfriends.selenium.common.tags.STagFieldSet;
@@ -50,6 +52,7 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSource;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSpan;
 import com.github.bordertech.webfriends.selenium.common.tags.STagStrong;
+import com.github.bordertech.webfriends.selenium.common.tags.STagSummary;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTD;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTH;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTR;
@@ -82,7 +85,9 @@ public final class SeleniumTags {
 	public static final STagAudio AUDIO = new STagAudio();
 	public static final STagBody BODY = new STagBody();
 	public static final STagButton BUTTON = new STagButton();
+	public static final STagCaption CAPTION = new STagCaption();
 	public static final STagDatalist DATALIST = new STagDatalist();
+	public static final STagDetails DETAILS = new STagDetails();
 	public static final STagDialog DIALOG = new STagDialog();
 	public static final STagDiv DIV = new STagDiv();
 	public static final STagFieldSet FIELDSET = new STagFieldSet();
@@ -129,6 +134,7 @@ public final class SeleniumTags {
 	public static final STagSource SOURCE = new STagSource();
 	public static final STagSpan SPAN = new STagSpan();
 	public static final STagStrong STRONG = new STagStrong();
+	public static final STagSummary SUMMARY = new STagSummary();
 	public static final STagTable TABLE = new STagTable();
 	public static final STagTD TD = new STagTD();
 	public static final STagTextArea TEXTAREA = new STagTextArea();
@@ -141,11 +147,11 @@ public final class SeleniumTags {
 
 	private static final List<TagHeadingTypeSelenium> HEADING_TAGS = Arrays.asList(H1, H2, H3, H4, H5, H6);
 	private static final List<TagTypeSelenium> TAGS = Arrays.asList(
-			A, AUDIO, BODY, BUTTON, DATALIST, DIALOG, DIV, FIELDSET, FIGURE, FOOTER, FORM, H1, H2, H3, H4, H5, H6,
+			A, AUDIO, BODY, BUTTON, CAPTION, DATALIST, DETAILS, DIALOG, DIV, FIELDSET, FIGURE, FOOTER, FORM, H1, H2, H3, H4, H5, H6,
 			HEAD, HEADER, HTML, IMG, INPUT_CHECKBOX, INPUT_COLOR, INPUT_COLOR, INPUT_DATE, INPUT_DATETIME,
 			INPUT_EMAIL, INPUT_FILEUPLOAD, INPUT_NUMBER, INPUT_PASSWORD, INPUT_RADIO, INPUT_RADIO,
 			INPUT_RANGE, INPUT_SEARCH, INPUT_TELEPHONE, INPUT_TEXT, INPUT_URL,
-			LABEL, LISTITEM, MENU, METER, NAV, OL, OPTGROUP, OPTION, P, PROGRESS, SECTION, SELECT, SOURCE, SPAN, STRONG,
+			LABEL, LISTITEM, MENU, METER, NAV, OL, OPTGROUP, OPTION, P, PROGRESS, SECTION, SELECT, SOURCE, SPAN, SUMMARY, STRONG,
 			TABLE, TD, TEXTAREA, TH, TITLE, TR, TRACK,
 			UL, VIDEO
 	);

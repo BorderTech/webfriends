@@ -290,8 +290,22 @@ public class SmartDriver extends FriendDriver {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	public <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final By by) {
-		return getHelper().findWebFriends(this, getWebDriver(), elementTag, by);
+		return findWebFriends(elementTag, getWebDriver(), by);
 	}
+
+	/**
+	 * Find the child elements with this tag type and By.
+	 *
+	 * @param <T> the web friends element type
+	 * @param elementTag the element tag
+	 * @param searchContext the search context to use
+	 * @param by the BY condition
+	 * @return the web friend wrapper for the matching element, or null if no match
+	 */
+	public <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final SearchContext searchContext, final By by) {
+		return getHelper().findWebFriends(this, searchContext, elementTag, by);
+	}
+
 
 	/**
 	 * Find the first child element for a tag type.

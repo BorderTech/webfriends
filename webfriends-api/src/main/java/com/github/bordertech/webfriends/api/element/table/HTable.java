@@ -76,6 +76,12 @@ public interface HTable extends FlowPalpableElement, ScriptSupportingModel {
 	HRow getRow(final int rowIdx);
 
 	/**
+	 * @return the list of rows
+	 */
+	List<? extends HRow> getRows();
+
+
+	/**
 	 * @return the no data message or null
 	 */
 	String getNoDataMessage();
