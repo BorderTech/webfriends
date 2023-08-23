@@ -6,7 +6,6 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagTable;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openqa.selenium.By;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -24,7 +23,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public List<? extends SHeaderCell> getColumnHeaders() {
-		return getDriver().findWebFriends(SeleniumTags.TH, this.getWebElement(), By.tagName("th"));
+		return getDriver().findWebFriends(SeleniumTags.TH, this.getWebElement());
 	}
 
 	@Override
@@ -38,7 +37,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public List<SRow> getRows() {
-		return getDriver().findWebFriends(SeleniumTags.TR, this.getWebElement(), By.tagName("tr"));
+		return getDriver().findWebFriends(SeleniumTags.TR, this.getWebElement());
 	}
 
 	@Override
@@ -57,8 +56,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public String getTableCaption() {
-		SCaption caption = getDriver().findWebFriend(SeleniumTags.CAPTION, this.getWebElement(), By.tagName("caption"));
-		return caption.getWebElement().getText();
+		return getDriver().findWebFriend(SeleniumTags.CAPTION, this.getWebElement()).getWebElement().getText();
 	}
 
 	@Override

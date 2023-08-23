@@ -186,6 +186,34 @@ public class SmartHelperProvider extends HelperProvider {
 	}
 
 	/**
+	 * Finds the webfriend of a child elements parent
+	 *
+	 * @param driver the web driver
+	 * @param childWebElement the child web element
+	 * @param elementTag the element tag to wrap element with
+	 * @param <T> the web friends element type
+	 * @return
+	 */
+	public <T extends SElement> T findWebFriendParent(final SmartDriver driver, final WebElement childWebElement, final TagTypeSelenium<T> elementTag) {
+		return wrapWebElement(driver, childWebElement.findElement(By.xpath("parent::*")), elementTag);
+	}
+
+	/**
+	 *
+	 * Finds the webfriend of a child elements parent
+	 * @param driver the web driver
+	 * @param childElement the child web element
+	 * @param elementTag the element tag to wrap element with
+	 * @param <T> the web friends element type returned
+	 * @param <I> the web friends element type input
+	 * @return
+	 */
+	public <T extends SElement, I extends SElement> T findWebFriendParent(final SmartDriver driver, final I childElement, final TagTypeSelenium<T> elementTag) {
+		return findWebFriendParent(driver, childElement.getWebElement(), elementTag);
+	}
+
+
+	/**
 	 * Filter and wrap web elements with this tag type.
 	 *
 	 * @param <T> the web friends element type

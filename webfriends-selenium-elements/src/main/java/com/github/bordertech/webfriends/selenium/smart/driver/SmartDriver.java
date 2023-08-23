@@ -192,6 +192,18 @@ public class SmartDriver extends FriendDriver {
 		return getHelper().findWebFriend(this, getWebDriver(), elementTag);
 	}
 
+	/**
+	 * Find the first child element with this tag type.
+	 *
+	 * @param <T> the web friends element type
+	 * @param elementTag the element tag
+	 * @param searchContext the search context to use
+	 * @return the web friend wrapper for the matching element, or null if no match
+	 */
+	public <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag, final SearchContext searchContext) {
+		return getHelper().findWebFriend(this, searchContext, elementTag);
+	}
+
 
 	/**
 	 * Find the first child element with this Tag Type and By.
@@ -306,6 +318,17 @@ public class SmartDriver extends FriendDriver {
 		return getHelper().findWebFriends(this, searchContext, elementTag, by);
 	}
 
+	/**
+	 * Find the child elements with this tag type and By.
+	 *
+	 * @param <T> the web friends element type
+	 * @param elementTag the element tag
+	 * @param searchContext the search context to use
+	 * @return the web friend wrapper for the matching element, or null if no match
+	 */
+	public <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final SearchContext searchContext) {
+		return getHelper().findWebFriends(this, searchContext, elementTag);
+	}
 
 	/**
 	 * Find the first child element for a tag type.
@@ -381,6 +404,31 @@ public class SmartDriver extends FriendDriver {
 	 */
 	public List<WebElement> findWebElements(final TagTypeSelenium elementTag, final By by) {
 		return getHelper().findWebElements(getWebDriver(), elementTag, by);
+	}
+
+	/**
+	 *
+	 * Finds the webfriend of a child elements parent
+	 * @param childWebElement the child web element
+	 * @param elementTag the element tag to wrap element with
+	 * @param <T> the web friends element type returned
+	 * @return
+	 */
+	public <T extends SElement> T findWebFriendParent(final WebElement childWebElement, final TagTypeSelenium<T> elementTag) {
+		return getHelper().findWebFriendParent(this, childWebElement, elementTag);
+	}
+
+	/**
+	 *
+	 * Finds the webfriend of a child elements parent
+	 * @param childElement the child element
+	 * @param elementTag the element tag to wrap element with
+	 * @param <T> the web friends element type returned
+	 * @param <I> the web friends element type input
+	 * @return
+	 */
+	public <T extends SElement, I extends SElement> T findWebFriendParent(final I childElement, final TagTypeSelenium<T> elementTag) {
+		return getHelper().findWebFriendParent(this, childElement, elementTag);
 	}
 
 	/**
