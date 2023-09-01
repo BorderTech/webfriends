@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.selenium.util.driver.type.impl;
 
-import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
+import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverTypeChromium;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
@@ -12,7 +12,7 @@ import org.openqa.selenium.edge.EdgeOptions;
  * Subclasses can override to alter the configuration or change the implementation.
  * </p>
  */
-public class EdgeWebDriverType implements WebDriverType<EdgeDriver, EdgeOptions, EdgeDriverService> {
+public class EdgeWebDriverType implements WebDriverTypeChromium<EdgeDriver, EdgeOptions, EdgeDriverService> {
 
 	@Override
 	public String getDriverTypeName() {

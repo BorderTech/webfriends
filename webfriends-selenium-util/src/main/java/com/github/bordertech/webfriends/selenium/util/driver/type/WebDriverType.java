@@ -38,25 +38,35 @@ public interface WebDriverType<T extends WebDriver, M extends MutableCapabilitie
 	M getDefaultOptions();
 
 	/**
-	 * @return the DesiredCapabilities configured from parameters.
+	 * @return the options with the desired capabilities and arguments configured from parameters.
 	 */
 	default M getOptions() {
 		// Get default options
-		M capabilities = getDefaultOptions();
-		// Merge any ocerride options
-		Properties props = getOverrideOptions();
-		for (Map.Entry<Object, Object> property : props.entrySet()) {
-			capabilities.setCapability((String) property.getKey(), property.getValue());
-		}
-		return capabilities;
+		M options = getDefaultOptions();
+		handleOverrideCapabilities(options);
+		handleOverrideArguments(options);
+		return options;
 	}
 
 	/**
-	 * @return the default driver properties from properties file
+	 * Handle overriding capabilities from parameters.
+	 *
+	 * @param options the options to update
 	 */
-	default Properties getOverrideOptions() {
-		return ConfigUtilProperties.getDriverCapabilities(getDriverTypeName());
+	default void handleOverrideCapabilities(M options) {
+		// Check for capability overrides from Parameters
+		Properties props = ConfigUtilProperties.getDriverCapabilities(getDriverTypeName());
+		for (Map.Entry<Object, Object> property : props.entrySet()) {
+			options.setCapability((String) property.getKey(), property.getValue());
+		}
 	}
+
+	/**
+	 * Handle overriding arguments from parameters.
+	 *
+	 * @param options the options to update
+	 */
+	void handleOverrideArguments(M options);
 
 	/**
 	 * @return the driver service
