@@ -33,6 +33,11 @@ public class SafariWebDriverType implements WebDriverType<SafariDriver, SafariOp
 	}
 
 	@Override
+	public void handleOverrideArguments(final SafariOptions options) {
+		// Do nothing
+	}
+
+	@Override
 	public SafariDriverService getDriverService() {
 		return SafariDriverService.createDefaultService();
 	}

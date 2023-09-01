@@ -37,6 +37,11 @@ public class InternetExplorerWebDriverType implements WebDriverType<InternetExpl
 	}
 
 	@Override
+	public void handleOverrideArguments(final InternetExplorerOptions options) {
+		// Do nothing
+	}
+
+	@Override
 	public InternetExplorerDriverService getDriverService() {
 		return InternetExplorerDriverService.createDefaultService();
 	}

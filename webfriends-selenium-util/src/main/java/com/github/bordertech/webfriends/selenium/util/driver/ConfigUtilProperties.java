@@ -5,6 +5,8 @@ import com.github.bordertech.didums.Factory;
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.lang.ArrayUtils;
@@ -23,6 +25,11 @@ public final class ConfigUtilProperties {
 	 * The capabilities of each web driver.
 	 */
 	private static final String SELENIUM_DRIVER_CAPABILITIES = DRIVER_PREFIX + "{0}.capabilities";
+
+	/**
+	 * The arguments of each web driver.
+	 */
+	private static final String SELENIUM_DRIVER_ARGUMENTS = DRIVER_PREFIX + "{0}.arguments";
 
 	/**
 	 * The list of driver type short names to use for the MultiBrowserRunner.
@@ -104,11 +111,23 @@ public final class ConfigUtilProperties {
 	 * The WebDriver capabilities for the given driver type.
 	 *
 	 * @param driverType the driver type.
-	 * @return the parameter value if set, or empty properties if not set.
+	 * @return the capabilities set as property values, or empty properties if not set.
 	 */
 	public static Properties getDriverCapabilities(final String driverType) {
 		String paramName = MessageFormat.format(SELENIUM_DRIVER_CAPABILITIES, driverType);
 		return get().getProperties(paramName);
+	}
+
+	/**
+	 * The WebDriver arguments for the given driver type.
+	 *
+	 * @param driverType the driver type.
+	 * @return the list of arguments or empty list if not set
+	 */
+	public static List<String> getDriverArguments(final String driverType) {
+		String paramName = MessageFormat.format(SELENIUM_DRIVER_ARGUMENTS, driverType);
+		String values[] = get().getStringArray(paramName);
+		return Arrays.asList(values);
 	}
 
 	/**
