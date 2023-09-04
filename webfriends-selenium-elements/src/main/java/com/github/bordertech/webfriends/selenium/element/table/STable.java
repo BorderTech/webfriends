@@ -28,7 +28,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public SRow getRow(final int rowIdx) {
-		List<SRow> sRows = getRows();
+		List<? extends SRow> sRows = getRows();
 		if (CollectionUtils.isEmpty(sRows) || CollectionUtils.size(sRows) - 1 < rowIdx) {
 			throw new IllegalArgumentException("Invalid row selection of " + rowIdx);
 		}
@@ -36,7 +36,7 @@ public class STable extends AbstractSElement implements HTable {
 	}
 
 	@Override
-	public List<SRow> getRows() {
+	public List<? extends SRow> getRows() {
 		return getDriver().findWebFriends(SeleniumTags.TR, this.getWebElement());
 	}
 
