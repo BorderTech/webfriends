@@ -5,6 +5,7 @@ import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChi
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagDialog;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Selenium dialog element.
@@ -19,12 +20,12 @@ public class SDialog extends AbstractSElement implements HDialog,
 
 	@Override
 	public String getDialogTitle() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return getDriver().findWebFriend(SeleniumTags.HEADER, getWebElement()).getHeaderText();
 	}
 
 	@Override
 	public boolean isOpen() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return StringUtils.isNotBlank(getWebElement().getAttribute("open"));
 	}
 
 	@Override

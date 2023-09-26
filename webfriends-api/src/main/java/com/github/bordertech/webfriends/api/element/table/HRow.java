@@ -40,14 +40,14 @@ public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, Cust
 	HDataCell getRowCellAsData(final int colIdx);
 
 	/**
-	 * @return the row header cell for this row or null
+	 * @return true if the row has header cells
 	 */
-	HHeaderCell getRowHeader();
+	boolean hasRowHeaderCells();
 
 	/**
-	 * @return true if the row has a header
+	 * @return true if the row has data cells
 	 */
-	boolean hasRowHeader();
+	boolean hasRowDataCells();
 
 	/**
 	 * @return the cell elements for this row. Could be a mix of data and header elements if the row has a header.
