@@ -59,6 +59,6 @@ public interface Keyboardable extends SElement {
 	 * Set focus to this element
 	 */
 	default void focus() {
-		getHelper().setFocus(getDriver(), this);
+		getDriver().setFocus(this);
 	}
 }

@@ -11,7 +11,7 @@ import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagLabel;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.element.SElement;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
+import com.github.bordertech.webfriends.selenium.smart.driver.ElementUtil;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -44,12 +44,12 @@ public class SLabel extends AbstractSElement implements HLabel,
 	@Override
 	public LabelableSelenium getLabeledElement() {
 		// Find the labeled element
-		WebElement labeled = SmartHelper.getProvider().findLabeledElementWithLabel(getWebElement());
+		WebElement labeled = ElementUtil.findLabeledElementWithLabel(getWebElement());
 		if (labeled == null) {
 			return null;
 		}
 		// Wrap it in Selenium element
-		SElement element = getHelper().wrapWebElement(getDriver(), labeled);
+		SElement element = ElementUtil.wrapWebElement(getDriver(), labeled);
 		// Check element is labelable
 		if (element instanceof LabelableSelenium) {
 			return (LabelableSelenium) element;

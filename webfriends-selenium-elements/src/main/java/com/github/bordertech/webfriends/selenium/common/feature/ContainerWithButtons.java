@@ -2,6 +2,7 @@ package com.github.bordertech.webfriends.selenium.common.feature;
 
 import com.github.bordertech.webfriends.selenium.element.SElement;
 import com.github.bordertech.webfriends.selenium.element.form.SButton;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 
 /**
  * Element with child button elements.
@@ -26,7 +27,7 @@ public interface ContainerWithButtons extends SElement {
 	 * @return the button element or null
 	 */
 	default SButton findButton(final String text, final boolean partial) {
-		return getHelper().findButton(getDriver(), getWebElement(), text, partial);
+		return SmartDriverUtil.findButton(getDriver(), getWebElement(), text, partial);
 	}
 
 }

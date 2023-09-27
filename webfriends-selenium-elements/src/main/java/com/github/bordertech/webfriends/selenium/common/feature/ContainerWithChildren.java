@@ -1,11 +1,12 @@
 package com.github.bordertech.webfriends.selenium.common.feature;
 
 import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.SElement;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Element with child elements.
@@ -34,7 +35,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the labeled element or null
 	 */
 	default <T extends LabelableSelenium> T findLabelled(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
-		return getHelper().findLabeled(getDriver(), getWebElement(), elementTag, text, partial);
+		return SmartDriverUtil.findLabeled(getDriver(), getWebElement(), elementTag, text, partial);
 	}
 
 	/**
@@ -59,7 +60,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the labeled element or null
 	 */
 	default <T extends SElement> T findWithText(final TagTypeSelenium<T> elementTag, final String text, final boolean partial) {
-		return getHelper().findWithText(getDriver(), getWebElement(), elementTag, text, partial);
+		return SmartDriverUtil.findWithText(getDriver(), getWebElement(), elementTag, text, partial);
 	}
 
 	/**
@@ -70,7 +71,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag) {
-		return getHelper().findWebFriend(getDriver(), getWebElement(), elementTag);
+		return SmartDriverUtil.findWebFriend(getDriver(), getWebElement(), elementTag);
 	}
 
 	/**
@@ -82,7 +83,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> T findWebFriend(final TagTypeSelenium<T> elementTag, final By by) {
-		return getHelper().findWebFriend(getDriver(), getWebElement(), elementTag, by);
+		return SmartDriverUtil.findWebFriend(getDriver(), getWebElement(), elementTag, by);
 	}
 
 	/**
@@ -94,7 +95,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final int idx) {
-		return getHelper().findWebFriendNth(getDriver(), getWebElement(), elementTag, idx);
+		return SmartDriverUtil.findWebFriendNth(getDriver(), getWebElement(), elementTag, idx);
 	}
 
 	/**
@@ -107,7 +108,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> T findWebFriendNth(final TagTypeSelenium<T> elementTag, final By by, final int idx) {
-		return getHelper().findWebFriendNth(getDriver(), getWebElement(), elementTag, by, idx);
+		return SmartDriverUtil.findWebFriendNth(getDriver(), getWebElement(), elementTag, by, idx);
 	}
 
 	/**
@@ -118,7 +119,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag) {
-		return getHelper().findWebFriends(getDriver(), getWebElement(), elementTag);
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), elementTag);
 	}
 
 	/**
@@ -130,7 +131,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the web friend wrapper for the matching element, or null if no match
 	 */
 	default <T extends SElement> List<T> findWebFriends(final TagTypeSelenium<T> elementTag, final By by) {
-		return getHelper().findWebFriends(getDriver(), getWebElement(), elementTag, by);
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), elementTag, by);
 	}
 
 	/**
@@ -140,7 +141,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching element or null
 	 */
 	default WebElement findWebElement(final TagTypeSelenium elementTag) {
-		return getHelper().findWebElement(getWebElement(), elementTag);
+		return SmartDriverUtil.findWebElement(getWebElement(), elementTag);
 	}
 
 	/**
@@ -151,7 +152,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching element or null
 	 */
 	default WebElement findWebElement(final TagTypeSelenium elementTag, final By by) {
-		return getHelper().findWebElement(getWebElement(), elementTag, by);
+		return SmartDriverUtil.findWebElement(getWebElement(), elementTag, by);
 	}
 
 	/**
@@ -162,7 +163,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching element or null
 	 */
 	default WebElement findWebElementNth(final TagTypeSelenium elementTag, final int idx) {
-		return getHelper().findWebElementNth(getWebElement(), elementTag, idx);
+		return SmartDriverUtil.findWebElementNth(getWebElement(), elementTag, idx);
 	}
 
 	/**
@@ -174,7 +175,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching element or null
 	 */
 	default WebElement findWebElementNth(final TagTypeSelenium elementTag, final By by, final int idx) {
-		return getHelper().findWebElementNth(getWebElement(), elementTag, by, idx);
+		return SmartDriverUtil.findWebElementNth(getWebElement(), elementTag, by, idx);
 	}
 
 	/**
@@ -184,7 +185,7 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching elements.
 	 */
 	default List<WebElement> findWebElements(final TagTypeSelenium elementTag) {
-		return getHelper().findWebElements(getWebElement(), elementTag);
+		return SmartDriverUtil.findWebElements(getWebElement(), elementTag);
 	}
 
 	/**
@@ -195,6 +196,6 @@ public interface ContainerWithChildren extends SElement {
 	 * @return the matching elements.
 	 */
 	default List<WebElement> findWebElements(final TagTypeSelenium elementTag, final By by) {
-		return getHelper().findWebElements(getWebElement(), elementTag, by);
+		return SmartDriverUtil.findWebElements(getWebElement(), elementTag, by);
 	}
 }

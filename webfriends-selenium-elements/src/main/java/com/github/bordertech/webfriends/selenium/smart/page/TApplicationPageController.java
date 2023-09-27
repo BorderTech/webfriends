@@ -1,9 +1,7 @@
 package com.github.bordertech.webfriends.selenium.smart.page;
 
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
 import com.github.bordertech.webfriends.pageobject.ApplicationPageController;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 
 /**
  * Application controller backed by the smart selenium drivers.
@@ -55,13 +53,6 @@ public abstract class TApplicationPageController<T extends TPageObject> implemen
 	 */
 	public SmartDriver getDriver() {
 		return driver;
-	}
-
-	/**
-	 * @return the smart helper
-	 */
-	public SmartHelperProvider getHelper() {
-		return SmartHelper.getProvider();
 	}
 
 	/**

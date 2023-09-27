@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
-import com.github.bordertech.webfriends.selenium.element.SElement;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
+import com.github.bordertech.webfriends.selenium.element.SElement;
+import com.github.bordertech.webfriends.selenium.smart.driver.ElementUtil;
 
 /**
  * Selenium element tag.
@@ -37,7 +37,7 @@ public abstract class AbstractTag<T extends SElement> implements TagTypeSelenium
 	 */
 	protected String getXPathRelative() {
 		if (xpathRelative == null) {
-			xpathRelative = SmartHelper.getProvider().buildElementQualifierXpath(getTagName(), getQualifiers(), true);
+			xpathRelative = ElementUtil.buildElementQualifierXpath(getTagName(), getQualifiers(), true);
 		}
 		return xpathRelative;
 	}
@@ -47,7 +47,7 @@ public abstract class AbstractTag<T extends SElement> implements TagTypeSelenium
 	 */
 	protected String getXPathRoot() {
 		if (xpathRoot == null) {
-			xpathRoot = SmartHelper.getProvider().buildElementQualifierXpath(getTagName(), getQualifiers(), false);
+			xpathRoot = ElementUtil.buildElementQualifierXpath(getTagName(), getQualifiers(), false);
 		}
 		return xpathRoot;
 	}

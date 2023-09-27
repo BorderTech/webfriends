@@ -25,18 +25,10 @@ public final class DriverCache {
 		String key = driverType.getDriverTypeName();
 		FriendDriver driver = POOL.get(key);
 		if (driver == null) {
-			driver = createDriver(driverType);
+			driver = DriverFactory.createDriverInstance(driverType);
 			POOL.put(key, driver);
 		}
 		return driver;
-	}
-
-	/**
-	 * @param type the driver type to create
-	 * @return the driver instance
-	 */
-	public static FriendDriver createDriver(final WebDriverType type) {
-		return Helper.getProvider().createDriverInstance(type);
 	}
 
 	/**

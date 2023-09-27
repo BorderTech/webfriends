@@ -5,6 +5,7 @@ import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChi
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagDialog;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -20,7 +21,7 @@ public class SDialog extends AbstractSElement implements HDialog,
 
 	@Override
 	public String getDialogTitle() {
-		return getDriver().findWebFriend(SeleniumTags.HEADER, getWebElement()).getHeaderText();
+		return SmartDriverUtil.findWebFriend(getDriver(), getWebElement(), SeleniumTags.HEADER).getHeaderText();
 	}
 
 	@Override

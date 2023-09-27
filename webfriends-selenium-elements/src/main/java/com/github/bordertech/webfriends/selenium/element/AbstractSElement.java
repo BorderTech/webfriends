@@ -1,5 +1,6 @@
 package com.github.bordertech.webfriends.selenium.element;
 
+import com.github.bordertech.webfriends.selenium.smart.driver.ElementUtil;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
 import org.openqa.selenium.WebElement;
 
@@ -54,7 +55,7 @@ public abstract class AbstractSElement implements SElement {
 			throw new IllegalArgumentException("Backing web driver must be provided.");
 		}
 		// Check element and TAG are a match
-		if (!getHelper().isElementMatch(getWebElement(), getTagType())) {
+		if (!ElementUtil.isElementMatch(getWebElement(), getTagType())) {
 			String name = getWebElement().getTagName();
 			String expected = getTagType().getKey();
 			throw new IllegalStateException("Web element is [" + name + "] but expected [" + expected + "].");

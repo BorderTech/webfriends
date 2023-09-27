@@ -8,6 +8,7 @@ import com.github.bordertech.webfriends.selenium.common.form.category.FormAssoci
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagForm;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 
 /**
@@ -54,7 +55,7 @@ public class SForm extends AbstractSElement implements HForm,
 
 	@Override
 	public List<? extends FormAssociatedSelenium> getAssociated() {
-		return getHelper().getFormAssociated(this);
+		return SmartDriverUtil.findFormAssociated(this);
 	}
 
 	@Override
