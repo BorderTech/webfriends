@@ -1,4 +1,4 @@
-package com.github.bordertech.webfriends.selenium.util.server;
+package com.github.bordertech.webfriends.junit.server;
 
 import com.github.bordertech.lde.api.LdeLauncher;
 

@@ -35,13 +35,6 @@
 			<version>5.5.2</version>
 		</dependency>
 
-		<!-- LDE API -->
-		<dependency>
-			<groupId>com.github.bordertech.lde</groupId>
-			<artifactId>lde-api</artifactId>
-			<version>1.0.4</version>
-		</dependency>
-
 		<!-- Didums -->
 		<dependency>
 			<groupId>com.github.bordertech.didums</groupId>
@@ -61,14 +54,6 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-text</artifactId>
 			<version>1.10.0</version>
-		</dependency>
-
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.2</version>
-			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

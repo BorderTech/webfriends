@@ -1,4 +1,4 @@
-package com.github.bordertech.webfriends.selenium.util.junit;
+package com.github.bordertech.webfriends.junit.listener;
 
 import com.github.bordertech.webfriends.selenium.util.driver.DriverCache;
 import org.junit.runner.Result;
