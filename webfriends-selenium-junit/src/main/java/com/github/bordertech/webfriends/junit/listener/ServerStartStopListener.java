@@ -1,6 +1,6 @@
-package com.github.bordertech.webfriends.selenium.util.junit;
+package com.github.bordertech.webfriends.junit.listener;
 
-import com.github.bordertech.webfriends.selenium.util.server.Launcher;
+import com.github.bordertech.webfriends.junit.server.Launcher;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.notification.RunListener;

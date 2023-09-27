@@ -49,6 +49,7 @@
 		<module>webfriends-pageobject-api</module>
 		<module>webfriends-selenium-util</module>
 		<module>webfriends-selenium-elements</module>
+		<module>webfriends-selenium-junit</module>
 		<module>webfriends-selenium-wc</module>
 	</modules>
 
