@@ -2,7 +2,7 @@ package com.github.bordertech.webfriends.selenium.common.tag;
 
 import com.github.bordertech.webfriends.api.common.tag.TagType;
 import com.github.bordertech.webfriends.selenium.element.SElement;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
+import com.github.bordertech.webfriends.selenium.smart.driver.ElementUtil;
 
 /**
  * Selenium element tag.
@@ -16,7 +16,7 @@ public interface TagTypeSelenium<T extends SElement> extends TagType<T> {
 	 * @return the XPATH to find selenium tag
 	 */
 	default String getXPath(final boolean relative) {
-		return SmartHelper.getProvider().buildElementQualifierXpath(getTagName(), getQualifiers(), relative);
+		return ElementUtil.buildElementQualifierXpath(getTagName(), getQualifiers(), relative);
 	}
 
 }

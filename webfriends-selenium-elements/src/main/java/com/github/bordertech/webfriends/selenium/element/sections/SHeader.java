@@ -6,6 +6,7 @@ import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChi
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagHeader;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 
 /**
  * Selenium header element.
@@ -20,7 +21,7 @@ public class SHeader extends AbstractSElement implements HHeader,
 
 	@Override
 	public String getHeaderText() {
-		HeadingElementSelenium heading = getHelper().findHeading(getDriver(), getWebElement());
+		HeadingElementSelenium heading = SmartDriverUtil.findHeading(getDriver(), getWebElement());
 		return heading == null ? null : heading.getHeadingText();
 	}
 

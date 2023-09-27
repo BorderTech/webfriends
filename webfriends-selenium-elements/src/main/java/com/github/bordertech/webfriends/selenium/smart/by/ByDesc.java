@@ -1,13 +1,12 @@
 package com.github.bordertech.webfriends.selenium.smart.by;
 
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.smart.driver.ConfigSmartProperties;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
-import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * An implementation of By which can find HTML elements by text node and attributes.
@@ -134,11 +133,10 @@ public class ByDesc extends By {
 	 */
 	@Override
 	public List<WebElement> findElements(final SearchContext context) {
-		SmartHelperProvider helper = SmartHelper.getProvider();
 		if (tag == null) {
-			return helper.findElementsWithTextOptions(context, options, relative);
+			return SmartDriverUtil.findElementsWithTextOptions(context, options, relative);
 		} else {
-			return helper.findElementsWithTextOptions(context, tag, options, relative);
+			return SmartDriverUtil.findElementsWithTextOptions(context, tag, options, relative);
 		}
 	}
 

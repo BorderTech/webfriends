@@ -4,12 +4,12 @@ import com.github.bordertech.webfriends.api.element.table.HTable;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTable;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Selenium table element.
@@ -23,7 +23,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public List<? extends SHeaderCell> getColumnHeaders() {
-		return getDriver().findWebFriends(SeleniumTags.TH, this.getWebElement());
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), SeleniumTags.TH);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public List<? extends SRow> getRows() {
-		return getDriver().findWebFriends(SeleniumTags.TR, this.getWebElement());
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), SeleniumTags.TR);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class STable extends AbstractSElement implements HTable {
 
 	@Override
 	public String getTableCaption() {
-		return getDriver().findWebFriend(SeleniumTags.CAPTION, this.getWebElement()).getWebElement().getText();
+		return SmartDriverUtil.findWebFriend(getDriver(), getWebElement(), SeleniumTags.CAPTION).getWebElement().getText();
 	}
 
 	@Override

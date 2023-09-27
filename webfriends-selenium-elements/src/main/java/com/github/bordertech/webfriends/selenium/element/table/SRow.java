@@ -5,11 +5,11 @@ import com.github.bordertech.webfriends.api.element.table.HRow;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTR;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
-import org.apache.commons.collections.CollectionUtils;
-
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.apache.commons.collections.CollectionUtils;
 
 /**
  * Selenium row of cells in a table.
@@ -35,7 +35,6 @@ public class SRow extends AbstractSElement implements HRow {
 			return getRowCellAsData(colIdx);
 		}
 	}
-
 
 	@Override
 	public SHeaderCell getRowCellAsHeader(final int colIdx) {
@@ -66,11 +65,11 @@ public class SRow extends AbstractSElement implements HRow {
 	}
 
 	private List<SHeaderCell> getHeaderCells() {
-		return getDriver().findWebFriends(SeleniumTags.TH, this.getWebElement());
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), SeleniumTags.TH);
 	}
 
 	private List<SDataCell> getDataCells() {
-		return getDriver().findWebFriends(SeleniumTags.TD, this.getWebElement());
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), SeleniumTags.TD);
 	}
 
 }

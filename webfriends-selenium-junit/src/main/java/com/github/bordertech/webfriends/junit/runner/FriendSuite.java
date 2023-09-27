@@ -6,6 +6,7 @@ import com.github.bordertech.webfriends.junit.listener.ServerStartStopListener;
 import com.github.bordertech.webfriends.junit.server.Launcher;
 import com.github.bordertech.webfriends.selenium.util.driver.ConfigUtilProperties;
 import com.github.bordertech.webfriends.selenium.util.driver.DriverCache;
+import com.github.bordertech.webfriends.selenium.util.driver.DriverFactory;
 import com.github.bordertech.webfriends.selenium.util.driver.FriendDriver;
 import com.github.bordertech.webfriends.selenium.util.driver.FriendTestCase;
 import com.github.bordertech.webfriends.selenium.util.driver.type.WebDriverType;
@@ -98,7 +99,7 @@ public class FriendSuite extends Suite {
 			this.driverType = driverType;
 			if (runParallel) {
 				// Unique driver for test class
-				driver = DriverCache.createDriver(driverType);
+				driver = DriverFactory.createDriverInstance(driverType);
 			} else {
 				// Driver from POOL
 				driver = DriverCache.getDriver(driverType);

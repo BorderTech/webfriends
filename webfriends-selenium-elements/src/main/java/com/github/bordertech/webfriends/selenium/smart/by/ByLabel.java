@@ -1,7 +1,6 @@
 package com.github.bordertech.webfriends.selenium.smart.by;
 
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
@@ -75,8 +74,7 @@ public class ByLabel extends By {
 	 */
 	@Override
 	public List<WebElement> findElements(final SearchContext context) {
-		SmartHelperProvider helper = SmartHelper.getProvider();
-		return helper.findLabeledElementsWithText(context, labelText, partialMatch, relative);
+		return SmartDriverUtil.findLabeledElementsWithText(context, labelText, partialMatch, relative);
 	}
 
 }

@@ -2,8 +2,6 @@ package com.github.bordertech.webfriends.selenium.smart.page;
 
 import com.github.bordertech.webfriends.pageobject.PanelObject;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
 import java.util.function.Function;
 import org.openqa.selenium.WebDriver;
 
@@ -48,13 +46,6 @@ public class TPanelObject<T extends TApplicationPageController, P extends TPanel
 	 */
 	protected SmartDriver getDriver() {
 		return app.getDriver();
-	}
-
-	/**
-	 * @return the helper provider
-	 */
-	protected SmartHelperProvider getHelper() {
-		return SmartHelper.getProvider();
 	}
 
 	/**

@@ -3,13 +3,12 @@ package com.github.bordertech.webfriends.selenium.element;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericToken;
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.element.Element;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
+import com.github.bordertech.webfriends.selenium.smart.driver.ElementUtil;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelper;
-import com.github.bordertech.webfriends.selenium.smart.driver.SmartHelperProvider;
 import java.math.BigDecimal;
 import java.util.List;
 import org.openqa.selenium.WebElement;
-import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Element backed by a selenium web element and web driver.
@@ -75,7 +74,7 @@ public interface SElement extends Element {
 	 * @return the value for this attribute
 	 */
 	default String getAttribute(final String key) {
-		return getHelper().getAttribute(getWebElement(), key);
+		return ElementUtil.getAttribute(getWebElement(), key);
 	}
 
 	/**
@@ -85,7 +84,7 @@ public interface SElement extends Element {
 	 * @return true if attribute is string "true" otherwise false
 	 */
 	default boolean getAttributeAsBoolean(final String key) {
-		return getHelper().getAttributeAsBoolean(getWebElement(), key);
+		return ElementUtil.getAttributeAsBoolean(getWebElement(), key);
 	}
 
 	/**
@@ -95,7 +94,7 @@ public interface SElement extends Element {
 	 * @return integer value or null
 	 */
 	default Integer getAttributeAsInteger(final String key) {
-		return getHelper().getAttributeAsInteger(getWebElement(), key);
+		return ElementUtil.getAttributeAsInteger(getWebElement(), key);
 	}
 
 	/**
@@ -105,7 +104,7 @@ public interface SElement extends Element {
 	 * @return big decimal value or null
 	 */
 	default BigDecimal getAttributeAsBigDecimal(final String key) {
-		return getHelper().getAttributeAsBigDecimal(getWebElement(), key);
+		return ElementUtil.getAttributeAsBigDecimal(getWebElement(), key);
 	}
 
 	/**
@@ -115,7 +114,7 @@ public interface SElement extends Element {
 	 * @return attribute value as a list
 	 */
 	default List<String> getAttributeAsList(final String key) {
-		return getHelper().getAttributeAsList(getWebElement(), key);
+		return ElementUtil.getAttributeAsList(getWebElement(), key);
 	}
 
 	/**
@@ -126,7 +125,7 @@ public interface SElement extends Element {
 	 * @return attribute value as a list
 	 */
 	default List<String> getAttributeAsList(final String key, final String delim) {
-		return getHelper().getAttributeAsList(getWebElement(), key);
+		return ElementUtil.getAttributeAsList(getWebElement(), key);
 	}
 
 	/**
@@ -138,7 +137,7 @@ public interface SElement extends Element {
 	 * @return the token or null
 	 */
 	default <T extends AttributeToken> T getAttributeToken(final String key, final T[] tokens) {
-		return getHelper().getAttributeToken(getWebElement(), key, tokens);
+		return ElementUtil.getAttributeToken(getWebElement(), key, tokens);
 	}
 
 	/**
@@ -150,13 +149,6 @@ public interface SElement extends Element {
 	 * @return the token or null
 	 */
 	default <T extends AttributeNumericToken> T getAttributeNumericToken(final String key, final T[] tokens) {
-		return getHelper().getAttributeNumericToken(getWebElement(), key, tokens);
-	}
-
-	/**
-	 * @return the web friends helper
-	 */
-	default SmartHelperProvider getHelper() {
-		return SmartHelper.getProvider();
+		return ElementUtil.getAttributeNumericToken(getWebElement(), key, tokens);
 	}
 }

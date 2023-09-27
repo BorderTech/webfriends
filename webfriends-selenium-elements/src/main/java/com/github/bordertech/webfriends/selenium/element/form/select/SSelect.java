@@ -9,9 +9,9 @@ import com.github.bordertech.webfriends.selenium.common.form.control.FormControl
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
-import org.apache.commons.lang3.StringUtils;
-
+import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriverUtil;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Selenium select element.
@@ -26,7 +26,7 @@ public class SSelect extends AbstractSElement implements HSelect<SOption>, FormC
 
 	@Override
 	public List<SOption> getOptions() {
-		return getHelper().findWebFriends(getDriver(), getWebElement(), SeleniumTags.OPTION);
+		return SmartDriverUtil.findWebFriends(getDriver(), getWebElement(), SeleniumTags.OPTION);
 	}
 
 	@Override
