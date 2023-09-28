@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
-import com.github.bordertech.webfriends.selenium.element.grouping.SOrderedList;
 import com.github.bordertech.webfriends.api.common.tags.TagOrderedList;
 import com.github.bordertech.webfriends.selenium.common.tag.TagListContainerTypeSelenium;
+import com.github.bordertech.webfriends.selenium.element.grouping.SOrderedList;
 
 /**
  * HTML <code>ol</code> ordered list tag.

@@ -3,8 +3,8 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 import com.github.bordertech.webfriends.api.element.embedded.HImage;
 import com.github.bordertech.webfriends.selenium.common.capability.DimensionableSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagImg;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium image element.

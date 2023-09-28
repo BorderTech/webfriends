@@ -6,5 +6,5 @@ package com.github.bordertech.webfriends.api.common.category;
  * Elements like meter and progress are labelable but are not form associated.
  * </p>
  */
-public interface Labelable extends Category {
+public interface LabelableContent extends Category {
 }

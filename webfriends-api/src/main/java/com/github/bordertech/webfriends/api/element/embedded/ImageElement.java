@@ -11,8 +11,9 @@ import com.github.bordertech.webfriends.api.common.tag.TagImageType;
  * Image element.
  */
 public interface ImageElement extends EmbeddedContent, PalpableContent,
-		Dimensionable,
-		EmbeddedContext, NothingContentModel {
+		EmbeddedContext,
+		NothingContentModel,
+		Dimensionable {
 
 	@Override
 	TagImageType getTagType();

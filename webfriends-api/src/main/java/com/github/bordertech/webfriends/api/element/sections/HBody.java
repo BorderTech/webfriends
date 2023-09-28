@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.element.sections;
 
-import com.github.bordertech.webfriends.api.common.category.SectioningRoot;
+import com.github.bordertech.webfriends.api.common.category.SectioningRootContent;
 import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * The body element represents the contents of the document.
  */
-public interface HBody extends SectioningRoot, CustomContext, FlowModel, CustomModel {
+public interface HBody extends SectioningRootContent, CustomContext, FlowModel, CustomModel {
 
 	@Override
 	TagBody getTagType();

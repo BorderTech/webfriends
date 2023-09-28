@@ -1,6 +1,9 @@
 package com.github.bordertech.webfriends.api.element.table;
 
-import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
+import com.github.bordertech.webfriends.api.common.category.FlowContent;
+import com.github.bordertech.webfriends.api.common.category.PalpableContent;
+import com.github.bordertech.webfriends.api.common.context.FlowContext;
+import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
 import com.github.bordertech.webfriends.api.common.tags.TagTable;
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.List;
  * Must be the parent of caption, colgroup, thead, tbody, tr, tfoot and scripting elements.
  * </p>
  */
-public interface HTable extends FlowPalpableElement, ScriptSupportingModel {
+public interface HTable extends FlowContent, PalpableContent, FlowContext, FlowModel, ScriptSupportingModel {
 
 	@Override
 	TagTable getTagType();
@@ -79,7 +82,6 @@ public interface HTable extends FlowPalpableElement, ScriptSupportingModel {
 	 * @return the list of rows
 	 */
 	List<? extends HRow> getRows();
-
 
 	/**
 	 * @return the no data message or null

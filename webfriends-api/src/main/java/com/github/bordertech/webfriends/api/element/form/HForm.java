@@ -2,9 +2,12 @@ package com.github.bordertech.webfriends.api.element.form;
 
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.capability.Autocapitalizable;
-import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
+import com.github.bordertech.webfriends.api.common.category.FlowContent;
+import com.github.bordertech.webfriends.api.common.category.PalpableContent;
+import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.form.category.FormAssociated;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
+import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.tags.TagForm;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
@@ -15,7 +18,10 @@ import org.apache.commons.lang3.StringUtils;
  * The form element represents a collection of form-associated elements, some of which can represent editable values
  * that can be submitted to a server for processing.
  */
-public interface HForm extends FlowPalpableElement, Autocapitalizable, CustomModel {
+public interface HForm extends FlowContent, PalpableContent,
+		FlowContext,
+		FlowModel, CustomModel,
+		Autocapitalizable {
 
 	/**
 	 * Autocomplete type.

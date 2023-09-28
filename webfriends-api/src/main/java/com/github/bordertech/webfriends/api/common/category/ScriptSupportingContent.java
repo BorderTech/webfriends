@@ -7,5 +7,5 @@ package com.github.bordertech.webfriends.api.common.category;
  * scripts, either by containing or specifying script code directly, or by specifying data that will be used by scripts.
  * </p>
  */
-public interface ScriptSupporting extends Category {
+public interface ScriptSupportingContent extends Category {
 }

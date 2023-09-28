@@ -2,7 +2,7 @@ package com.github.bordertech.webfriends.api.element.grouping;
 
 import com.github.bordertech.webfriends.api.common.category.FlowContent;
 import com.github.bordertech.webfriends.api.common.category.PalpableContent;
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
@@ -22,7 +22,8 @@ import java.util.List;
  *
  * @param <T> the list child item type
  */
-public interface ListContainerElement<T extends ListItemElement> extends FlowContent, PalpableContent, FlowContext,
+public interface ListContainerElement<T extends ListItemElement> extends FlowContent, PalpableContent,
+		FlowContext,
 		ScriptSupportingModel, CustomModel {
 
 	@Override
@@ -35,7 +36,7 @@ public interface ListContainerElement<T extends ListItemElement> extends FlowCon
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupporting.class, ListItemElement.class);
+		return Arrays.asList(ScriptSupportingContent.class, ListItemElement.class);
 	}
 
 }

@@ -30,7 +30,9 @@ import org.apache.commons.lang3.StringUtils;
  * </p>
  */
 public interface MediaElement extends EmbeddedContent, InteractiveContent, PalpableContent,
-		EmbeddedContext, TransparentModel, CustomModel, Focusable {
+		EmbeddedContext,
+		TransparentModel, CustomModel,
+		Focusable {
 
 	/**
 	 * Pre-load media type.

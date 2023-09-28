@@ -7,7 +7,6 @@ import com.github.bordertech.webfriends.selenium.common.form.control.FormTextCon
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputFileUpload;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
-
 import java.util.List;
 
 /**

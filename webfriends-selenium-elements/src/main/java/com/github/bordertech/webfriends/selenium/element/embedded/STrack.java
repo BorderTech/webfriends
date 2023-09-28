@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.selenium.element.embedded;
 
 import com.github.bordertech.webfriends.api.element.embedded.HTrack;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTrack;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium track element.

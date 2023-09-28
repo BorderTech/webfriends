@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.selenium.element.form.input;
 
 import com.github.bordertech.webfriends.api.element.form.input.HUrlField;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputUrl;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium URL input element.

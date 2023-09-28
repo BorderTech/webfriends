@@ -3,8 +3,8 @@ package com.github.bordertech.webfriends.selenium.element.form.select;
 import com.github.bordertech.webfriends.api.element.form.select.HOption;
 import com.github.bordertech.webfriends.selenium.common.form.capability.DisableableSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagOption;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium option element.

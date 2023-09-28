@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.api.element.table;
 
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.model.ScriptSupportingModel;
@@ -56,7 +56,7 @@ public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, Cust
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupporting.class,
+		return Arrays.asList(ScriptSupportingContent.class,
 				CellElement.class
 		);
 	}

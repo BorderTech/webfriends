@@ -1,7 +1,10 @@
 package com.github.bordertech.webfriends.api.element.form.other;
 
-import com.github.bordertech.webfriends.api.common.combo.PhrasingPalpableElement;
+import com.github.bordertech.webfriends.api.common.category.PalpableContent;
+import com.github.bordertech.webfriends.api.common.category.PhrasingContent;
+import com.github.bordertech.webfriends.api.common.context.PhrasingContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
+import com.github.bordertech.webfriends.api.common.model.PhrasingModel;
 import com.github.bordertech.webfriends.api.common.tags.TagMeter;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.math.BigDecimal;
@@ -11,7 +14,9 @@ import java.util.List;
 /**
  * Meter element.
  */
-public interface HMeter extends PhrasingPalpableElement, CustomModel {
+public interface HMeter extends PhrasingContent, PalpableContent,
+		PhrasingContext,
+		PhrasingModel, CustomModel {
 
 	@Override
 	TagMeter getTagType();

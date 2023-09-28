@@ -12,7 +12,9 @@ import java.util.List;
 /**
  * Option element.
  */
-public interface HOption extends NoCategory, CustomContext, TextModel,
+public interface HOption extends NoCategory,
+		CustomContext,
+		TextModel,
 		Disableable {
 
 	@Override
