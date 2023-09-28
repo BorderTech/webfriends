@@ -2,8 +2,8 @@ package com.github.bordertech.webfriends.selenium.element.sections;
 
 import com.github.bordertech.webfriends.api.element.sections.HHeading4;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagH4;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium H4 element.

@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.tags.TagMenu;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
@@ -24,6 +24,6 @@ public interface HMenu<T extends HMenuItem> extends ListContainerElement<T> {
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupporting.class, HMenuItem.class);
+		return Arrays.asList(ScriptSupportingContent.class, HMenuItem.class);
 	}
 }

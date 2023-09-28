@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.tags.TagUnorderedList;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
@@ -18,6 +18,6 @@ public interface HUnorderedList<T extends HUnorderedListItem> extends ListContai
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupporting.class, HUnorderedListItem.class);
+		return Arrays.asList(ScriptSupportingContent.class, HUnorderedListItem.class);
 	}
 }

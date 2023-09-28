@@ -1,12 +1,12 @@
 package com.github.bordertech.webfriends.selenium.element.form;
 
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.smart.by.ByLabel;
+import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.AbstractTestElement;
+import com.github.bordertech.webfriends.selenium.smart.by.ByLabel;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 
 /**
  * Test {@link SLabel} with nested element.

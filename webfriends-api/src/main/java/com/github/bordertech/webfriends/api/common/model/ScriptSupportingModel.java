@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.common.model;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ public interface ScriptSupportingModel extends AllowedModel {
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupporting.class);
+		return Arrays.asList(ScriptSupportingContent.class);
 	}
 
 }

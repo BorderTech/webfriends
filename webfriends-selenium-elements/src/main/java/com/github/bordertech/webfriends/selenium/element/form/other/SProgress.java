@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.form.other;
 
 import com.github.bordertech.webfriends.api.element.form.other.HProgress;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
+import com.github.bordertech.webfriends.selenium.common.tags.STagProgress;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.math.BigDecimal;
-import com.github.bordertech.webfriends.selenium.common.tags.STagProgress;
 
 /**
  * Selenium progress element.

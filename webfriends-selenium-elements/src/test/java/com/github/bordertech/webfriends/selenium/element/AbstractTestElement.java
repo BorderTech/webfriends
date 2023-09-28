@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.element;
 
+import com.github.bordertech.webfriends.junit.runner.AbstractFriendTestCase;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.smart.driver.SmartDriver;
-import com.github.bordertech.webfriends.junit.runner.AbstractFriendTestCase;
 import org.junit.Before;
 
 /**

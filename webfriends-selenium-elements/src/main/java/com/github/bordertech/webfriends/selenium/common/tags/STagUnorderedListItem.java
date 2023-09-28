@@ -1,8 +1,8 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
+import com.github.bordertech.webfriends.api.common.tags.TagUnorderedListItem;
 import com.github.bordertech.webfriends.selenium.common.tag.TagListItemTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.grouping.SUnorderedListItem;
-import com.github.bordertech.webfriends.api.common.tags.TagUnorderedListItem;
 
 /**
  * HTML <code>li</code> list item tag.

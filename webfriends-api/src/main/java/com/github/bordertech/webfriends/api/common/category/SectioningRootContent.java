@@ -6,5 +6,5 @@ package com.github.bordertech.webfriends.api.common.category;
  * The sections and headings inside these elements do not contribute to the outlines of their ancestors.
  * </p>
  */
-public interface SectioningRoot extends Category {
+public interface SectioningRootContent extends Category {
 }

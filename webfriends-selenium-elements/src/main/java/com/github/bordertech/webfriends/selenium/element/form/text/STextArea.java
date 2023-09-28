@@ -3,8 +3,8 @@ package com.github.bordertech.webfriends.selenium.element.form.text;
 import com.github.bordertech.webfriends.api.element.form.text.HTextArea;
 import com.github.bordertech.webfriends.selenium.common.form.control.FormTextControlSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTextArea;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium TextArea element.

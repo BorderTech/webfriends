@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.api.element.form.select;
 
 import com.github.bordertech.webfriends.api.common.category.NoCategory;
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
@@ -14,7 +14,9 @@ import java.util.List;
 /**
  * Group of options with a common label.
  */
-public interface HOptGroup extends NoCategory, CustomContext, ScriptSupportingModel, CustomModel,
+public interface HOptGroup extends NoCategory,
+		CustomContext,
+		ScriptSupportingModel, CustomModel,
 		Disableable {
 
 	@Override
@@ -37,7 +39,7 @@ public interface HOptGroup extends NoCategory, CustomContext, ScriptSupportingMo
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(HOption.class, ScriptSupporting.class);
+		return Arrays.asList(HOption.class, ScriptSupportingContent.class);
 	}
 
 }

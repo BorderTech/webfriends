@@ -2,16 +2,19 @@ package com.github.bordertech.webfriends.api.element.form;
 
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.capability.Focusable;
+import com.github.bordertech.webfriends.api.common.category.FlowContent;
 import com.github.bordertech.webfriends.api.common.category.InteractiveContent;
-import com.github.bordertech.webfriends.api.common.category.Labelable;
+import com.github.bordertech.webfriends.api.common.category.LabelableContent;
+import com.github.bordertech.webfriends.api.common.category.PalpableContent;
 import com.github.bordertech.webfriends.api.common.category.PhrasingContent;
-import com.github.bordertech.webfriends.api.common.combo.FlowPalpableElement;
+import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.form.capability.Autofocusable;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.form.category.AutocapitalizeInheriting;
 import com.github.bordertech.webfriends.api.common.form.category.Listed;
 import com.github.bordertech.webfriends.api.common.form.category.Submittable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
+import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.tags.TagButton;
 import com.github.bordertech.webfriends.api.element.Element;
 import java.util.Arrays;
@@ -21,9 +24,10 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Button element.
  */
-public interface HButton extends FlowPalpableElement, PhrasingContent, InteractiveContent,
-		CustomModel,
-		Listed, Labelable, Submittable, AutocapitalizeInheriting,
+public interface HButton extends FlowContent, PalpableContent, PhrasingContent, InteractiveContent, LabelableContent,
+		FlowContext,
+		FlowModel, CustomModel,
+		Listed, Submittable, AutocapitalizeInheriting,
 		Autofocusable, Disableable, Focusable {
 
 	enum ButtonType implements AttributeToken {

@@ -1,13 +1,15 @@
 package com.github.bordertech.webfriends.api.element.interactive;
 
-import com.github.bordertech.webfriends.api.common.category.SectioningRoot;
-import com.github.bordertech.webfriends.api.common.combo.FlowElement;
+import com.github.bordertech.webfriends.api.common.category.FlowContent;
+import com.github.bordertech.webfriends.api.common.category.SectioningRootContent;
+import com.github.bordertech.webfriends.api.common.context.FlowContext;
+import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.tags.TagDialog;
 
 /**
  * Dialog element.
  */
-public interface HDialog extends FlowElement, SectioningRoot {
+public interface HDialog extends FlowContent, SectioningRootContent, FlowContext, FlowModel {
 
 	@Override
 	TagDialog getTagType();

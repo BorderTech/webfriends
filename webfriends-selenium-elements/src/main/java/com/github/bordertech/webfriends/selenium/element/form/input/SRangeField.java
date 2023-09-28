@@ -7,8 +7,8 @@ import com.github.bordertech.webfriends.selenium.common.form.capability.Stepable
 import com.github.bordertech.webfriends.selenium.common.form.capability.SuggestableSelenium;
 import com.github.bordertech.webfriends.selenium.common.form.capability.ValueNumberSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputRange;
+import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
  * Selenium range element.

@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.element.form.select;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupporting;
+import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.form.capability.Autocompleteable;
 import com.github.bordertech.webfriends.api.common.form.capability.Sizeable;
 import com.github.bordertech.webfriends.api.common.form.capability.ValueMulti;
@@ -17,7 +17,8 @@ import java.util.List;
  *
  * @param <T> the option type
  */
-public interface HSelect<T extends HOption> extends FormControl, ScriptSupportingModel, CustomModel,
+public interface HSelect<T extends HOption> extends FormControl,
+		ScriptSupportingModel, CustomModel,
 		Autocompleteable, Sizeable, ValueMulti {
 
 	@Override
@@ -67,6 +68,6 @@ public interface HSelect<T extends HOption> extends FormControl, ScriptSupportin
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(HOption.class, HOptGroup.class, ScriptSupporting.class);
+		return Arrays.asList(HOption.class, HOptGroup.class, ScriptSupportingContent.class);
 	}
 }

@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
-import com.github.bordertech.webfriends.selenium.element.sections.HeadingElementSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.TagHeadingTypeSelenium;
+import com.github.bordertech.webfriends.selenium.element.sections.HeadingElementSelenium;
 
 /**
  * Selenium heading element tag.

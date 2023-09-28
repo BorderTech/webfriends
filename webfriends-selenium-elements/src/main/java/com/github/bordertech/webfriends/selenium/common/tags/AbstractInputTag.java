@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
-import com.github.bordertech.webfriends.selenium.element.form.input.InputElementSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.TagInputTypeSelenium;
+import com.github.bordertech.webfriends.selenium.element.form.input.InputElementSelenium;
 
 /**
  * Selenium element tag.

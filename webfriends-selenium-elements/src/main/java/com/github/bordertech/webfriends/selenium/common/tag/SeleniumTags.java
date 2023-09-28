@@ -63,7 +63,6 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagTrack;
 import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedList;
 import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedListItem;
 import com.github.bordertech.webfriends.selenium.common.tags.STagVideo;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

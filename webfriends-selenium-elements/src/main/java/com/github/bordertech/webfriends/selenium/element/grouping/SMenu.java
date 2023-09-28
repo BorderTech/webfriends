@@ -2,9 +2,9 @@ package com.github.bordertech.webfriends.selenium.element.grouping;
 
 import com.github.bordertech.webfriends.api.element.grouping.HMenu;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
+import com.github.bordertech.webfriends.selenium.common.tags.STagMenu;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 import java.util.List;
-import com.github.bordertech.webfriends.selenium.common.tags.STagMenu;
 
 /**
  * Menu element.
