@@ -4,6 +4,9 @@ import com.github.bordertech.webfriends.api.element.Element;
 
 /**
  * Element that can be spell checked.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#spelling-and-grammar-checking">HTML Spec</a>
  */
 public interface SpellCheckable extends Element {
 

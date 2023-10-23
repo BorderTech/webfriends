@@ -8,6 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Input element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-input-element">HTML Spec</a>
  */
 public interface InputElement extends FormControl, NothingContentModel {
 

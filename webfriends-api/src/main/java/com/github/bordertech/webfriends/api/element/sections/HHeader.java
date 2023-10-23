@@ -12,6 +12,9 @@ import java.util.List;
 
 /**
  * Header element represents a group of introductory or navigational aids.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-header-element">HTML Spec</a>
  */
 public interface HHeader extends FlowContent, PalpableContent, FlowContext, FlowModel, CustomModel {
 

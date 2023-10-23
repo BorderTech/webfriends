@@ -4,6 +4,9 @@ import com.github.bordertech.webfriends.api.element.Element;
 
 /**
  * Input element that has a single value.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#value">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#concept-fe-value">HTML Spec</a>
  */
 public interface ValueSingle extends Element {
 

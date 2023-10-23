@@ -8,6 +8,9 @@ import java.util.List;
  * The HTML element tag type.
  *
  * @param <T> the element type
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Glossary/Tag">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#syntax-tags">HTML Spec</a>
  */
 public interface TagType<T extends Element> {
 

@@ -1,23 +1,21 @@
-package com.github.bordertech.webfriends.selenium.element.grouping;
+package com.github.bordertech.webfriends.selenium.element.interactive;
 
-import com.github.bordertech.webfriends.api.element.grouping.HDetails;
+import com.github.bordertech.webfriends.api.element.interactive.HSummary;
 import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithButtons;
 import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
-import com.github.bordertech.webfriends.selenium.common.tags.STagDetails;
+import com.github.bordertech.webfriends.selenium.common.tags.STagSummary;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;
 
 /**
- * Selenium details element.
+ * Selenium summary element.
  */
-public class SDetails extends AbstractSElement implements HDetails,
+public class SSummary extends AbstractSElement implements HSummary,
 		ContainerWithChildren, ContainerWithButtons {
 
 	@Override
-	public STagDetails getTagType() {
-		return SeleniumTags.DETAILS;
+	public STagSummary getTagType() {
+		return SeleniumTags.SUMMARY;
 	}
-
-
 
 }

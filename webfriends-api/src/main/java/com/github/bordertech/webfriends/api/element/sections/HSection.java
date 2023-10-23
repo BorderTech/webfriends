@@ -9,6 +9,9 @@ import com.github.bordertech.webfriends.api.common.tags.TagSection;
 
 /**
  * A section element represents a generic section of the document.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-section-element">HTML Spec</a>
  */
 public interface HSection extends FlowContent, PalpableContent, SectioningContent, FlowContext, FlowModel {
 

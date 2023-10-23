@@ -14,6 +14,9 @@ import java.util.List;
 
 /**
  * Data list element (ie suggestions).
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-datalist-element">HTML Spec</a>
  */
 public interface HDatalist extends PhrasingContent, PalpableContent,
 		PhrasingContext,

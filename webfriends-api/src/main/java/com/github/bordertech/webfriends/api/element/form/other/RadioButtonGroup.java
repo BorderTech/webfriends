@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * Radio button group.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#defining_a_radio_group">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#radio-button-group">HTML Spec</a>
  */
 public interface RadioButtonGroup {
 

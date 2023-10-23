@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Progress element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-progress-element">HTML Spec</a>
  */
 public interface HProgress extends PhrasingContent, PalpableContent,
 		PhrasingContext,

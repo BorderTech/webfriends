@@ -5,6 +5,9 @@ import com.github.bordertech.webfriends.api.common.tags.TagInputDateTime;
 
 /**
  * Date and time input element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#local-date-and-time-state-(type=datetime-local)">HTML Spec</a>
  */
 public interface HDatetimeField extends InputElement, FormDateControl {
 

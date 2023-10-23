@@ -1,22 +1,19 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
 import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
-import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
-import com.github.bordertech.webfriends.api.common.tags.TagOrderedList;
-import com.github.bordertech.webfriends.api.element.Element;
-import java.util.Arrays;
-import java.util.List;
 import org.apache.commons.lang3.StringUtils;
+import com.github.bordertech.webfriends.api.common.tags.TagOL;
 
 /**
  * Ordered list element.
  *
- * @param <T> the ordered list item type
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-ol-element">HTML Spec</a>
  */
-public interface HOrderedList<T extends HOrderedListItem> extends ListContainerElement<T> {
+public interface HOrderedList extends ListContainerElement {
 
 	@Override
-	TagOrderedList getTagType();
+	TagOL getTagType();
 
 	/**
 	 * List marker type.
@@ -79,10 +76,5 @@ public interface HOrderedList<T extends HOrderedListItem> extends ListContainerE
 	 * @return the kind of list marker or null for default
 	 */
 	MarkerType getMarkerType();
-
-	@Override
-	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupportingContent.class, HOrderedListItem.class);
-	}
 
 }

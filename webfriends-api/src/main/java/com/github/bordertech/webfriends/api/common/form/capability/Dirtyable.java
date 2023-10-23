@@ -4,6 +4,8 @@ import com.github.bordertech.webfriends.api.element.Element;
 
 /**
  * Element that can have a dirty state.
+ *
+ * @see <a href="https://html.spec.whatwg.org/#concept-fe-dirty">HTML Spec</a>
  */
 public interface Dirtyable extends Element {
 

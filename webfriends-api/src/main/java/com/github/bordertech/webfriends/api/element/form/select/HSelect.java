@@ -16,6 +16,9 @@ import java.util.List;
  * Select element.
  *
  * @param <T> the option type
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-select-element">HTML Spec</a>
  */
 public interface HSelect<T extends HOption> extends FormControl,
 		ScriptSupportingModel, CustomModel,

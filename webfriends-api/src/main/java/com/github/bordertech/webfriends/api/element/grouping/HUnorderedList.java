@@ -1,23 +1,16 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
-import com.github.bordertech.webfriends.api.common.tags.TagUnorderedList;
-import com.github.bordertech.webfriends.api.element.Element;
-import java.util.Arrays;
-import java.util.List;
+import com.github.bordertech.webfriends.api.common.tags.TagUL;
 
 /**
  * List (unordered) element.
  *
- * @param <T> the list item type
+ * @see <a href="https://html.spec.whatwg.org/#the-ul-element">Web Docs</a>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">HTML Spec</a>
  */
-public interface HUnorderedList<T extends HUnorderedListItem> extends ListContainerElement<T> {
+public interface HUnorderedList extends ListContainerElement {
 
 	@Override
-	TagUnorderedList getTagType();
+	TagUL getTagType();
 
-	@Override
-	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupportingContent.class, HUnorderedListItem.class);
-	}
 }

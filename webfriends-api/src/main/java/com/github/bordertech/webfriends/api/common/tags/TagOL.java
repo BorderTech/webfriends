@@ -8,7 +8,7 @@ import com.github.bordertech.webfriends.api.element.grouping.HOrderedList;
  *
  * @param <T> the element type
  */
-public interface TagOrderedList<T extends HOrderedList> extends TagListContainerType<T> {
+public interface TagOL<T extends HOrderedList> extends TagListContainerType<T> {
 
 	@Override
 	default String getTagName() {

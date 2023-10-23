@@ -8,6 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * TextArea element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-textarea-element">HTML Spec</a>
  */
 public interface HTextArea extends FormTextControl, TextModel {
 

@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Group of options with a common label.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-optgroup-element">HTML Spec</a>
  */
 public interface HOptGroup extends NoCategory,
 		CustomContext,

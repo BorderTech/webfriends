@@ -21,13 +21,15 @@ import org.apache.commons.lang3.StringUtils;
  * Interactive and Palpable content if the element has a controls attribute.
  * </p>
  * <p>
- * If the element has a src attribute: zero or more track elements, then transparent model, but with no media element
- * descendants.
+ * If the element has a src attribute: zero or more track elements, then transparent model, but with no media element descendants.
  * </p>
  * <p>
- * If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then
- * transparent model, but with no media element descendants.
+ * If the element does not have a src attribute: zero or more source elements, then zero or more track elements, then transparent model, but with no
+ * media element descendants.
  * </p>
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#media-element">HTML Spec</a>
  */
 public interface MediaElement extends EmbeddedContent, InteractiveContent, PalpableContent,
 		EmbeddedContext,

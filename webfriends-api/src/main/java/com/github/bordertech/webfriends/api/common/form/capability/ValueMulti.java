@@ -4,6 +4,9 @@ import java.util.List;
 
 /**
  * Element that allows the user to specify more than one value.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#value">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#concept-fe-value">HTML Spec</a>
  */
 public interface ValueMulti extends ValueSingle {
 

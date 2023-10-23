@@ -20,9 +20,8 @@ import java.util.List;
  * Content model is zero or more li and script-supporting elements.
  * </p>
  *
- * @param <T> the list child item type
  */
-public interface ListContainerElement<T extends ListItemElement> extends FlowContent, PalpableContent,
+public interface ListContainerElement extends FlowContent, PalpableContent,
 		FlowContext,
 		ScriptSupportingModel, CustomModel {
 
@@ -32,11 +31,11 @@ public interface ListContainerElement<T extends ListItemElement> extends FlowCon
 	/**
 	 * @return the list of items
 	 */
-	List<T> getListItems();
+	List<? extends HListItem> getListItems();
 
 	@Override
 	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupportingContent.class, ListItemElement.class);
+		return Arrays.asList(ScriptSupportingContent.class, HListItem.class);
 	}
 
 }

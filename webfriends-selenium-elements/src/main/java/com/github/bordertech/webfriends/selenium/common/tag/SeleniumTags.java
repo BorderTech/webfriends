@@ -37,15 +37,15 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagInputSearch;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputTelephone;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputText;
 import com.github.bordertech.webfriends.selenium.common.tags.STagInputUrl;
+import com.github.bordertech.webfriends.selenium.common.tags.STagLI;
 import com.github.bordertech.webfriends.selenium.common.tags.STagLabel;
 import com.github.bordertech.webfriends.selenium.common.tags.STagMenu;
-import com.github.bordertech.webfriends.selenium.common.tags.STagMenuItem;
 import com.github.bordertech.webfriends.selenium.common.tags.STagMeter;
 import com.github.bordertech.webfriends.selenium.common.tags.STagNav;
 import com.github.bordertech.webfriends.selenium.common.tags.STagOptGroup;
 import com.github.bordertech.webfriends.selenium.common.tags.STagOption;
-import com.github.bordertech.webfriends.selenium.common.tags.STagOrderedList;
-import com.github.bordertech.webfriends.selenium.common.tags.STagParagraph;
+import com.github.bordertech.webfriends.selenium.common.tags.STagOL;
+import com.github.bordertech.webfriends.selenium.common.tags.STagP;
 import com.github.bordertech.webfriends.selenium.common.tags.STagProgress;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSection;
 import com.github.bordertech.webfriends.selenium.common.tags.STagSelect;
@@ -60,8 +60,7 @@ import com.github.bordertech.webfriends.selenium.common.tags.STagTable;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTextArea;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTitle;
 import com.github.bordertech.webfriends.selenium.common.tags.STagTrack;
-import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedList;
-import com.github.bordertech.webfriends.selenium.common.tags.STagUnorderedListItem;
+import com.github.bordertech.webfriends.selenium.common.tags.STagUL;
 import com.github.bordertech.webfriends.selenium.common.tags.STagVideo;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -118,15 +117,14 @@ public final class SeleniumTags {
 	public static final STagInputText INPUT_TEXT = new STagInputText();
 	public static final STagInputUrl INPUT_URL = new STagInputUrl();
 	public static final STagLabel LABEL = new STagLabel();
-	public static final STagUnorderedListItem LISTITEM = new STagUnorderedListItem();
+	public static final STagLI LI = new STagLI();
 	public static final STagMenu MENU = new STagMenu();
-	public static final STagMenuItem MENUITEM = new STagMenuItem();
 	public static final STagMeter METER = new STagMeter();
 	public static final STagNav NAV = new STagNav();
-	public static final STagOrderedList OL = new STagOrderedList();
+	public static final STagOL OL = new STagOL();
 	public static final STagOptGroup OPTGROUP = new STagOptGroup();
 	public static final STagOption OPTION = new STagOption();
-	public static final STagParagraph P = new STagParagraph();
+	public static final STagP P = new STagP();
 	public static final STagProgress PROGRESS = new STagProgress();
 	public static final STagSection SECTION = new STagSection();
 	public static final STagSelect SELECT = new STagSelect();
@@ -141,7 +139,7 @@ public final class SeleniumTags {
 	public static final STagTitle TITLE = new STagTitle();
 	public static final STagTR TR = new STagTR();
 	public static final STagTrack TRACK = new STagTrack();
-	public static final STagUnorderedList UL = new STagUnorderedList();
+	public static final STagUL UL = new STagUL();
 	public static final STagVideo VIDEO = new STagVideo();
 
 	private static final List<TagHeadingTypeSelenium> HEADING_TAGS = Arrays.asList(H1, H2, H3, H4, H5, H6);
@@ -150,7 +148,7 @@ public final class SeleniumTags {
 			HEAD, HEADER, HTML, IMG, INPUT_CHECKBOX, INPUT_COLOR, INPUT_COLOR, INPUT_DATE, INPUT_DATETIME,
 			INPUT_EMAIL, INPUT_FILEUPLOAD, INPUT_NUMBER, INPUT_PASSWORD, INPUT_RADIO, INPUT_RADIO,
 			INPUT_RANGE, INPUT_SEARCH, INPUT_TELEPHONE, INPUT_TEXT, INPUT_URL,
-			LABEL, LISTITEM, MENU, METER, NAV, OL, OPTGROUP, OPTION, P, PROGRESS, SECTION, SELECT, SOURCE, SPAN, SUMMARY, STRONG,
+			LABEL, LI, MENU, METER, NAV, OL, OPTGROUP, OPTION, P, PROGRESS, SECTION, SELECT, SOURCE, SPAN, SUMMARY, STRONG,
 			TABLE, TD, TEXTAREA, TH, TITLE, TR, TRACK,
 			UL, VIDEO
 	);

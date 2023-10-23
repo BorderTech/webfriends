@@ -9,6 +9,9 @@ import com.github.bordertech.webfriends.api.common.tags.TagInputRange;
 
 /**
  * Input range element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#range-state-(type=range)">HTML Spec</a>
  */
 public interface HRangeField extends InputElement,
 		Autocompleteable, Suggestable, MinMaxConstrainableNumber, Stepable, ValueNumber {
