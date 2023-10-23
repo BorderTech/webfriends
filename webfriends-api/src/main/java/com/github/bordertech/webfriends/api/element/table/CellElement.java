@@ -12,7 +12,6 @@ import java.util.List;
  * <p>
  * Must be the child of a tr element.
  * </p>
- *
  */
 public interface CellElement extends Element, CustomContext, FlowModel {
 

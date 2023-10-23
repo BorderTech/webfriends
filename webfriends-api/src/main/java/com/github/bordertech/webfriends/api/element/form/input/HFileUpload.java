@@ -7,6 +7,9 @@ import java.util.List;
 
 /**
  * File upload element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#file-upload-state-(type=file)">HTML Spec</a>
  */
 public interface HFileUpload extends InputElement, ValueMulti {
 

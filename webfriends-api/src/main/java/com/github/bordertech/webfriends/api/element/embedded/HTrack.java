@@ -12,6 +12,9 @@ import org.apache.commons.lang3.StringUtils;
  * <p>
  * Child of a media element.
  * </p>
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-track-element">HTML Spec</a>
  */
 public interface HTrack extends NoCategory, MediaElementContext, NothingContentModel {
 

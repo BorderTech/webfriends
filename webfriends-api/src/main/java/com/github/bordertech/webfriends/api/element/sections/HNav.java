@@ -9,6 +9,9 @@ import com.github.bordertech.webfriends.api.common.tags.TagNav;
 
 /**
  * Nav element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-nav-element">HTML Spec</a>
  */
 public interface HNav extends FlowContent, PalpableContent, SectioningContent, FlowContext, FlowModel {
 

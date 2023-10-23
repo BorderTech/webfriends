@@ -1,6 +1,6 @@
-package com.github.bordertech.webfriends.selenium.element.grouping;
+package com.github.bordertech.webfriends.selenium.element.textlevel;
 
-import com.github.bordertech.webfriends.api.element.grouping.HStrong;
+import com.github.bordertech.webfriends.api.element.textlevel.HStrong;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tags.STagStrong;
 import com.github.bordertech.webfriends.selenium.element.AbstractSElement;

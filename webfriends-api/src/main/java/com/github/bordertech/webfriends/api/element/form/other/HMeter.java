@@ -13,6 +13,9 @@ import java.util.List;
 
 /**
  * Meter element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-meter-element">HTML Spec</a>
  */
 public interface HMeter extends PhrasingContent, PalpableContent,
 		PhrasingContext,

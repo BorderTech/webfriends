@@ -11,6 +11,9 @@ import java.util.List;
 
 /**
  * The head element represents a collection of metadata for the Document.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-head-element">HTML Spec</a>
  */
 public interface HHead extends NoCategory, CustomContext, MetadataContentModel {
 

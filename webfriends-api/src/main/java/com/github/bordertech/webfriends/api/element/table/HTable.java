@@ -13,6 +13,9 @@ import java.util.List;
  * <p>
  * Must be the parent of caption, colgroup, thead, tbody, tr, tfoot and scripting elements.
  * </p>
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-table-element">HTML Spec</a>
  */
 public interface HTable extends FlowContent, PalpableContent, FlowContext, FlowModel, ScriptSupportingModel {
 

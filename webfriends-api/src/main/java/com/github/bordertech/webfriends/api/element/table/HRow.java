@@ -15,6 +15,9 @@ import java.util.List;
  * <p>
  * Must be the child of a table, thead, tbody, tfoot, table element.
  * </p>
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-tr-element">HTML Spec</a>
  */
 public interface HRow extends NoCategory, FlowModel, ScriptSupportingModel, CustomModel {
 

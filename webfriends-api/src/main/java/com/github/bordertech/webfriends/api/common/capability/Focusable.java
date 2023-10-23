@@ -4,7 +4,12 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeNumericTok
 import com.github.bordertech.webfriends.api.element.Element;
 
 /**
- * Element that can be focused.
+ * Element that can be focused (ie tabindex and accesskey).
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Web Docs tabindex</a>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Web Docs accesskey</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-tabindex-attribute">HTML Spec tabindex</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-accesskey-attribute">HTML Spec accesskey</a>
  */
 public interface Focusable extends Element {
 

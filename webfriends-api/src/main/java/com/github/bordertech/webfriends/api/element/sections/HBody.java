@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.api.element.sections;
 
-import com.github.bordertech.webfriends.api.common.category.SectioningRootContent;
+import com.github.bordertech.webfriends.api.common.category.NoCategory;
 import com.github.bordertech.webfriends.api.common.context.CustomContext;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
@@ -12,8 +12,11 @@ import java.util.List;
 
 /**
  * The body element represents the contents of the document.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-body-element">HTML Spec</a>
  */
-public interface HBody extends SectioningRootContent, CustomContext, FlowModel, CustomModel {
+public interface HBody extends NoCategory, CustomContext, FlowModel, CustomModel {
 
 	@Override
 	TagBody getTagType();

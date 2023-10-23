@@ -6,6 +6,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Element that can be autocapitalized.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#autocapitalize">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#autocapitalization">HTML Spec</a>
  */
 public interface Autocapitalizable extends Element {
 

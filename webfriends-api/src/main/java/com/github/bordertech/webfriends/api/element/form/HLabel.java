@@ -2,10 +2,10 @@ package com.github.bordertech.webfriends.api.element.form;
 
 import com.github.bordertech.webfriends.api.common.capability.Focusable;
 import com.github.bordertech.webfriends.api.common.category.InteractiveContent;
-import com.github.bordertech.webfriends.api.common.category.LabelableContent;
 import com.github.bordertech.webfriends.api.common.category.PalpableContent;
 import com.github.bordertech.webfriends.api.common.category.PhrasingContent;
 import com.github.bordertech.webfriends.api.common.context.PhrasingContext;
+import com.github.bordertech.webfriends.api.common.form.category.LabelableContent;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
 import com.github.bordertech.webfriends.api.common.model.PhrasingModel;
 import com.github.bordertech.webfriends.api.common.tags.TagLabel;
@@ -15,6 +15,9 @@ import java.util.List;
 
 /**
  * Label element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-label-element">HTML Spec</a>
  */
 public interface HLabel extends PhrasingContent, PalpableContent, InteractiveContent,
 		PhrasingContext,

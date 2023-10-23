@@ -7,6 +7,10 @@ import java.util.List;
 
 /**
  * Base element (No defined category, No context and No model).
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Glossary/Element">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#elements">HTML Spec</a>
+ * @see <a href="https://html.spec.whatwg.org/#element-definitions">HTML Element Definitions</a>
  */
 public interface Element extends ElementContext, ElementModel {
 

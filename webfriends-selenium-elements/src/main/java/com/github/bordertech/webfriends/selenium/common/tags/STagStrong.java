@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.selenium.common.tags;
 
 import com.github.bordertech.webfriends.api.common.tags.TagStrong;
-import com.github.bordertech.webfriends.selenium.element.grouping.SStrong;
+import com.github.bordertech.webfriends.selenium.element.textlevel.SStrong;
 
 /**
  * HTML <code>strong</code> tag.

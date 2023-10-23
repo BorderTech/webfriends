@@ -15,4 +15,9 @@ public class SCaption extends AbstractSElement implements HCaption {
 		return SeleniumTags.CAPTION;
 	}
 
+	@Override
+	public String getCaptionText() {
+		return getWebElement().getText();
+	}
+
 }

@@ -1,7 +1,7 @@
 package com.github.bordertech.webfriends.api.common.tags;
 
 import com.github.bordertech.webfriends.api.common.tag.TagType;
-import com.github.bordertech.webfriends.api.element.grouping.HSummary;
+import com.github.bordertech.webfriends.api.element.interactive.HSummary;
 
 /**
  * HTML <code>summary</code> tag.

@@ -6,6 +6,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Form control that can be auto completed.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#autofill">HTML Spec</a>
  */
 public interface Autocompleteable extends Element {
 

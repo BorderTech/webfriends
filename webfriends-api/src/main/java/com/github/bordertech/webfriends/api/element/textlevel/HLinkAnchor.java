@@ -17,9 +17,12 @@ import java.util.List;
 /**
  * HyperLink element.
  * <p>
- * If the element has a HREF attribute then the content is Interactive. The content model is Transparent, but there must
- * be no interactive content or a element descendants.
+ * If the element has a HREF attribute then the content is Interactive. The content model is Transparent, but there must be no interactive content or
+ * a element descendants.
  * </p>
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-a-element">HTML Spec</a>
  */
 public interface HLinkAnchor extends PhrasingContent, InteractiveContent, PalpableContent,
 		PhrasingContext, TransparentModel, FlowModel, CustomModel, Focusable {

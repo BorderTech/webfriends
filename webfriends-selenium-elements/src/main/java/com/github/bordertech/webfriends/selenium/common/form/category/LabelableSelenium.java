@@ -1,6 +1,6 @@
-package com.github.bordertech.webfriends.selenium.common.category;
+package com.github.bordertech.webfriends.selenium.common.form.category;
 
-import com.github.bordertech.webfriends.api.common.category.LabelableContent;
+import com.github.bordertech.webfriends.api.common.form.category.LabelableContent;
 import com.github.bordertech.webfriends.selenium.element.SElement;
 
 /**

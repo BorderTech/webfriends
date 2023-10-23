@@ -1,15 +1,17 @@
 package com.github.bordertech.webfriends.api.element.interactive;
 
 import com.github.bordertech.webfriends.api.common.category.FlowContent;
-import com.github.bordertech.webfriends.api.common.category.SectioningRootContent;
 import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.model.FlowModel;
 import com.github.bordertech.webfriends.api.common.tags.TagDialog;
 
 /**
  * Dialog element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-dialog-element">HTML Spec</a>
  */
-public interface HDialog extends FlowContent, SectioningRootContent, FlowContext, FlowModel {
+public interface HDialog extends FlowContent, FlowContext, FlowModel {
 
 	@Override
 	TagDialog getTagType();

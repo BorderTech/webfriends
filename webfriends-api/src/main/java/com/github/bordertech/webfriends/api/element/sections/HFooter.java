@@ -12,6 +12,9 @@ import java.util.List;
 
 /**
  * Footer element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-footer-element">HTML Spec</a>
  */
 public interface HFooter extends FlowContent, PalpableContent, FlowContext, FlowModel, CustomModel {
 

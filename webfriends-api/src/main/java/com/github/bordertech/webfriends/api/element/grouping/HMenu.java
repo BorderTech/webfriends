@@ -1,29 +1,17 @@
 package com.github.bordertech.webfriends.api.element.grouping;
 
-import com.github.bordertech.webfriends.api.common.category.ScriptSupportingContent;
 import com.github.bordertech.webfriends.api.common.tags.TagMenu;
-import com.github.bordertech.webfriends.api.element.Element;
-import java.util.Arrays;
-import java.util.List;
+import com.github.bordertech.webfriends.api.element.grouping.ListContainerElement;
 
 /**
  * Menu element.
  *
- * @param <T> the menu item type
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-menu-element">HTML Spec</a>
  */
-public interface HMenu<T extends HMenuItem> extends ListContainerElement<T> {
+public interface HMenu extends ListContainerElement {
 
 	@Override
 	TagMenu getTagType();
 
-	/**
-	 * @param text the text of the menu item
-	 * @return the menu item, or null
-	 */
-	HMenuItem getMenuItemByText(final String text);
-
-	@Override
-	default List<Class<? extends Element>> getChildrenAllowed() {
-		return Arrays.asList(ScriptSupportingContent.class, HMenuItem.class);
-	}
 }

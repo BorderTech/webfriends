@@ -2,6 +2,8 @@ package com.github.bordertech.webfriends.api.common.attribute;
 
 /**
  * Target window type.
+ *
+ * @see <a href="https://html.spec.whatwg.org/#navigable-target-names">HTML Spec</a>
  */
 public final class WindowTarget {
 

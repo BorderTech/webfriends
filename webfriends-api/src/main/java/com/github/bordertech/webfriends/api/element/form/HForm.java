@@ -15,8 +15,11 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * The form element represents a collection of form-associated elements, some of which can represent editable values
- * that can be submitted to a server for processing.
+ * The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server
+ * for processing.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-form-element">HTML Spec</a>
  */
 public interface HForm extends FlowContent, PalpableContent,
 		FlowContext,

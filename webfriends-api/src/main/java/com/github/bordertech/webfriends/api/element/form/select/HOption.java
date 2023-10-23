@@ -11,6 +11,9 @@ import java.util.List;
 
 /**
  * Option element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-option-element">HTML Spec</a>
  */
 public interface HOption extends NoCategory,
 		CustomContext,

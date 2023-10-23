@@ -2,7 +2,7 @@ package com.github.bordertech.webfriends.selenium.element.form;
 
 import com.github.bordertech.webfriends.api.element.form.HLabel;
 import com.github.bordertech.webfriends.selenium.common.capability.FocusableSelenium;
-import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
+import com.github.bordertech.webfriends.selenium.common.form.category.LabelableSelenium;
 import com.github.bordertech.webfriends.selenium.common.feature.Clickable;
 import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithButtons;
 import com.github.bordertech.webfriends.selenium.common.feature.ContainerWithChildren;

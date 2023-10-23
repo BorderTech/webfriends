@@ -1,6 +1,6 @@
 package com.github.bordertech.webfriends.selenium.smart.driver;
 
-import com.github.bordertech.webfriends.selenium.common.category.LabelableSelenium;
+import com.github.bordertech.webfriends.selenium.common.form.category.LabelableSelenium;
 import com.github.bordertech.webfriends.selenium.common.tag.SeleniumTags;
 import com.github.bordertech.webfriends.selenium.common.tag.TagTypeSelenium;
 import com.github.bordertech.webfriends.selenium.element.SElement;

@@ -4,13 +4,13 @@ import com.github.bordertech.webfriends.api.common.attribute.AttributeToken;
 import com.github.bordertech.webfriends.api.common.capability.Focusable;
 import com.github.bordertech.webfriends.api.common.category.FlowContent;
 import com.github.bordertech.webfriends.api.common.category.InteractiveContent;
-import com.github.bordertech.webfriends.api.common.category.LabelableContent;
 import com.github.bordertech.webfriends.api.common.category.PalpableContent;
 import com.github.bordertech.webfriends.api.common.category.PhrasingContent;
 import com.github.bordertech.webfriends.api.common.context.FlowContext;
 import com.github.bordertech.webfriends.api.common.form.capability.Autofocusable;
 import com.github.bordertech.webfriends.api.common.form.capability.Disableable;
 import com.github.bordertech.webfriends.api.common.form.category.AutocapitalizeInheriting;
+import com.github.bordertech.webfriends.api.common.form.category.LabelableContent;
 import com.github.bordertech.webfriends.api.common.form.category.Listed;
 import com.github.bordertech.webfriends.api.common.form.category.Submittable;
 import com.github.bordertech.webfriends.api.common.model.CustomModel;
@@ -23,6 +23,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Button element.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-button-element">HTML Spec</a>
  */
 public interface HButton extends FlowContent, PalpableContent, PhrasingContent, InteractiveContent, LabelableContent,
 		FlowContext,

@@ -7,6 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Table header cell (ie th element).
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-th-element">HTML Spec</a>
  */
 public interface HHeaderCell extends CellElement, NoCategory {
 

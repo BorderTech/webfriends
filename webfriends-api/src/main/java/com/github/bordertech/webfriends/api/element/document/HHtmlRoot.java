@@ -12,6 +12,9 @@ import java.util.List;
 
 /**
  * The root element of an HTML document (ie HTML element).
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#the-html-element">HTML Spec</a>
  */
 public interface HHtmlRoot extends NoCategory, NoContext, CustomModel {
 

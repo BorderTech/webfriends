@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 
 /**
  * Element with a value that can be stepped.
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/step">Web Docs</a>
+ * @see <a href="https://html.spec.whatwg.org/#attr-input-step">HTML Spec</a>
  */
 public interface Stepable extends Element {
 
